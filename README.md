@@ -1,7 +1,11 @@
 # ANODA-Turn-Timer
 ANODA Open Source iOS Swift example app
 
-[http://itunes.apple.com/app/id1282215925]()
+Download for iPhone [http://itunes.apple.com/app/id1282215925](http://itunes.apple.com/app/id1282215925)
+
+![](http://s.themengzor.com/logo_small.png)
+
+![](http://s.themengzor.com/ANODA_Turn_Timer_on_the_App_Store_2017-10-04_01-16-06-3w512.png)
 
 ## Build
 
