@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  AnodaGameTimer
+
+  Created by Oksana Kovalchuk on 9/11/17.
+  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
+*/
+
+
+"error" = "Error";
+
+"empty-timer" = "You need to specify round length";
+"empty-beep" = "You need to specify time before second beep";
