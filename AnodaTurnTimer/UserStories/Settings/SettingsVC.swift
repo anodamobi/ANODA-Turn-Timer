@@ -49,7 +49,8 @@ class SettingsVC: UIViewController {
         
         contentView.backButton.addTargetClosure { (button) in
             Answers.logCustomEvent(withName: "Settings updated",
-                                   customAttributes: ["Total": Defaults[.timerInterval], "Beep": Defaults[.beepInterval])
+                                   customAttributes: ["Total": Defaults[.timerInterval],
+                                                      "Beep": Defaults[.beepInterval]])
             self.delegate?.loadData()
             self.navigationController?.popViewController(animated: true)
         }

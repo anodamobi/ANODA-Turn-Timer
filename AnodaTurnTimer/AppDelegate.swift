@@ -11,6 +11,9 @@ import UIKit
 import SwiftyUserDefaults
 import Fabric
 import Crashlytics
+import ReSwift
+
+let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [logOnOutMiddleware])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
