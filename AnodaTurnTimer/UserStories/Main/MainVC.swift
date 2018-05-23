@@ -33,6 +33,7 @@ class MainVC: UIViewController, TimerDelegate {
         super.viewDidLoad()
 
         contentView.pauseButton.addTargetClosure { (button) in
+            
             if self.timer.state == .paused || self.timer.state == .initial {
                 self.timer.updateTo(state: .running)
             } else if self.timer.state == .running {
@@ -62,8 +63,8 @@ class MainVC: UIViewController, TimerDelegate {
         case .paused:
             self.contentView.updatePlay(toPause: false)
         case .isOut:
-            Answers.logCustomEvent(withName: "Time is out",
-                                   customAttributes: ["Total": timer.timerSecondsValue, "Beep": timer.beepValue])
+            
+            store.dispatch(TimerIsOutAction(timerSecondsValue: timer.timerSecondsValue, beepValue: timer.beepValue))
             self.contentView.updateRestartIcon(visible: true)
         }
     }

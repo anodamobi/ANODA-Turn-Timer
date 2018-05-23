@@ -20,6 +20,9 @@ class SettingsVC: UIViewController {
     let contentView = SettingsView()
     weak var delegate: DataUpdated?
     
+    var timeInterval: Int = 0
+    var beepInterval: Int = 0
+    
     init(delegate: DataUpdated) {
         super.init(nibName: nil, bundle: nil)
         self.delegate = delegate
@@ -36,8 +39,11 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.roundDurationSection.picker.timeInterval = TimeInterval(Defaults[.timerInterval])
-        contentView.beepSection.picker.timeInterval = TimeInterval(Defaults[.beepInterval])
+        timeInterval = store.state.timerAppState.timeInterval
+        beepInterval = store.state.timerAppState.beepInterval
+        
+        contentView.roundDurationSection.picker.timeInterval = Double(timeInterval)
+        contentView.beepSection.picker.timeInterval = Double(beepInterval)
         
         contentView.roundDurationSection.picker.addTarget(self,
                                                           action: #selector(timeChanged(_:)),
@@ -47,10 +53,10 @@ class SettingsVC: UIViewController {
                                                  action: #selector(beepChanged(_:)),
                                                  for: .valueChanged)
         
-        contentView.backButton.addTargetClosure { (button) in
-            Answers.logCustomEvent(withName: "Settings updated",
-                                   customAttributes: ["Total": Defaults[.timerInterval],
-                                                      "Beep": Defaults[.beepInterval]])
+        contentView.backButton.addTargetClosure { [unowned self] (button) in
+            
+            //TODO: try to remove delegate.
+            store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval, beepInterval: self.beepInterval))
             self.delegate?.loadData()
             self.navigationController?.popViewController(animated: true)
         }
@@ -67,10 +73,10 @@ class SettingsVC: UIViewController {
     }
     
     func timeChanged(_ picker: LETimeIntervalPicker) {
-        Defaults[.timerInterval] = Int(picker.timeInterval)
+        timeInterval = Int(picker.timeInterval)
     }
     
     func beepChanged(_ picker: LETimeIntervalPicker) {
-        Defaults[.beepInterval] = Int(picker.timeInterval)
+        beepInterval = Int(picker.timeInterval)
     }
 }

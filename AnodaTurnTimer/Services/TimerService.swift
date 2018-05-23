@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyUserDefaults
 import SwiftySound
+import ReSwift
 
 enum TimerState {
     case initial
@@ -23,7 +24,8 @@ protocol TimerDelegate: class {
     func updated(progress: CGFloat)
 }
 
-class TimerService: NSObject, DataUpdated {
+class TimerService: NSObject, DataUpdated, StoreSubscriber {
+    
     
     var beepValue: Int
     var timerSecondsValue: Int
@@ -43,12 +45,18 @@ class TimerService: NSObject, DataUpdated {
     override init() {
         timerSecondsValue = Defaults[.timerInterval]
         beepValue = Defaults[.beepInterval]
+        super.init()
+        store.subscribe(self) { $0.select({ $0.timerAppState })}
+    }
+    
+    func newState(state: TimerAppState) {
+        
     }
 
     func loadData() {
 
-        let isChangedSeconds = timerSecondsValue != Defaults[.timerInterval]
-        let isChangedBeep = beepValue != Defaults[.beepInterval]
+        let isChangedSeconds = timerSecondsValue != store.state.timerAppState.timeInterval
+        let isChangedBeep = beepValue != store.state.timerAppState.timeInterval
         
         timerSecondsValue = Defaults[.timerInterval]
         beepValue = Defaults[.beepInterval]

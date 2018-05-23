@@ -15,4 +15,6 @@ struct AppState: StateType {
 
 struct TimerAppState: StateType {
     var time: TimeInterval = 0
+    var beepInterval: Int = 0
+    var timeInterval: Int = 0
 }

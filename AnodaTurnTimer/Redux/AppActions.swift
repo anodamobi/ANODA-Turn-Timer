@@ -10,8 +10,23 @@ import Foundation
 import ReSwift
 import protocol ReSwift.Action
 
+struct TimerAppLaunchAction: Action {
+    var beepInterval: Int
+    var timeInterval: Int
+    var wasLaunched: Bool
+}
+
+struct TimerUpdateSettings: Action {
+    var timeInterval: Int
+    var beepInterval: Int
+}
+
 struct TimerInitialAction: Action { var timer: TimeInterval}
 struct TimerStopAction: Action {}
 struct TimerRunningAction: Action {}
 struct TimerPausedActioin: Action {}
-struct TimerIsOutAction: Action {}
+
+struct TimerIsOutAction: Action {
+    var timerSecondsValue: Int
+    var beepValue: Int
+}
