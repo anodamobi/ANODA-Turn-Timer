@@ -21,18 +21,18 @@ struct TimerUpdateSettings: Action {
     var beepInterval: Int
 }
 
-struct TimerIsOutAction: Action {
+struct TimerInitialAction: Action { var timer: TimeInterval}
+
+struct RoundRunningAction: Action {}
+struct RoundPausedAction: Action {}
+struct RoundReplayAction: Action {}
+
+struct RoundIsOutAction: Action {
     var timerSecondsValue: Int
     var beepValue: Int
 }
 
-struct TimerInitialAction: Action { var timer: TimeInterval}
-
-struct RoundStopAction: Action { var state: TimerState }
-struct RoundRunningAction: Action { var state: TimerState }
-struct RoundPausedActioin: Action { var state: TimerState  }
-struct RoundReplayAcrion: Action { var state: TimerState  }
-
 struct RoundProgress: Action { var progress: CGFloat}
+struct RoundTimeInterval: Action { var timer: Int }
 
 

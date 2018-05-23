@@ -32,8 +32,26 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     func newState(state: RoundState) {
+        
         contentView.pieView.update(to: state.progress, animated: true)
+        
+        switch state.roundState {
+        case .initial:
+            contentView.pieView.update(to: 0, animated: true)
+            contentView.updateRestartIcon(visible: false)
+            
+        case .running:
+            self.contentView.updatePlay(toPause: true)
+            
+        case .paused:
+            self.contentView.updatePlay(toPause: false)
+            
+        case .isOut:
+            self.contentView.updateRestartIcon(visible: true)
+        }
+        
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,19 +91,19 @@ class MainVC: UIViewController, StoreSubscriber {
 extension MainVC: TimerDelegate {
     
     func updated(state: TimerState) {
-        switch state {
-        case .initial:
-            contentView.pieView.update(to: 0, animated: true)
-            contentView.updateRestartIcon(visible: false)
-        case .running:
-            self.contentView.updatePlay(toPause: true)
-        case .paused:
-            self.contentView.updatePlay(toPause: false)
-        case .isOut:
-            
-            store.dispatch(TimerIsOutAction(timerSecondsValue: timer.timerSecondsValue, beepValue: timer.beepValue))
-            self.contentView.updateRestartIcon(visible: true)
-        }
+//        switch state {
+//        case .initial:
+//            contentView.pieView.update(to: 0, animated: true)
+//            contentView.updateRestartIcon(visible: false)
+//        case .running:
+//            self.contentView.updatePlay(toPause: true)
+//        case .paused:
+//            self.contentView.updatePlay(toPause: false)
+//        case .isOut:
+//
+//            store.dispatch(TimerIsOutAction(timerSecondsValue: timer.timerSecondsValue, beepValue: timer.beepValue))
+//            self.contentView.updateRestartIcon(visible: true)
+//        }
     }
 
     

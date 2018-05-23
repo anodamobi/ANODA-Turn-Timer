@@ -36,4 +36,8 @@ struct TimerAppState: StateType {
 struct RoundState: StateType {
     var progress: CGFloat = 0.0
     var roundState: TimerState = .initial
+    
+    //a bit of data duplication
+    var beepInterval: Int = 0
+    var timeInterval: Int = 0
 }

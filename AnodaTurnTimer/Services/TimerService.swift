@@ -59,7 +59,9 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
 
     func updateTimer() {
         if seconds < 1 {
+            //TODO: Update state to isOut and check how it works.
             updateTo(state: .isOut)
+            //store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
         } else {
             seconds -= 1
             if seconds == beepValue {
@@ -76,24 +78,33 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
         
         switch state {
         case .initial: // Restart
-            delegate?.updated(timeInterval: timerSecondsValue)
+            updateTimeInterval(timeInterval: timerSecondsValue)
+//            delegate?.updated(timeInterval: timerSecondsValue)
             
         case .paused: // pause
-            delegate?.updated(state: .paused)
+            store.dispatch(RoundPausedAction())
         case .running: // resume if paused or started
             
-            if self.state == .initial {
-                delegate?.updated(timeInterval: timerSecondsValue)
+            if store.state.roundState.roundState == .initial {
+                updateTimeInterval(timeInterval: timerSecondsValue)
+//                delegate?.updated(timeInterval: timerSecondsValue)
                 Sound.play(file: "start_end.mp3")
                 seconds = timerSecondsValue
             }
             runTimer()
+            
         case .isOut: // time is end
+            store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
+            store.dispatch(RoundTimeInterval(timer: 0))
             delegate?.updated(timeInterval: nil)
             Sound.play(file: "start_end.mp3")
         }
         self.state = state
         delegate?.updated(state: state)
+    }
+    
+    func updateTimeInterval(timeInterval: Int) {
+        store.dispatch(RoundTimeInterval(timer: timeInterval))
     }
     
     deinit {

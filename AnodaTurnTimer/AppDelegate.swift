@@ -13,7 +13,7 @@ import Fabric
 import Crashlytics
 import ReSwift
 
-let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [logOnOutMiddleware])
+let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [timerAppStateMiddleware, roundStateMiddleware])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

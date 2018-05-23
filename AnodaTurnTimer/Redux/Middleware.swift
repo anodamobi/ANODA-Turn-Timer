@@ -11,16 +11,13 @@ import ReSwift
 import Crashlytics
 import SwiftyUserDefaults
 
-let logOnOutMiddleware: Middleware<AppState> = { dispatch, getState in
+let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in
         return { action in
             
             switch action {
             case let actionState as TimerInitialAction:
                 break
-            case let actionState as TimerIsOutAction:
-                Answers.logCustomEvent(withName: "Time is out",
-                                       customAttributes: ["Total": actionState.timerSecondsValue, "Beep": actionState.beepValue])
             case let actionState as TimerAppLaunchAction:
                 if actionState.wasLaunched != true {
                     
@@ -41,6 +38,23 @@ let logOnOutMiddleware: Middleware<AppState> = { dispatch, getState in
                 break
             }
 
+            next(action)
+        }
+    }
+}
+
+let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
+    return { next in
+        return { action in
+            
+            switch action {
+            case let actionState as RoundIsOutAction:
+                Answers.logCustomEvent(withName: "Time is out",
+                                       customAttributes: ["Total": actionState.timerSecondsValue, "Beep": actionState.beepValue])
+            default:
+                break
+            }
+            
             next(action)
         }
     }
