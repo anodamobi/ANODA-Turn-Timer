@@ -12,7 +12,7 @@ import SwiftyUserDefaults
 import Crashlytics
 
 protocol DataUpdated: class {
-    func loadData()
+//    func loadData()
 }
 
 class SettingsVC: UIViewController {
@@ -55,9 +55,8 @@ class SettingsVC: UIViewController {
         
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             
-            //TODO: try to remove delegate.
-            store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval, beepInterval: self.beepInterval))
-            self.delegate?.loadData()
+            store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
+                                               beepInterval: self.beepInterval))
             self.navigationController?.popViewController(animated: true)
         }
         

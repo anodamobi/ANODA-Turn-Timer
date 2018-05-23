@@ -10,8 +10,9 @@ import UIKit
 import SwiftySound
 import SwiftyUserDefaults
 import Crashlytics
+import ReSwift
 
-class MainVC: UIViewController, TimerDelegate {
+class MainVC: UIViewController, StoreSubscriber {
     
     let contentView: MainView = MainView(frame: CGRect.zero)
     let timer: TimerService = TimerService()
@@ -19,6 +20,7 @@ class MainVC: UIViewController, TimerDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         timer.delegate = self
+        store.subscribe(self) { $0.select({ $0.roundState })}
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,6 +29,10 @@ class MainVC: UIViewController, TimerDelegate {
     
     override func loadView() {
         view = contentView
+    }
+    
+    func newState(state: RoundState) {
+        contentView.pieView.update(to: state.progress, animated: true)
     }
     
     override func viewDidLoad() {
@@ -53,6 +59,19 @@ class MainVC: UIViewController, TimerDelegate {
         }
     }
     
+    func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        if minutes > 0 {
+            return  String(format:"%02i:%02i", minutes, seconds)
+        } else {
+            return  String(format:"%i", seconds)
+        }
+    }
+}
+
+extension MainVC: TimerDelegate {
+    
     func updated(state: TimerState) {
         switch state {
         case .initial:
@@ -68,10 +87,7 @@ class MainVC: UIViewController, TimerDelegate {
             self.contentView.updateRestartIcon(visible: true)
         }
     }
-    
-    func updated(progress: CGFloat) {
-        contentView.pieView.update(to: progress, animated: true)
-    }
+
     
     func updated(timeInterval: Int?) {
         
@@ -83,15 +99,5 @@ class MainVC: UIViewController, TimerDelegate {
             text = ""
         }
         contentView.timerLabel.text = text
-    }
-    
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        if minutes > 0 {
-            return  String(format:"%02i:%02i", minutes, seconds)
-        } else {
-            return  String(format:"%i", seconds)
-        }
     }
 }

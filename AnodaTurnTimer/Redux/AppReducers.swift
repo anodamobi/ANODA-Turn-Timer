@@ -10,7 +10,8 @@ import Foundation
 import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
-    return AppState(timerAppState: timerReducer(action: action, state: state?.timerAppState))
+    return AppState(timerAppState: timerReducer(action: action, state: state?.timerAppState),
+                    roundState: roundReducer(action: action, state: state?.roundState))
 }
 
 func timerReducer(action: Action, state: TimerAppState?) -> TimerAppState {
@@ -25,16 +26,23 @@ func timerReducer(action: Action, state: TimerAppState?) -> TimerAppState {
     case let act as TimerAppLaunchAction:
         state.beepInterval = act.beepInterval
         state.timeInterval = act.timeInterval
-    case let act as TimerStopAction:
-        break
-    case let act as TimerRunningAction:
-        break
-    case let act as TimerPausedActioin:
-        break
     case let act as TimerIsOutAction:
         break
     default:
         break
     }
+    return state
+}
+
+func roundReducer(action: Action, state: RoundState?) -> RoundState {
+    var state = state ?? RoundState()
+    
+    switch action {
+    case let act as RoundProgress:
+        state.progress = act.progress
+    default:
+        break
+    }
+    
     return state
 }

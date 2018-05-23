@@ -11,17 +11,9 @@ import SwiftyUserDefaults
 import SwiftySound
 import ReSwift
 
-enum TimerState {
-    case initial
-    case running
-    case paused
-    case isOut
-}
-
 protocol TimerDelegate: class {
     func updated(timeInterval: Int?)
     func updated(state: TimerState)
-    func updated(progress: CGFloat)
 }
 
 class TimerService: NSObject, DataUpdated, StoreSubscriber {
@@ -36,34 +28,25 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
     var isPaused = false
     var state: TimerState = .initial
     
-    weak var delegate: TimerDelegate? {
+    //TODO: To remove
+    weak var delegate: TimerDelegate?  {
         didSet {
             updateTo(state: .initial)
         }
     }
 
     override init() {
-        timerSecondsValue = Defaults[.timerInterval]
-        beepValue = Defaults[.beepInterval]
+        timerSecondsValue = store.state.timerAppState.timeInterval
+        beepValue = store.state.timerAppState.beepInterval
         super.init()
-        store.subscribe(self) { $0.select({ $0.timerAppState })}
+        store.subscribe(self) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
     }
     
     func newState(state: TimerAppState) {
+        timerSecondsValue = state.timeInterval
+        beepValue = state.beepInterval
         
-    }
-
-    func loadData() {
-
-        let isChangedSeconds = timerSecondsValue != store.state.timerAppState.timeInterval
-        let isChangedBeep = beepValue != store.state.timerAppState.timeInterval
-        
-        timerSecondsValue = Defaults[.timerInterval]
-        beepValue = Defaults[.beepInterval]
-
-        if isChangedBeep || isChangedSeconds {
-            updateTo(state: .initial)
-        }
+        updateTo(state: .initial)
     }
     
     func runTimer() {
@@ -85,7 +68,7 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
             delegate?.updated(timeInterval: seconds)
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
-        delegate?.updated(progress: progress)
+        store.dispatch(RoundProgress(progress: progress))
     }
     
     func updateTo(state: TimerState) {
@@ -111,5 +94,9 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
         }
         self.state = state
         delegate?.updated(state: state)
+    }
+    
+    deinit {
+        store.unsubscribe(self)
     }
 }
