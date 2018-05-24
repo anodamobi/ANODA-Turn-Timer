@@ -20,8 +20,8 @@ class MainVC: UIViewController, StoreSubscriber {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        store.dispatch(RoundInitialAction(timer: 0))
-        store.subscribe(self) { $0.select({ $0.roundAppState })}
+        store.dispatch(RoundInitialAction(progress: 0))
+        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,23 +36,23 @@ class MainVC: UIViewController, StoreSubscriber {
         
         contentView.pieView.update(to: state.progress, animated: true)
         
-        updated(timeInterval: state.timeInterval)
-        
         switch state.roundState {
         case .initial:
-            
+
             contentView.pieView.update(to: 0, animated: true)
             contentView.updateRestartIcon(visible: false)
-            
+
         case .running:
             self.contentView.updatePlay(toPause: true)
-            
+
         case .paused:
             self.contentView.updatePlay(toPause: false)
-            
+
         case .isOut:
             self.contentView.updateRestartIcon(visible: true)
         }
+        
+        updated(timeInterval: state.timeInterval)
         
     }
 
@@ -66,10 +66,8 @@ class MainVC: UIViewController, StoreSubscriber {
             
             if state == .paused || state == .initial {
                 store.dispatch(RoundRunningAction())
-//                self.timer.updateTo(state: .running)
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
-//                self.timer.updateTo(state: .paused)
             }
         }
         
@@ -78,7 +76,7 @@ class MainVC: UIViewController, StoreSubscriber {
             Answers.logCustomEvent(withName: "Timer restart",
                                    customAttributes: ["Total": self.timer.timerSecondsValue, "Beep": self.timer.beepValue])
             
-            store.dispatch(RoundInitialAction(timer: 0))
+            store.dispatch(RoundInitialAction(progress: 0))
             store.dispatch(RoundRunningAction())
         }
         

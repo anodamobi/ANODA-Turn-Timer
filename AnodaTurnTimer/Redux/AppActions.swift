@@ -32,6 +32,6 @@ struct RoundIsOutAction: Action {
 
 struct RoundProgress: Action { var progress: CGFloat }
 struct RoundTimeInterval: Action { var timer: Int }
-struct RoundInitialAction: Action { var timer: Int }
+struct RoundInitialAction: Action { var progress: CGFloat }
 
 

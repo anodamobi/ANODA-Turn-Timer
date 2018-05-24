@@ -17,13 +17,17 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
             
             switch action {
                 
-            case let actionState as TimerAppLaunchAction:
+            case var actionState as TimerAppLaunchAction:
                 if actionState.wasLaunched != true {
                     
                     Defaults[.wasLaunched] = true
                     Defaults[.timerInterval] = 60
                     Defaults[.beepInterval] = 10
                 }
+                actionState.timeInterval = Defaults[.timerInterval]
+                actionState.beepInterval = Defaults[.beepInterval]
+                next(actionState)
+                break
             case let actionState as TimerUpdateSettings:
                 
                 Answers.logCustomEvent(withName: "Settings updated",

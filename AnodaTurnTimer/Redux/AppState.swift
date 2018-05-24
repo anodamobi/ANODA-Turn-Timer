@@ -43,7 +43,7 @@ struct RoundState: StateType {
     
     static func == (lhs: RoundState, rhs: RoundState) -> Bool {
         return lhs.roundState == rhs.roundState &&
-            lhs.beepInterval == rhs.beepInterval &&
-            lhs.timeInterval == rhs.timeInterval
+            lhs.timeInterval == rhs.timeInterval &&
+            lhs.progress == rhs.progress
     }
 }

@@ -13,8 +13,8 @@ import ReSwift
 
 class TimerService: NSObject, DataUpdated {
 
-    var beepValue: Int
-    var timerSecondsValue: Int
+    var beepValue: Int = 0
+    var timerSecondsValue: Int = 0
     var timer = Timer()
     var seconds: Int = 0
     
@@ -27,11 +27,10 @@ class TimerService: NSObject, DataUpdated {
     private var roundAppState: ReduxHelper<RoundState>?
 
 
-    override init() {
+    override init() { 
+        super.init()
         timerSecondsValue = store.state.timerAppState.timeInterval
         beepValue = store.state.timerAppState.beepInterval
-        super.init()
-        
         setupSubscription()
 
     }
@@ -44,7 +43,7 @@ class TimerService: NSObject, DataUpdated {
                 self.timerSecondsValue = state.timeInterval
                 self.beepValue = state.beepInterval
             
-                store.dispatch(RoundInitialAction(timer: 0))
+                store.dispatch(RoundInitialAction(progress: 0))
         }
         
         roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
@@ -66,14 +65,12 @@ class TimerService: NSObject, DataUpdated {
         if seconds < 1 {
             //TODO: Update state to isOut and check how it works.
             updateTo(state: .isOut)
-            //store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
         } else {
             seconds -= 1
             if seconds == beepValue {
                 Sound.play(file: "alarm.mp3")
             }
             store.dispatch(RoundTimeInterval(timer: seconds))
-//            delegate?.updated(timeInterval: seconds)
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
         store.dispatch(RoundProgress(progress: progress))
@@ -90,7 +87,7 @@ class TimerService: NSObject, DataUpdated {
             store.dispatch(RoundPausedAction())
         case .running: // resume if paused or started
             
-            if store.state.roundAppState.roundState == .initial {
+            if self.state == .initial {
                 updateTimeInterval(timeInterval: timerSecondsValue)
                 Sound.play(file: "start_end.mp3")
                 seconds = timerSecondsValue

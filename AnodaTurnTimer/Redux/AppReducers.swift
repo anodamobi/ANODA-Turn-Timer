@@ -39,7 +39,7 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
         
     case let act as RoundInitialAction:
         state.roundState = .initial
-        state.progress = 0
+        state.progress = act.progress
         
     case let act as RoundProgress:
         state.progress = act.progress
@@ -54,6 +54,8 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
         state.beepInterval = act.beepValue
         state.timeInterval = act.timerSecondsValue
         state.roundState = .isOut
+    case let act as RoundTimeInterval:
+        state.timeInterval = act.timer
         
     default:
         break
