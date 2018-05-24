@@ -41,10 +41,9 @@ class SettingsVC: UIViewController {
         
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             
-            store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
-                                               beepInterval: self.beepInterval,
-                                               settingsVC: self))
-//            self.navigationController?.popViewController(animated: true)
+        store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
+                                           beepInterval: self.beepInterval,
+                                           settingsVC: self))
         }
         
         contentView.shareButton.addTargetClosure { (button) in
