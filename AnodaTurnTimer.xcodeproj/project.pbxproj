@@ -18,6 +18,8 @@
 		D4F660A720B5AD9100508BC5 /* AnodaTurnTimerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */; };
 		D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B120B6968900508BC5 /* SettingsController.swift */; };
 		D4F660B820B6DD9900508BC5 /* WatchConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B720B6DD9900508BC5 /* WatchConnectivityService.swift */; };
+		D4F660BD20B6EDFC00508BC5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660BC20B6EDFC00508BC5 /* Enums.swift */; };
+		D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660BC20B6EDFC00508BC5 /* Enums.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
 		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
@@ -122,6 +124,7 @@
 		D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnodaTurnTimer.entitlements; sourceTree = "<group>"; };
 		D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AnodaTurnTimerWatch Extension.entitlements"; sourceTree = "<group>"; };
 		D4F660B720B6DD9900508BC5 /* WatchConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityService.swift; sourceTree = "<group>"; };
+		D4F660BC20B6EDFC00508BC5 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75F79751F69F73A00DFF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
@@ -259,9 +262,18 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		D4F660BB20B6EDE500508BC5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4F660BC20B6EDFC00508BC5 /* Enums.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D75F79711F69F73A00DFF3AA /* AnodaTurnTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D4F660BB20B6EDE500508BC5 /* Helpers */,
 				D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */,
 				D75F79721F69F73A00DFF3AA /* AppDelegate.swift */,
 				D75F79731F69F73A00DFF3AA /* BundleFiles */,
@@ -674,6 +686,7 @@
 				D75F79BE1F69F73A00DFF3AA /* MainView.swift in Sources */,
 				D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */,
 				D4F660B820B6DD9900508BC5 /* WatchConnectivityService.swift in Sources */,
+				D4F660BD20B6EDFC00508BC5 /* Enums.swift in Sources */,
 				D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */,
 				D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,
@@ -690,6 +703,7 @@
 			files = (
 				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
+				D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */,
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

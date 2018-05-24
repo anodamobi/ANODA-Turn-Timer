@@ -24,9 +24,9 @@ class WatchConnectivityService: NSObject, WCSessionDelegate {
         }
     }
     
-    func updateTimeInterval(interval: TimeInterval) {
+    func updateTimeInterval(interval: TimeInterval, type: WatchConnectivityKey) {
         if let validSession = session {
-            let iPhoneAppContext = ["timerInterval": interval as Double]
+            let iPhoneAppContext = [type.rawValue: interval as Double]
             
             do {
                 try validSession.updateApplicationContext(iPhoneAppContext)

@@ -67,11 +67,13 @@ class SettingsVC: UIViewController {
     
     func timeChanged(_ picker: LETimeIntervalPicker) {
         let interval = picker.timeInterval
-        WatchConnectivityService.shared.updateTimeInterval(interval: interval)
+        WatchConnectivityService.shared.updateTimeInterval(interval: interval, type: .roundDuration)
         Defaults[.timerInterval] = Int(interval)
     }
     
     func beepChanged(_ picker: LETimeIntervalPicker) {
-        Defaults[.beepInterval] = Int(picker.timeInterval)
+        let interval = picker.timeInterval
+        WatchConnectivityService.shared.updateTimeInterval(interval: interval, type: .beepInterval)
+        Defaults[.beepInterval] = Int(interval)
     }
 }

@@ -16,9 +16,7 @@
                     <items>
                         <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
                             <items>
-                                <timer width="136" height="96" alignment="center" textAlignment="center" id="V6q-qm-B3X">
-                                    <calendarUnit key="units" minute="YES" second="YES"/>
-                                </timer>
+                                <label width="136" height="92" alignment="center" textAlignment="center" id="YYu-Ev-JWq"/>
                                 <button width="1" alignment="left" title="Settings" id="Uw6-rI-2Rb">
                                     <connections>
                                         <action selector="didPressSettings" destination="AgC-eL-Hgc" id="wae-zG-NaO"/>
@@ -35,7 +33,7 @@
                     <connections>
                         <outlet property="ibRestartButton" destination="vnW-Cp-27E" id="pRj-nF-Ji7"/>
                         <outlet property="ibSettingsButton" destination="Uw6-rI-2Rb" id="rPG-dU-qoo"/>
-                        <outlet property="ibTimer" destination="V6q-qm-B3X" id="swa-gg-kkJ"/>
+                        <outlet property="ibTimerLabel" destination="YYu-Ev-JWq" id="01Q-5e-C45"/>
                     </connections>
                 </controller>
             </objects>
@@ -63,7 +61,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="622" y="422"/>
+            <point key="canvasLocation" x="581" y="442"/>
         </scene>
     </scenes>
 </document>

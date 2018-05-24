@@ -24,10 +24,16 @@ class MainController: WKInterfaceController {
 
     @IBOutlet private var ibRestartButton: WKInterfaceButton!
     @IBOutlet private var ibSettingsButton: WKInterfaceButton!
-    @IBOutlet private var ibTimer: WKInterfaceTimer!
+    @IBOutlet private var ibTimerLabel: WKInterfaceLabel!
     
     private var timer = Timer()
-    private var choosenInterval: Double = 0.0
+    private var choosenInterval: Double = 0.0 {
+        didSet {
+            timeRemaining = choosenInterval
+        }
+    }
+    private var timeRemaining: Double = 0.0
+    private var beepInterval: Double = 1.0   // Seconds before round ends
     
     private let session = WCSession.default
     
@@ -40,7 +46,7 @@ class MainController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         setupUI()
-        stopTimer()
+        resetTimer()
         setupSession()
     }
     
@@ -51,34 +57,56 @@ class MainController: WKInterfaceController {
     }
     
     private func setupUI() {
-        ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
         ibRestartButton.setTitle(StartButtonState.start.rawValue)
+        updateTimerLabel()
     }
     
     // MARK: Timer controls
     
     private func startTimer() {
-        ibTimer.start()
         timer.fire()
-        ibTimer.setTextColor(.green)
+        ibTimerLabel.setTextColor(.green)
     }
     
     private func stopTimer() {
-        ibTimer.stop()
-        timer.invalidate()
-        ibTimer.setTextColor(.red)
+        if timer.isValid {
+            timer.invalidate()
+        }
+        ibTimerLabel.setTextColor(.red)
     }
     
-    private func updateTimer() {
-        timer = Timer.scheduledTimer(timeInterval: choosenInterval + 1, target: self, selector: #selector(timerDidFinish), userInfo: nil, repeats: true)
+    private func resetTimer() {
+        stopTimer()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        timeRemaining = choosenInterval
+        updateTimerLabel()
+    }
+    
+    private func updateTimerLabel() {
+        let minutesLeft = Int(timeRemaining) / 60 % 60
+        let secondsLeft = Int(timeRemaining) % 60
+        
+        var minutesString = "\(minutesLeft)"
+        var secondsString = "\(secondsLeft)"
+        
+        if minutesLeft < 10 {
+            minutesString = "0\(minutesString)"
+        }
+        
+        if secondsLeft < 10 {
+            secondsString = "0\(secondsString)"
+        }
+        
+        ibTimerLabel.setText("\(minutesString):\(secondsString)")
     }
     
     // MARK: Actions
     
     @IBAction private func didPressRestart() {
-        stopTimer()
-        updateTimer()
+        resetTimer()
         if startButtonState == .start || startButtonState == .restart {
+            guard choosenInterval > 0 else { return }
+            timeRemaining = choosenInterval
             startButtonState = .stop
             startTimer()
         } else {
@@ -86,17 +114,26 @@ class MainController: WKInterfaceController {
         }
     }
     
-    @objc private func timerDidFinish() {
-        let diffToNextFireDate = timer.fireDate.timeIntervalSince(Date())
-        if diffToNextFireDate < choosenInterval {
+    @objc private func timerUpdate() {
+        guard startButtonState == .stop else { return }
+        
+        timeRemaining -= 1
+        
+        if timeRemaining == beepInterval {
+            WKInterfaceDevice.current().play(.notification)
+        }
+        
+        if timeRemaining == 0 {
             startButtonState = .restart
             stopTimer()
             WKInterfaceDevice.current().play(.success)
         }
+        
+        updateTimerLabel()
     }
     
     @IBAction private func didPressSettings() {
-        stopTimer()
+        resetTimer()
         startButtonState = .start
         moveToSettings()
     }
@@ -112,7 +149,7 @@ extension MainController: TimeIntervalPickerDelegate {
     func didPickInterval(_ interval: PickerTimeInterval) {
         let pickedTime = Double(interval.rawValue)
         choosenInterval = pickedTime
-        ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
+        updateTimerLabel()
     }
 }
 
@@ -128,9 +165,15 @@ extension MainController: WCSessionDelegate {
     
     private func processAppContext() {
         if let iPhoneContext = session.receivedApplicationContext as? [String : Double] {
-            if let interval = iPhoneContext["timerInterval"] {
+            
+            if let interval = iPhoneContext[WatchConnectivityKey.roundDuration.rawValue] {
                 choosenInterval = interval
-                ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
+                updateTimerLabel()
+            }
+            
+            if let interval = iPhoneContext[WatchConnectivityKey.beepInterval.rawValue] {
+                beepInterval = interval
+                debugPrint("BEEP updated")
             }
         }
     }
