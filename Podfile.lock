@@ -13,18 +13,26 @@ DEPENDENCIES:
   - SnapKit
   - SwiftySound
   - SwiftyUserDefaults
-  - UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)
+  - "UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)"
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Crashlytics
+    - Fabric
+    - SnapKit
+    - SwiftySound
+    - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
   UIImagePDF:
     :branch: 0.9-beta1
     :commit: 7d9dfbf
-    :git: git@github.com:anodamobi/UIImage-PDF.git
+    :git: "git@github.com:anodamobi/UIImage-PDF.git"
 
 CHECKOUT OPTIONS:
   UIImagePDF:
     :commit: 7d9dfbf7d961f6af225e015dae94728f029fe7ef
-    :git: git@github.com:anodamobi/UIImage-PDF.git
+    :git: "git@github.com:anodamobi/UIImage-PDF.git"
 
 SPEC CHECKSUMS:
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
@@ -36,4 +44,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 14947b3c76b7d3876ffa3b8850607e241d7dff68
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
