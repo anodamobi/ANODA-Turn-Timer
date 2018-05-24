@@ -51,7 +51,6 @@ class MainController: WKInterfaceController {
         setupUI()
         stopTimer()
         setupSession()
-        
         timerService.delegate = self
     }
     
