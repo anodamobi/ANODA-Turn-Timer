@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftySound
-import SwiftyUserDefaults
 import Crashlytics
 
 class MainVC: UIViewController, TimerDelegate {

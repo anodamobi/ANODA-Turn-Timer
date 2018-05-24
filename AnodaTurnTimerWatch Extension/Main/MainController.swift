@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 class TransitionHelper: NSObject {
     var delegate: TimeIntervalPickerDelegate?
@@ -28,6 +29,8 @@ class MainController: WKInterfaceController {
     private var timer = Timer()
     private var choosenInterval: Double = 0.0
     
+    private let session = WCSession.default
+    
     private var startButtonState: StartButtonState = .start {
         didSet {
             ibRestartButton.setTitle(startButtonState.rawValue)
@@ -38,6 +41,13 @@ class MainController: WKInterfaceController {
         super.awake(withContext: context)
         setupUI()
         stopTimer()
+        setupSession()
+    }
+    
+    private func setupSession() {
+        processAppContext()
+        session.delegate = self
+        session.activate()
     }
     
     private func setupUI() {
@@ -61,7 +71,6 @@ class MainController: WKInterfaceController {
     
     private func updateTimer() {
         timer = Timer.scheduledTimer(timeInterval: choosenInterval + 1, target: self, selector: #selector(timerDidFinish), userInfo: nil, repeats: true)
-        ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
     }
     
     // MARK: Actions
@@ -69,7 +78,7 @@ class MainController: WKInterfaceController {
     @IBAction private func didPressRestart() {
         stopTimer()
         updateTimer()
-        if startButtonState == .start || startButtonState == .restart {     // Need to fire timer
+        if startButtonState == .start || startButtonState == .restart {
             startButtonState = .stop
             startTimer()
         } else {
@@ -82,6 +91,7 @@ class MainController: WKInterfaceController {
         if diffToNextFireDate < choosenInterval {
             startButtonState = .restart
             stopTimer()
+            WKInterfaceDevice.current().play(.success)
         }
     }
     
@@ -104,4 +114,26 @@ extension MainController: TimeIntervalPickerDelegate {
         choosenInterval = pickedTime
         ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
     }
+}
+
+extension MainController: WCSessionDelegate {
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        if startButtonState == .start || startButtonState == .restart {
+            DispatchQueue.main.async { [unowned self] in
+                self.processAppContext()
+            }
+        }
+    }
+    
+    private func processAppContext() {
+        if let iPhoneContext = session.receivedApplicationContext as? [String : Double] {
+            if let interval = iPhoneContext["timerInterval"] {
+                choosenInterval = interval
+                ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
+            }
+        }
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
 }

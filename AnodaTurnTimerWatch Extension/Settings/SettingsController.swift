@@ -28,6 +28,7 @@ class SettingsController: WKInterfaceController {
     @IBOutlet private var ibSetButton: WKInterfaceButton!
     
     private var pickerItems: [WKPickerItem] = []
+    private var pickedInterval: PickerTimeInterval?
     
     weak var delegate: TimeIntervalPickerDelegate?
     
@@ -41,7 +42,7 @@ class SettingsController: WKInterfaceController {
     
     private func setupPicker() {
         let intervals: [PickerTimeInterval] = [.sec5, .sec10, .sec20, .sec30, .sec45, .minute1]
-        delegate?.didPickInterval(intervals[0])
+        pickedInterval = intervals.first
         
         for interval in intervals {
             let item = WKPickerItem()
@@ -54,12 +55,15 @@ class SettingsController: WKInterfaceController {
     
     @IBAction private func didPickTimeInterval(_ value: Int) {
         let item = pickerItems[value]
-        if let itemTitle = Int(item.title ?? ""), let interval = PickerTimeInterval(rawValue: itemTitle) {
-                    delegate?.didPickInterval(interval)
+        if let itemTitle = Int(item.title ?? "") {
+            pickedInterval = PickerTimeInterval(rawValue: itemTitle)
         }
     }
     
     @IBAction private func didPressSetButton() {
+        if let interval = pickedInterval {
+            delegate?.didPickInterval(interval)
+        }
         self.pop()
     }
 }
