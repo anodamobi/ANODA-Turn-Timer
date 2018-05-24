@@ -3,7 +3,7 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/10/17.
-//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
+//  Copyright © 2017 ANODA. All rights reserved.
 //
 
 import Foundation

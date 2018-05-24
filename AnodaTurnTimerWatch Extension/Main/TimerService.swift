@@ -3,7 +3,7 @@
 //  AnodaTurnTimerWatch Extension
 //
 //  Created by Alexander Kravchenko on 5/24/18.
-//  Copyright © 2018 Oksana Kovalchuk. All rights reserved.
+//  Copyright © 2018 ANODA. All rights reserved.
 //
 
 import Foundation
