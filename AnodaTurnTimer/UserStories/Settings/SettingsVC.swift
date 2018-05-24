@@ -11,26 +11,12 @@ import UIKit
 import SwiftyUserDefaults
 import Crashlytics
 
-protocol DataUpdated: class {
-//    func loadData()
-}
-
 class SettingsVC: UIViewController {
     
     let contentView = SettingsView()
-    weak var delegate: DataUpdated?
     
     var timeInterval: Int = 0
     var beepInterval: Int = 0
-    
-    init(delegate: DataUpdated) {
-        super.init(nibName: nil, bundle: nil)
-        self.delegate = delegate
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func loadView() {
         view = contentView
@@ -56,8 +42,9 @@ class SettingsVC: UIViewController {
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             
             store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
-                                               beepInterval: self.beepInterval))
-            self.navigationController?.popViewController(animated: true)
+                                               beepInterval: self.beepInterval,
+                                               settingsVC: self))
+//            self.navigationController?.popViewController(animated: true)
         }
         
         contentView.shareButton.addTargetClosure { (button) in

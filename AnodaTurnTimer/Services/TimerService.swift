@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 import SwiftySound
 import ReSwift
 
-class TimerService: NSObject, DataUpdated {
+class TimerService: NSObject {
 
     var beepValue: Int = 0
     var timerSecondsValue: Int = 0
@@ -40,6 +40,7 @@ class TimerService: NSObject, DataUpdated {
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
                 store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
             }) { [unowned self] (state) in
+                
                 self.timerSecondsValue = state.timeInterval
                 self.beepValue = state.beepInterval
             
@@ -63,10 +64,10 @@ class TimerService: NSObject, DataUpdated {
 
     func updateTimer() {
         if seconds < 1 {
-            //TODO: Update state to isOut and check how it works.
             updateTo(state: .isOut)
         } else {
             seconds -= 1
+            //todo: add to middleware
             if seconds == beepValue {
                 Sound.play(file: "alarm.mp3")
             }
@@ -88,7 +89,6 @@ class TimerService: NSObject, DataUpdated {
         case .running: // resume if paused or started
             
             if self.state == .initial {
-                updateTimeInterval(timeInterval: timerSecondsValue)
                 Sound.play(file: "start_end.mp3")
                 seconds = timerSecondsValue
             }
@@ -96,7 +96,6 @@ class TimerService: NSObject, DataUpdated {
             
         case .isOut: // time is end
             store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
-            store.dispatch(RoundTimeInterval(timer: 0))
             Sound.play(file: "start_end.mp3")
         }
         self.state = state

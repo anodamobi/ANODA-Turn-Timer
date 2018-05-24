@@ -29,13 +29,13 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
                 next(actionState)
                 break
             case let actionState as TimerUpdateSettings:
-                
-                Answers.logCustomEvent(withName: "Settings updated",
-                                       customAttributes: ["Total": actionState.timeInterval,
-                                                          "Beep": actionState.beepInterval])
+                EventHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
+                                                beepValue: actionState.beepInterval)
                 
                 Defaults[.timerInterval] = actionState.timeInterval
                 Defaults[.beepInterval] = actionState.beepInterval
+                
+                actionState.settingsVC.navigationController?.popViewController(animated: true)
                 
             default:
                 break
@@ -52,8 +52,7 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             
             switch action {
             case let actionState as RoundIsOutAction:
-                Answers.logCustomEvent(withName: "Time is out",
-                                       customAttributes: ["Total": actionState.timerSecondsValue, "Beep": actionState.beepValue])
+                EventHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
             case let actionState as RoundInitialAction:
                 break
             case let actionState as RoundRunningAction:
@@ -61,7 +60,7 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             case let actionState as RoundPausedAction:
                 break
             case let actionState as RoundReplayAction:
-                break
+                EventHandler.logTimeRestart(timerValue: actionState.timeValue, beepValue: actionState.beepValue)
             default:
                 break
             }

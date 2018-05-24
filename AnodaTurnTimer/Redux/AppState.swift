@@ -37,13 +37,13 @@ struct RoundState: StateType {
     var progress: CGFloat = 0.0
     var roundState: TimerState = .initial
     
-    //a bit of data duplication
     var beepInterval: Int = 0
-    var timeInterval: Int = 0
+    var roundTimeProgress: Int = 0
     
     static func == (lhs: RoundState, rhs: RoundState) -> Bool {
         return lhs.roundState == rhs.roundState &&
-            lhs.timeInterval == rhs.timeInterval &&
+            lhs.roundTimeProgress == rhs.roundTimeProgress &&
+            lhs.beepInterval == rhs.beepInterval &&
             lhs.progress == rhs.progress
     }
 }

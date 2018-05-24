@@ -14,6 +14,8 @@
 		56CCFFFE20B46F4900811328 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCFFFD20B46F4900811328 /* AppState.swift */; };
 		56DE8A2120B5868900CCE914 /* ReSwiftStore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2020B5868900CCE914 /* ReSwiftStore+Ext.swift */; };
 		56DE8A2320B6E80C00CCE914 /* ReduxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2220B6E80C00CCE914 /* ReduxHelper.swift */; };
+		56DE8A2520B705AE00CCE914 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2420B705AE00CCE914 /* EventHandler.swift */; };
+		56DE8A2720B7159800CCE914 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2620B7159800CCE914 /* SoundManager.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
 		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
@@ -57,6 +59,8 @@
 		56CCFFFF20B46FC900811328 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		56DE8A2020B5868900CCE914 /* ReSwiftStore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReSwiftStore+Ext.swift"; sourceTree = "<group>"; };
 		56DE8A2220B6E80C00CCE914 /* ReduxHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxHelper.swift; sourceTree = "<group>"; };
+		56DE8A2420B705AE00CCE914 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		56DE8A2620B7159800CCE914 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		621E50AC711666BEB9964DD8 /* Pods-AnodaGameTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimerTests/Pods-AnodaGameTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		62D20570DD56A1143D42CFE2 /* Pods-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		8B19A15C88758FB5095FA3ED /* Pods-AnodaGameTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimer/Pods-AnodaGameTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				D75F79941F69F73A00DFF3AA /* TimerService.swift */,
+				56DE8A2420B705AE00CCE914 /* EventHandler.swift */,
+				56DE8A2620B7159800CCE914 /* SoundManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -468,10 +474,12 @@
 				D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */,
 				D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */,
 				56DE8A2120B5868900CCE914 /* ReSwiftStore+Ext.swift in Sources */,
+				56DE8A2720B7159800CCE914 /* SoundManager.swift in Sources */,
 				56DE8A2320B6E80C00CCE914 /* ReduxHelper.swift in Sources */,
 				D75F79BE1F69F73A00DFF3AA /* MainView.swift in Sources */,
 				D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */,
 				D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */,
+				56DE8A2520B705AE00CCE914 /* EventHandler.swift in Sources */,
 				D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */,
 				56CC000420B4708B00811328 /* AppReducers.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,

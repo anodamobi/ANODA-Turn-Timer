@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import SwiftySound
-import SwiftyUserDefaults
-import Crashlytics
 import ReSwift
 
 class MainVC: UIViewController, StoreSubscriber {
@@ -21,7 +18,7 @@ class MainVC: UIViewController, StoreSubscriber {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         store.dispatch(RoundInitialAction(progress: 0))
-        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +35,6 @@ class MainVC: UIViewController, StoreSubscriber {
         
         switch state.roundState {
         case .initial:
-
             contentView.pieView.update(to: 0, animated: true)
             contentView.updateRestartIcon(visible: false)
 
@@ -52,8 +48,7 @@ class MainVC: UIViewController, StoreSubscriber {
             self.contentView.updateRestartIcon(visible: true)
         }
         
-        updated(timeInterval: state.timeInterval)
-        
+        updated(timeInterval: state.roundTimeProgress)
     }
 
     
@@ -61,7 +56,6 @@ class MainVC: UIViewController, StoreSubscriber {
         super.viewDidLoad()
 
         contentView.pauseButton.addTargetClosure { (button) in
-            
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
@@ -72,17 +66,34 @@ class MainVC: UIViewController, StoreSubscriber {
         }
         
         contentView.restartButton.addTargetClosure { (button) in
-            
-            Answers.logCustomEvent(withName: "Timer restart",
-                                   customAttributes: ["Total": self.timer.timerSecondsValue, "Beep": self.timer.beepValue])
-            
+            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
+                                             beepValue: store.state.timerAppState.beepInterval))
             store.dispatch(RoundInitialAction(progress: 0))
             store.dispatch(RoundRunningAction())
         }
         
         contentView.settingsButton.addTargetClosure { (button) in
-            self.navigationController?.pushViewController(SettingsVC.init(delegate: self.timer), animated: true)
+            store.dispatch(RoundPausedAction())
+            self.navigationController?.pushViewController(SettingsVC(), animated: true)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        store.unsubscribe(self)
+        super.viewWillDisappear(animated)
+    }
+    
+    func updated(timeInterval: Int) {
+        
+        var text: String
+        text = timeString(time: TimeInterval(timeInterval))
+        
+        contentView.timerLabel.text = text
     }
     
     func timeString(time: TimeInterval) -> String {
@@ -93,13 +104,5 @@ class MainVC: UIViewController, StoreSubscriber {
         } else {
             return  String(format:"%i", seconds)
         }
-    }
-    
-    func updated(timeInterval: Int) {
-        
-        var text: String
-        text = timeString(time: TimeInterval(timeInterval))
-        
-        contentView.timerLabel.text = text
     }
 }

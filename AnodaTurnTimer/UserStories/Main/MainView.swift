@@ -35,6 +35,7 @@ class MainView: UIView {
         } else {
             restartButton.setImage(nil, for: .normal)
         }
+        timerLabel.isHidden = visible
     }
     
     override init(frame: CGRect) {
