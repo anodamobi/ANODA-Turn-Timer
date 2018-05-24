@@ -68,9 +68,6 @@ class TimerService: NSObject {
         } else {
             seconds -= 1
             //todo: add to middleware
-            if seconds == beepValue {
-                Sound.play(file: "alarm.mp3")
-            }
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
@@ -89,14 +86,13 @@ class TimerService: NSObject {
         case .running: // resume if paused or started
             
             if self.state == .initial {
-                Sound.play(file: "start_end.mp3")
+                SoundManager.startEndSound()
                 seconds = timerSecondsValue
             }
             runTimer()
             
         case .isOut: // time is end
             store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
-            Sound.play(file: "start_end.mp3")
         }
         self.state = state
     }

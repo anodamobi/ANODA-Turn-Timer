@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import SwiftySound
 
 class SoundManager {
     
+    static func startEndSound() {
+        Sound.play(file: "start_end.mp3")
+    }
+    
+    static func alertSound() {
+        Sound.play(file: "alarm.mp3")
+    }
 }
