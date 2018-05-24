@@ -39,14 +39,6 @@ class SettingsController: WKInterfaceController {
         setupPicker()
     }
     
-    override func willActivate() {
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
-    
     private func setupPicker() {
         let intervals: [PickerTimeInterval] = [.sec5, .sec10, .sec20, .sec30, .sec45, .minute1]
         delegate?.didPickInterval(intervals[0])

@@ -28,8 +28,6 @@ class MainController: WKInterfaceController {
     private var timer = Timer()
     private var choosenInterval: Double = 0.0
     
-    private var didSkipTimerInitialFire = false
-    
     private var startButtonState: StartButtonState = .start {
         didSet {
             ibRestartButton.setTitle(startButtonState.rawValue)
@@ -38,10 +36,16 @@ class MainController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
-        ibRestartButton.setTitle(StartButtonState.start.rawValue)
+        setupUI()
         stopTimer()
     }
+    
+    private func setupUI() {
+        ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
+        ibRestartButton.setTitle(StartButtonState.start.rawValue)
+    }
+    
+    // MARK: Timer controls
     
     private func startTimer() {
         ibTimer.start()
@@ -56,10 +60,11 @@ class MainController: WKInterfaceController {
     }
     
     private func updateTimer() {
-        didSkipTimerInitialFire = false
         timer = Timer.scheduledTimer(timeInterval: choosenInterval + 1, target: self, selector: #selector(timerDidFinish), userInfo: nil, repeats: true)
         ibTimer.setDate(Date().addingTimeInterval(choosenInterval + 1))
     }
+    
+    // MARK: Actions
     
     @IBAction private func didPressRestart() {
         stopTimer()
@@ -73,11 +78,10 @@ class MainController: WKInterfaceController {
     }
     
     @objc private func timerDidFinish() {
-        if didSkipTimerInitialFire {
+        let diffToNextFireDate = timer.fireDate.timeIntervalSince(Date())
+        if diffToNextFireDate < choosenInterval {
             startButtonState = .restart
             stopTimer()
-        } else {
-            didSkipTimerInitialFire = true
         }
     }
     
