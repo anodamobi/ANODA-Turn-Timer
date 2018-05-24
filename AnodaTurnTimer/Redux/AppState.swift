@@ -18,7 +18,7 @@ enum TimerState {
 
 struct AppState: StateType {
     let timerAppState: TimerAppState
-    let roundState: RoundState
+    let roundAppState: RoundState
 }
 
 struct TimerAppState: StateType {
@@ -40,4 +40,10 @@ struct RoundState: StateType {
     //a bit of data duplication
     var beepInterval: Int = 0
     var timeInterval: Int = 0
+    
+    static func == (lhs: RoundState, rhs: RoundState) -> Bool {
+        return lhs.roundState == rhs.roundState &&
+            lhs.beepInterval == rhs.beepInterval &&
+            lhs.timeInterval == rhs.timeInterval
+    }
 }

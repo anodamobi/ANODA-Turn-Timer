@@ -21,8 +21,6 @@ struct TimerUpdateSettings: Action {
     var beepInterval: Int
 }
 
-struct TimerInitialAction: Action { var timer: TimeInterval}
-
 struct RoundRunningAction: Action {}
 struct RoundPausedAction: Action {}
 struct RoundReplayAction: Action {}
@@ -32,7 +30,8 @@ struct RoundIsOutAction: Action {
     var beepValue: Int
 }
 
-struct RoundProgress: Action { var progress: CGFloat}
+struct RoundProgress: Action { var progress: CGFloat }
 struct RoundTimeInterval: Action { var timer: Int }
+struct RoundInitialAction: Action { var timer: Int }
 
 

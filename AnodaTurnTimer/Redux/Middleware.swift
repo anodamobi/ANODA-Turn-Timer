@@ -16,8 +16,7 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
         return { action in
             
             switch action {
-            case let actionState as TimerInitialAction:
-                break
+                
             case let actionState as TimerAppLaunchAction:
                 if actionState.wasLaunched != true {
                     
@@ -51,6 +50,14 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             case let actionState as RoundIsOutAction:
                 Answers.logCustomEvent(withName: "Time is out",
                                        customAttributes: ["Total": actionState.timerSecondsValue, "Beep": actionState.beepValue])
+            case let actionState as RoundInitialAction:
+                break
+            case let actionState as RoundRunningAction:
+                break
+            case let actionState as RoundPausedAction:
+                break
+            case let actionState as RoundReplayAction:
+                break
             default:
                 break
             }

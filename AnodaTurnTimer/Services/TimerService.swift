@@ -11,14 +11,8 @@ import SwiftyUserDefaults
 import SwiftySound
 import ReSwift
 
-protocol TimerDelegate: class {
-    func updated(timeInterval: Int?)
-    func updated(state: TimerState)
-}
+class TimerService: NSObject, DataUpdated {
 
-class TimerService: NSObject, DataUpdated, StoreSubscriber {
-    
-    
     var beepValue: Int
     var timerSecondsValue: Int
     var timer = Timer()
@@ -28,25 +22,36 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
     var isPaused = false
     var state: TimerState = .initial
     
-    //TODO: To remove
-    weak var delegate: TimerDelegate?  {
-        didSet {
-            updateTo(state: .initial)
-        }
-    }
+    private var timerAppState: ReduxHelper<TimerAppState>?
+    
+    private var roundAppState: ReduxHelper<RoundState>?
+
 
     override init() {
         timerSecondsValue = store.state.timerAppState.timeInterval
         beepValue = store.state.timerAppState.beepInterval
         super.init()
-        store.subscribe(self) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
+        
+        setupSubscription()
+
     }
     
-    func newState(state: TimerAppState) {
-        timerSecondsValue = state.timeInterval
-        beepValue = state.beepInterval
+    func setupSubscription() {
         
-        updateTo(state: .initial)
+        timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
+                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
+            }) { [unowned self] (state) in
+                self.timerSecondsValue = state.timeInterval
+                self.beepValue = state.beepInterval
+            
+                store.dispatch(RoundInitialAction(timer: 0))
+        }
+        
+        roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
+                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0.0 == $0.1 }) }
+            }) { [unowned self] (state) in
+                self.updateTo(state: state.roundState)
+        }
     }
     
     func runTimer() {
@@ -67,27 +72,26 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
             if seconds == beepValue {
                 Sound.play(file: "alarm.mp3")
             }
-            delegate?.updated(timeInterval: seconds)
+            store.dispatch(RoundTimeInterval(timer: seconds))
+//            delegate?.updated(timeInterval: seconds)
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
         store.dispatch(RoundProgress(progress: progress))
     }
     
-    func updateTo(state: TimerState) {
+ func updateTo(state: TimerState) {
         timer.invalidate()
         
         switch state {
         case .initial: // Restart
             updateTimeInterval(timeInterval: timerSecondsValue)
-//            delegate?.updated(timeInterval: timerSecondsValue)
             
         case .paused: // pause
             store.dispatch(RoundPausedAction())
         case .running: // resume if paused or started
             
-            if store.state.roundState.roundState == .initial {
+            if store.state.roundAppState.roundState == .initial {
                 updateTimeInterval(timeInterval: timerSecondsValue)
-//                delegate?.updated(timeInterval: timerSecondsValue)
                 Sound.play(file: "start_end.mp3")
                 seconds = timerSecondsValue
             }
@@ -96,18 +100,12 @@ class TimerService: NSObject, DataUpdated, StoreSubscriber {
         case .isOut: // time is end
             store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
             store.dispatch(RoundTimeInterval(timer: 0))
-            delegate?.updated(timeInterval: nil)
             Sound.play(file: "start_end.mp3")
         }
         self.state = state
-        delegate?.updated(state: state)
     }
     
     func updateTimeInterval(timeInterval: Int) {
         store.dispatch(RoundTimeInterval(timer: timeInterval))
-    }
-    
-    deinit {
-        store.unsubscribe(self)
     }
 }

@@ -19,8 +19,9 @@ class MainVC: UIViewController, StoreSubscriber {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        timer.delegate = self
-        store.subscribe(self) { $0.select({ $0.roundState })}
+
+        store.dispatch(RoundInitialAction(timer: 0))
+        store.subscribe(self) { $0.select({ $0.roundAppState })}
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,8 +36,11 @@ class MainVC: UIViewController, StoreSubscriber {
         
         contentView.pieView.update(to: state.progress, animated: true)
         
+        updated(timeInterval: state.timeInterval)
+        
         switch state.roundState {
         case .initial:
+            
             contentView.pieView.update(to: 0, animated: true)
             contentView.updateRestartIcon(visible: false)
             
@@ -58,18 +62,24 @@ class MainVC: UIViewController, StoreSubscriber {
 
         contentView.pauseButton.addTargetClosure { (button) in
             
-            if self.timer.state == .paused || self.timer.state == .initial {
-                self.timer.updateTo(state: .running)
-            } else if self.timer.state == .running {
-                self.timer.updateTo(state: .paused)
+            let state: TimerState = store.state.roundAppState.roundState
+            
+            if state == .paused || state == .initial {
+                store.dispatch(RoundRunningAction())
+//                self.timer.updateTo(state: .running)
+            } else if state == .running {
+                store.dispatch(RoundPausedAction())
+//                self.timer.updateTo(state: .paused)
             }
         }
         
         contentView.restartButton.addTargetClosure { (button) in
+            
             Answers.logCustomEvent(withName: "Timer restart",
                                    customAttributes: ["Total": self.timer.timerSecondsValue, "Beep": self.timer.beepValue])
-            self.timer.updateTo(state: .initial)
-            self.timer.updateTo(state: .running)
+            
+            store.dispatch(RoundInitialAction(timer: 0))
+            store.dispatch(RoundRunningAction())
         }
         
         contentView.settingsButton.addTargetClosure { (button) in
@@ -86,36 +96,12 @@ class MainVC: UIViewController, StoreSubscriber {
             return  String(format:"%i", seconds)
         }
     }
-}
-
-extension MainVC: TimerDelegate {
     
-    func updated(state: TimerState) {
-//        switch state {
-//        case .initial:
-//            contentView.pieView.update(to: 0, animated: true)
-//            contentView.updateRestartIcon(visible: false)
-//        case .running:
-//            self.contentView.updatePlay(toPause: true)
-//        case .paused:
-//            self.contentView.updatePlay(toPause: false)
-//        case .isOut:
-//
-//            store.dispatch(TimerIsOutAction(timerSecondsValue: timer.timerSecondsValue, beepValue: timer.beepValue))
-//            self.contentView.updateRestartIcon(visible: true)
-//        }
-    }
-
-    
-    func updated(timeInterval: Int?) {
+    func updated(timeInterval: Int) {
         
         var text: String
+        text = timeString(time: TimeInterval(timeInterval))
         
-        if let time = timeInterval {
-            text = timeString(time: TimeInterval(time))
-        } else {
-            text = ""
-        }
         contentView.timerLabel.text = text
     }
 }
