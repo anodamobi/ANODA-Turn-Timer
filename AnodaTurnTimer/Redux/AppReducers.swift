@@ -44,10 +44,10 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
     case let act as RoundProgress:
         state.progress = act.progress
         
-    case let _ as RoundPausedAction:
+    case _ as RoundPausedAction:
         state.roundState = .paused
         
-    case let _ as RoundRunningAction:
+    case _ as RoundRunningAction:
         state.roundState = .running
         
     case let act as RoundIsOutAction:

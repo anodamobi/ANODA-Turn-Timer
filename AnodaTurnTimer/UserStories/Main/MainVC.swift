@@ -91,18 +91,8 @@ class MainVC: UIViewController, StoreSubscriber {
     func updated(timeInterval: Int) {
         
         var text: String
-        text = timeString(time: TimeInterval(timeInterval))
+        text = String.timeString(time: TimeInterval(timeInterval))
         
         contentView.timerLabel.text = text
-    }
-    
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        if minutes > 0 {
-            return  String(format:"%02i:%02i", minutes, seconds)
-        } else {
-            return  String(format:"%i", seconds)
-        }
     }
 }

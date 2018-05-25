@@ -13,6 +13,8 @@ import Fabric
 import Crashlytics
 import ReSwift
 
+typealias Localizable = R.string.localizable
+
 let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [timerAppStateMiddleware, roundStateMiddleware])
 
 @UIApplicationMain
@@ -24,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
 
-        //update defaults
         store.dispatch(TimerAppLaunchAction(beepInterval: Defaults[.beepInterval],
                                             timeInterval: Defaults[.timerInterval],
                                             wasLaunched: Defaults[.wasLaunched]))

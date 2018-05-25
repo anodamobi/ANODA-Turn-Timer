@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyUserDefaults
 import SwiftySound
 import ReSwift
 
@@ -18,8 +17,6 @@ class TimerService: NSObject {
     var timer = Timer()
     var seconds: Int = 0
     
-    var isTimerRunning = false
-    var isPaused = false
     var state: TimerState = .initial
     
     private var timerAppState: ReduxHelper<TimerAppState>?
@@ -77,13 +74,14 @@ class TimerService: NSObject {
         timer.invalidate()
         
         switch state {
+            
         case .initial: // Restart
             updateTimeInterval(timeInterval: timerSecondsValue)
             
         case .paused: // pause
             store.dispatch(RoundPausedAction())
-        case .running: // resume if paused or started
             
+        case .running: // resume if paused or started
             if self.state == .initial {
                 SoundManager.startEndSound()
                 seconds = timerSecondsValue

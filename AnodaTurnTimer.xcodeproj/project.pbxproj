@@ -18,6 +18,7 @@
 		56DE8A2720B7159800CCE914 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2620B7159800CCE914 /* SoundManager.swift */; };
 		56DE8A2920B818E900CCE914 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2820B818E900CCE914 /* UIView+Ext.swift */; };
 		56DE8A2B20B81FFE00CCE914 /* backgroundX.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56DE8A2A20B81FFD00CCE914 /* backgroundX.pdf */; };
+		56DE8A2E20B8427C00CCE914 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2D20B8427C00CCE914 /* R.generated.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
 		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
@@ -65,6 +66,7 @@
 		56DE8A2620B7159800CCE914 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		56DE8A2820B818E900CCE914 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		56DE8A2A20B81FFD00CCE914 /* backgroundX.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backgroundX.pdf; sourceTree = "<group>"; };
+		56DE8A2D20B8427C00CCE914 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		621E50AC711666BEB9964DD8 /* Pods-AnodaGameTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimerTests/Pods-AnodaGameTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		62D20570DD56A1143D42CFE2 /* Pods-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		8B19A15C88758FB5095FA3ED /* Pods-AnodaGameTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimer/Pods-AnodaGameTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		D75F79731F69F73A00DFF3AA /* BundleFiles */ = {
 			isa = PBXGroup;
 			children = (
+				56DE8A2D20B8427C00CCE914 /* R.generated.swift */,
 				D75F79751F69F73A00DFF3AA /* Info.plist */,
 			);
 			path = BundleFiles;
@@ -330,6 +333,7 @@
 			buildConfigurationList = C73F45761F64D4CF00254F49 /* Build configuration list for PBXNativeTarget "AnodaTurnTimer" */;
 			buildPhases = (
 				76D44AB941BFB12036A5D49B /* [CP] Check Pods Manifest.lock */,
+				56DE8A2C20B8421100CCE914 /* R.Swift Script */,
 				C73F45551F64D4CF00254F49 /* Sources */,
 				C73F45561F64D4CF00254F49 /* Frameworks */,
 				C73F45571F64D4CF00254F49 /* Resources */,
@@ -411,6 +415,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		56DE8A2C20B8421100CCE914 /* R.Swift Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R.Swift Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+		};
 		76D44AB941BFB12036A5D49B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,8 +454,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
@@ -445,8 +463,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -490,6 +508,7 @@
 				D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */,
 				56DE8A2520B705AE00CCE914 /* EventHandler.swift in Sources */,
 				D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */,
+				56DE8A2E20B8427C00CCE914 /* R.generated.swift in Sources */,
 				56DE8A2920B818E900CCE914 /* UIView+Ext.swift in Sources */,
 				56CC000420B4708B00811328 /* AppReducers.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,

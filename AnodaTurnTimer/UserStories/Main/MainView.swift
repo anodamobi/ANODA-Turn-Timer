@@ -12,12 +12,13 @@ import SnapKit
 import UIImagePDF
 import CoreGraphics
 
+fileprivate let sizeConst = UIScreen.width - 40
+fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: sizeConst)
+
 class MainView: UIView {
     
     let background = UIImageView()
-    //TODO: constants
-    private static let frame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.width - 40, height: UIScreen.main.bounds.width - 40)
-    let pieView = MainPieView(frame: MainView.frame)
+    let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
@@ -48,6 +49,7 @@ class MainView: UIView {
         addSubview(pieView)
         pieView.snp.makeConstraints { (make) in
             
+            //HACK (Pavel.Mosunov) to not make a huge constraints for safe area as safeArea ext cannot into EDGES :'(
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
             let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
             let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
@@ -64,7 +66,7 @@ class MainView: UIView {
             make.left.equalTo(self).offset(20)
         }
         
-        settingsButton.setupButton(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
+        settingsButton.setupButtonImages(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
         addSubview(settingsButton)
         settingsButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(pauseButton)
@@ -74,9 +76,9 @@ class MainView: UIView {
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setupButton(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
         } else {
-            pauseButton.setupButton(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
         }
     }
     

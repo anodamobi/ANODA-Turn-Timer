@@ -14,12 +14,12 @@ target 'AnodaTurnTimer' do
     # UI Controls
     pod 'SwiftySound'
     pod 'SwiftyUserDefaults'
+    pod 'R.swift'
 
     # Analytics / Testing / Reporting
     pod 'Fabric'
     pod 'Crashlytics'
 
     pod 'UIImagePDF', :git=> 'git@github.com:anodamobi/UIImage-PDF.git', :branch => '0.9-beta1', :commit => '7d9dfbf'
-    pod 'Reveal-SDK', :configurations => ['Debug']
 
 end

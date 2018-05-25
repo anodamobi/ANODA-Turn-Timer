@@ -38,21 +38,21 @@ class SettingsView: UIView {
         }
         
         addSubview(backButton)
-        backButton.setupButton(imageName: ("cancelNormal", "cancelPressed", "cancelPressed"), width: 75)
+        backButton.setupButtonImages(imageName: ("cancelNormal", "cancelPressed", "cancelPressed"), width: 75)
         backButton.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeArea.top).offset(25)
             make.left.equalTo(10)
         }
         
         addSubview(shareButton)
-        shareButton.setupButton(imageName: ("shareNormal", "sharePressed", "sharePressed"), width: 75)
+        shareButton.setupButtonImages(imageName: ("shareNormal", "sharePressed", "sharePressed"), width: 75)
         shareButton.snp.makeConstraints { (make) in
             make.right.equalTo(-10)
             make.top.equalTo(backButton)
         }
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = "round.duration".localized
+        roundDurationSection.title.text = Localizable.roundDuration()
         roundDurationSection.snp.makeConstraints { (make) in
             make.top.equalTo(backButton.snp.bottom)
             make.left.right.equalTo(self)
@@ -61,19 +61,13 @@ class SettingsView: UIView {
         
         addSubview(beepSection)
         beepSection.picker.tag = 1
-        beepSection.title.text = "beep.before-round.ends".localized
+        beepSection.title.text = Localizable.beepBeforeRoundEnds()
         beepSection.snp.makeConstraints { (make) in
             make.top.equalTo(roundDurationSection.snp.bottom).offset(16)
             make.width.equalTo(roundDurationSection)
             make.height.equalTo(roundDurationSection)
         }
     }
-    
-//    private func setupButton(button: UIButton, imageName: (String, String, String), width: CGFloat) {
-//        button.setImage(UIImage.init(pdfNamed: imageName.0, atWidth: width), for: .normal)
-//        button.setImage(UIImage.init(pdfNamed: imageName.1, atWidth: width), for: .selected)
-//        button.setImage(UIImage.init(pdfNamed: imageName.2, atWidth: width), for: .highlighted)
-//    }
 }
 
 
@@ -118,8 +112,8 @@ class SettingsSectionView: UIView {
         background.addSubview(picker)
         picker.unitsStyle = .short
         picker.components = [.minutes, .seconds]
-        picker.textFont = UIFont.gtPickerFont()!
-        picker.numberFont = UIFont.gtPickerFont()!
+        picker.textFont = UIFont.gtPickerFont()
+        picker.numberFont = UIFont.gtPickerFont()
         picker.tintColor = UIColor.white
         picker.snp.makeConstraints { (make) in
             make.edges.equalTo(background)

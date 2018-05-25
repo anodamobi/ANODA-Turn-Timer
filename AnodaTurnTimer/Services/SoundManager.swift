@@ -12,10 +12,14 @@ import SwiftySound
 class SoundManager {
     
     static func startEndSound() {
-        Sound.play(file: "start_end.mp3")
+        if let url = R.file.start_endMp3() {
+            Sound.play(url: url)
+        }
     }
     
     static func alertSound() {
-        Sound.play(file: "alarm.mp3")
+        if let url = R.file.alarmMp3() {
+            Sound.play(url: url)
+        }
     }
 }
