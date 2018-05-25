@@ -24,6 +24,7 @@ extension UIImage {
             switch device {
             case .iphone6: imageName = "background-i6"
             case .iphonePlus: imageName = "background-i6p"
+            case .iphoneX: imageName = "backgroundX"
             default: imageName = "background-i5"
             }
             image = UIImage.init(pdfNamed: imageName, atWidth: UIScreen.main.bounds.width)

@@ -16,7 +16,8 @@ class MainView: UIView {
     
     let background = UIImageView()
     //TODO: constants
-    let pieView = MainPieView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width - 40))
+    static let frame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.width - 40, height: UIScreen.main.bounds.width - 40)
+    let pieView = MainPieView(frame: MainView.frame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
@@ -49,15 +50,20 @@ class MainView: UIView {
         
         addSubview(pieView)
         pieView.snp.makeConstraints { (make) in
+            
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
-            make.top.left.right.equalTo(self).inset(edges)
-            make.height.equalTo(UIScreen.main.bounds.width - edges.left - edges.right)
+            let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
+            let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
+            
+            make.top.left.right.equalTo(self).inset(edge)
+            make.height.equalTo(UIScreen.width - edge.left - edge.right)
         }
         
         updatePlay(toPause: false)
         addSubview(pauseButton)
         pauseButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self).offset(-20)
+            
+            make.bottom.equalTo(self.safeArea.bottom).offset(-20)
             make.left.equalTo(self).offset(20)
         }
         

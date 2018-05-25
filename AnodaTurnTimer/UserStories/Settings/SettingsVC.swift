@@ -47,7 +47,7 @@ class SettingsVC: UIViewController {
         }
         
         contentView.shareButton.addTargetClosure { (button) in
-            let message = "ANODA Turn Timer. Enjoy games with friends"
+            let message = "turn.timer".localized
             if let link = NSURL(string: "http://itunes.apple.com/app/id1282215925") {
                 let objectsToShare: [Any] = [message, link]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)

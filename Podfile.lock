@@ -3,6 +3,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.12)
   - ReSwift (4.0.1)
+  - Reveal-SDK (14)
   - SnapKit (3.2.0)
   - SwiftySound (0.7.0)
   - SwiftyUserDefaults (3.0.0)
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - ReSwift (~> 4.0.1)
+  - Reveal-SDK
   - SnapKit
   - SwiftySound
   - SwiftyUserDefaults
@@ -22,6 +24,7 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - ReSwift
+    - Reveal-SDK
     - SnapKit
     - SwiftySound
     - SwiftyUserDefaults
@@ -41,11 +44,12 @@ SPEC CHECKSUMS:
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftySound: bca0bb721690fb65249f4776cb0875abd98e9941
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   UIImagePDF: 7cae10d97e503ae042a3ebbfa53d19e4bca4daf9
 
-PODFILE CHECKSUM: 13995b6a9669df06149a48d35eeff450a93304af
+PODFILE CHECKSUM: 2aa66125dc67cb48d7bb6f6063d5d1b07579509e
 
 COCOAPODS: 1.5.0

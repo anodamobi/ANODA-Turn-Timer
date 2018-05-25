@@ -67,7 +67,6 @@ class TimerService: NSObject {
             updateTo(state: .isOut)
         } else {
             seconds -= 1
-            //todo: add to middleware
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))

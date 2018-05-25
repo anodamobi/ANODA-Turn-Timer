@@ -42,7 +42,7 @@ class SettingsView: UIView {
         backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .selected)
         backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .highlighted)
         backButton.snp.makeConstraints { (make) in
-            make.top.equalTo(25)
+            make.top.equalTo(self.safeArea.top).offset(25)
             make.left.equalTo(10)
         }
         
@@ -56,18 +56,20 @@ class SettingsView: UIView {
         }
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = "Round duration"
+        roundDurationSection.title.text = "round.duration".localized
         roundDurationSection.snp.makeConstraints { (make) in
             make.top.equalTo(backButton.snp.bottom)
             make.left.right.equalTo(self)
+            make.height.equalTo(250)
         }
         
         addSubview(beepSection)
         beepSection.picker.tag = 1
-        beepSection.title.text = "Beep before round ends"
+        beepSection.title.text = "beep.before-round.ends".localized
         beepSection.snp.makeConstraints { (make) in
             make.top.equalTo(roundDurationSection.snp.bottom).offset(16)
             make.width.equalTo(roundDurationSection)
+            make.height.equalTo(roundDurationSection)
         }
     }
 }
@@ -97,6 +99,7 @@ class SettingsSectionView: UIView {
         title.textColor = UIColor.gtVeryLightPink
         title.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self)
+            make.height.equalTo(44)
         }
         
         addSubview(background)
@@ -106,7 +109,6 @@ class SettingsSectionView: UIView {
         background.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom)
             make.centerX.equalTo(self)
-            make.bottom.equalTo(self)
             make.height.equalTo(170)
             make.width.equalTo(320)
         }

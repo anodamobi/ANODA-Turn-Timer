@@ -16,6 +16,8 @@
 		56DE8A2320B6E80C00CCE914 /* ReduxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2220B6E80C00CCE914 /* ReduxHelper.swift */; };
 		56DE8A2520B705AE00CCE914 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2420B705AE00CCE914 /* EventHandler.swift */; };
 		56DE8A2720B7159800CCE914 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2620B7159800CCE914 /* SoundManager.swift */; };
+		56DE8A2920B818E900CCE914 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE8A2820B818E900CCE914 /* UIView+Ext.swift */; };
+		56DE8A2B20B81FFE00CCE914 /* backgroundX.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56DE8A2A20B81FFD00CCE914 /* backgroundX.pdf */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
 		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
@@ -61,6 +63,8 @@
 		56DE8A2220B6E80C00CCE914 /* ReduxHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxHelper.swift; sourceTree = "<group>"; };
 		56DE8A2420B705AE00CCE914 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		56DE8A2620B7159800CCE914 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		56DE8A2820B818E900CCE914 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		56DE8A2A20B81FFD00CCE914 /* backgroundX.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backgroundX.pdf; sourceTree = "<group>"; };
 		621E50AC711666BEB9964DD8 /* Pods-AnodaGameTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimerTests/Pods-AnodaGameTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		62D20570DD56A1143D42CFE2 /* Pods-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		8B19A15C88758FB5095FA3ED /* Pods-AnodaGameTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimer/Pods-AnodaGameTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				D75F797A1F69F73A00DFF3AA /* UIButton+Ext.swift */,
 				D75F797B1F69F73A00DFF3AA /* UIDevice+Ext.swift */,
 				56DE8A2020B5868900CCE914 /* ReSwiftStore+Ext.swift */,
+				56DE8A2820B818E900CCE914 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 		D75F79C91F69F77D00DFF3AA /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				56DE8A2A20B81FFD00CCE914 /* backgroundX.pdf */,
 				D75F79CA1F69F77D00DFF3AA /* background-i5.pdf */,
 				D75F79CB1F69F77D00DFF3AA /* background-i6.pdf */,
 				D75F79CC1F69F77D00DFF3AA /* background-i6p.pdf */,
@@ -391,6 +397,7 @@
 				D75F79DE1F69F77D00DFF3AA /* Assets.xcassets in Resources */,
 				D75F79E31F69F77D00DFF3AA /* cancelPressed.pdf in Resources */,
 				D75F79E11F69F77D00DFF3AA /* background-i6p.pdf in Resources */,
+				56DE8A2B20B81FFE00CCE914 /* backgroundX.pdf in Resources */,
 				D75F79EF1F69F77D00DFF3AA /* start_end.mp3 in Resources */,
 				D75F79E81F69F77D00DFF3AA /* reset.pdf in Resources */,
 				D75F79EB1F69F77D00DFF3AA /* shareNormal.pdf in Resources */,
@@ -430,6 +437,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
@@ -438,6 +446,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -481,6 +490,7 @@
 				D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */,
 				56DE8A2520B705AE00CCE914 /* EventHandler.swift in Sources */,
 				D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */,
+				56DE8A2920B818E900CCE914 /* UIView+Ext.swift in Sources */,
 				56CC000420B4708B00811328 /* AppReducers.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,
 				56CC000220B4704F00811328 /* Middleware.swift in Sources */,

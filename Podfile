@@ -20,5 +20,6 @@ target 'AnodaTurnTimer' do
     pod 'Crashlytics'
 
     pod 'UIImagePDF', :git=> 'git@github.com:anodamobi/UIImage-PDF.git', :branch => '0.9-beta1', :commit => '7d9dfbf'
+    pod 'Reveal-SDK', :configurations => ['Debug']
 
 end

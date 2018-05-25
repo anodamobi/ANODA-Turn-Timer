@@ -14,7 +14,6 @@ class ReduxHelper<T>: StoreSubscriber where T: StateType {
     
     init(_ subscriptionClosure: (ReduxHelper)->(), newState: @escaping (T)->()) {
         newStateClosure = newState
-        //        super.init()
         subscriptionClosure(self)
     }
     

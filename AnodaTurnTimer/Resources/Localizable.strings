@@ -11,3 +11,6 @@
 
 "empty-timer" = "You need to specify round length";
 "empty-beep" = "You need to specify time before second beep";
+"round.duration" = "Round duration";
+"turn.timer" = "ANODA Turn Timer. Enjoy games with friends";
+"beep.before-round.ends" = "Beep before round ends";
