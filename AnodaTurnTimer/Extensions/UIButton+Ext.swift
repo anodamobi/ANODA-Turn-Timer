@@ -43,4 +43,10 @@ extension UIButton {
         guard let targetClosure = targetClosure else { return }
         targetClosure(self)
     }
+    
+    func setupButton(imageName: (String, String, String), width: CGFloat) {
+        self.setImage(UIImage.init(pdfNamed: imageName.0, atWidth: width), for: .normal)
+        self.setImage(UIImage.init(pdfNamed: imageName.1, atWidth: width), for: .selected)
+        self.setImage(UIImage.init(pdfNamed: imageName.2, atWidth: width), for: .highlighted)
+    }
 }

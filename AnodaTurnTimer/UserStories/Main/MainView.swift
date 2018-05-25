@@ -16,7 +16,7 @@ class MainView: UIView {
     
     let background = UIImageView()
     //TODO: constants
-    static let frame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.width - 40, height: UIScreen.main.bounds.width - 40)
+    private static let frame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.width - 40, height: UIScreen.main.bounds.width - 40)
     let pieView = MainPieView(frame: MainView.frame)
     
     let settingsButton = UIButton()
@@ -31,11 +31,8 @@ class MainView: UIView {
     }
     
     func updateRestartIcon(visible: Bool) {
-        if visible {
-            restartButton.setImage(UIImage.init(pdfNamed: "reset", atHeight: 192), for: .normal)
-        } else {
-            restartButton.setImage(nil, for: .normal)
-        }
+        let image: UIImage = UIImage.init(pdfNamed: "reset", atHeight: 192)
+        restartButton.setImage(visible ? image : nil, for: .normal)
         timerLabel.isHidden = visible
     }
     
@@ -67,9 +64,7 @@ class MainView: UIView {
             make.left.equalTo(self).offset(20)
         }
         
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsNormal", atWidth: 100), for: .normal)
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsPressed", atWidth: 100), for: .selected)
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsPressed", atWidth: 100), for: .highlighted)
+        settingsButton.setupButton(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
         addSubview(settingsButton)
         settingsButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(pauseButton)
@@ -79,13 +74,9 @@ class MainView: UIView {
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setImage(UIImage.init(pdfNamed: "pauseNormal", atWidth: 100), for: .normal)
-            pauseButton.setImage(UIImage.init(pdfNamed: "pausePressed", atWidth: 100), for: .selected)
-            pauseButton.setImage(UIImage.init(pdfNamed: "pausePressed", atWidth: 100), for: .highlighted)
+            pauseButton.setupButton(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
         } else {
-            pauseButton.setImage(UIImage.init(pdfNamed: "playNormal", atWidth: 100), for: .normal)
-            pauseButton.setImage(UIImage.init(pdfNamed: "playPressed", atWidth: 100), for: .selected)
-            pauseButton.setImage(UIImage.init(pdfNamed: "playPressed", atWidth: 100), for: .highlighted)
+            pauseButton.setupButton(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
         }
     }
     

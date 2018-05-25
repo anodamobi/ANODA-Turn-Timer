@@ -38,18 +38,14 @@ class SettingsView: UIView {
         }
         
         addSubview(backButton)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelNormal", atWidth: 75), for: .normal)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .selected)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .highlighted)
+        backButton.setupButton(imageName: ("cancelNormal", "cancelPressed", "cancelPressed"), width: 75)
         backButton.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeArea.top).offset(25)
             make.left.equalTo(10)
         }
         
         addSubview(shareButton)
-        shareButton.setImage(UIImage.init(pdfNamed: "shareNormal", atWidth: 75), for: .normal)
-        shareButton.setImage(UIImage.init(pdfNamed: "sharePressed", atWidth: 75), for: .selected)
-        shareButton.setImage(UIImage.init(pdfNamed: "sharePressed", atWidth: 75), for: .highlighted)
+        shareButton.setupButton(imageName: ("shareNormal", "sharePressed", "sharePressed"), width: 75)
         shareButton.snp.makeConstraints { (make) in
             make.right.equalTo(-10)
             make.top.equalTo(backButton)
@@ -72,6 +68,12 @@ class SettingsView: UIView {
             make.height.equalTo(roundDurationSection)
         }
     }
+    
+//    private func setupButton(button: UIButton, imageName: (String, String, String), width: CGFloat) {
+//        button.setImage(UIImage.init(pdfNamed: imageName.0, atWidth: width), for: .normal)
+//        button.setImage(UIImage.init(pdfNamed: imageName.1, atWidth: width), for: .selected)
+//        button.setImage(UIImage.init(pdfNamed: imageName.2, atWidth: width), for: .highlighted)
+//    }
 }
 
 
