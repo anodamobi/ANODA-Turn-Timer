@@ -15,21 +15,14 @@ extension UIImage {
     
     static func backgroudImage() -> UIImage? {
         
-        let screehHeight = UIScreen.main.bounds.height
-        var image: UIImage?
-        
-        if let device: ScreenSizes = ScreenSizes(rawValue: screehHeight) {
-            
-            var imageName: String
-            switch device {
+        var imageName: String
+        switch UIScreen.screenType {
             case .iphone6: imageName = "background-i6"
             case .iphonePlus: imageName = "background-i6p"
             case .iphoneX: imageName = "backgroundX"
             default: imageName = "background-i5"
-            }
-            image = UIImage.init(pdfNamed: imageName, atWidth: UIScreen.main.bounds.width)
         }
-        return image
+        return UIImage.init(pdfNamed: imageName, atWidth: UIScreen.width)
     }
 }
 

@@ -81,7 +81,7 @@ class TimerService: NSObject {
         case .paused: // pause
             store.dispatch(RoundPausedAction())
             
-        case .running: // resume if paused or started
+        case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
                 SoundManager.startEndSound()
                 seconds = timerSecondsValue
