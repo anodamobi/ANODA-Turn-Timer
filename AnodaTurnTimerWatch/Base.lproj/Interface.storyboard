@@ -16,13 +16,16 @@
                     <items>
                         <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
                             <items>
-                                <label width="136" height="92" alignment="center" textAlignment="center" id="YYu-Ev-JWq"/>
-                                <button width="1" alignment="left" title="Settings" id="Uw6-rI-2Rb">
+                                <label width="136" height="86" alignment="center" text="00:00" textAlignment="center" id="YYu-Ev-JWq">
+                                    <color key="textColor" red="1" green="0.2541172710359727" blue="0.047874807887875792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="52"/>
+                                </label>
+                                <button width="1" height="40" alignment="left" title="Settings" id="Uw6-rI-2Rb">
                                     <connections>
                                         <action selector="didPressSettings" destination="AgC-eL-Hgc" id="wae-zG-NaO"/>
                                     </connections>
                                 </button>
-                                <button width="1" height="34" alignment="left" title="Restart" id="vnW-Cp-27E">
+                                <button width="1" height="40" alignment="left" title="Restart" id="vnW-Cp-27E">
                                     <connections>
                                         <action selector="didPressRestart" destination="AgC-eL-Hgc" id="dnn-da-rhf"/>
                                     </connections>
@@ -49,7 +52,7 @@
                                 <action selector="didPickTimeInterval:" destination="MpI-c8-XTG" id="5Xf-j3-1zf"/>
                             </connections>
                         </picker>
-                        <button width="1" height="37" alignment="left" title="SET" id="rrO-zy-Qwf">
+                        <button width="1" height="40" alignment="left" title="Set" id="rrO-zy-Qwf">
                             <connections>
                                 <action selector="didPressSetButton" destination="MpI-c8-XTG" id="Vfa-A5-d7c"/>
                             </connections>
@@ -61,7 +64,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="581" y="442"/>
+            <point key="canvasLocation" x="580.61538461538464" y="441.5641025641026"/>
         </scene>
     </scenes>
 </document>

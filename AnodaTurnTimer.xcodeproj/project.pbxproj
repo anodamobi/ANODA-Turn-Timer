@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		383A5DC0DF2E9499C76CDEB4 /* Pods_AnodaTurnTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7F5A032E788A284E298C63 /* Pods_AnodaTurnTimer.framework */; };
-		7A9D91F565BF6DF8F1CBC175 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED03F8614E3C4D9F010D7093 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
+		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,6 +24,8 @@
 		D4F660C620B7040200508BC5 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C520B7040200508BC5 /* TimerService.swift */; };
 		D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C720B707C600508BC5 /* MainController+Session.swift */; };
 		D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CA20B70B1300508BC5 /* Constants.swift */; };
+		D4F660CD20B7E6B200508BC5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */; };
+		D4F660CE20B7E71B00508BC5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
 		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
@@ -105,17 +106,12 @@
 
 /* Begin PBXFileReference section */
 		2DA1BD85F0C21876F04FF4A8 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33C63AF0380EBF50D090DBF6 /* Pods-AnodaGameTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimerTests/Pods-AnodaGameTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42B4BB6869F0AB3D36C27D9D /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		621E50AC711666BEB9964DD8 /* Pods-AnodaGameTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimerTests/Pods-AnodaGameTimerTests.release.xcconfig"; sourceTree = "<group>"; };
-		62D20570DD56A1143D42CFE2 /* Pods-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77136240DC03831EF6FC281B /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		8B19A15C88758FB5095FA3ED /* Pods-AnodaGameTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimer/Pods-AnodaGameTimer.release.xcconfig"; sourceTree = "<group>"; };
-		AE7F5A032E788A284E298C63 /* Pods_AnodaTurnTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnodaTurnTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9A1FD7EA4E5D7285E523F42 /* Pods-AnodaTurnTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimer/Pods-AnodaTurnTimer.release.xcconfig"; sourceTree = "<group>"; };
 		D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimerWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6609020B5AD8F00508BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D4F6609220B5AD9000508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +130,7 @@
 		D4F660C520B7040200508BC5 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 		D4F660C720B707C600508BC5 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
 		D4F660CA20B70B1300508BC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75F79751F69F73A00DFF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 		D75F79DB1F69F77D00DFF3AA /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		D75F79DC1F69F77D00DFF3AA /* start_end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_end.mp3; sourceTree = "<group>"; };
 		D75F79F01F6A063B00DFF3AA /* BRCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRCircularProgressView.swift; sourceTree = "<group>"; };
-		ED03F8614E3C4D9F010D7093 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F921CEDB8667E1B7DFEE3C82 /* Pods-AnodaGameTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaGameTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaGameTimer/Pods-AnodaGameTimer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +172,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				383A5DC0DF2E9499C76CDEB4 /* Pods_AnodaTurnTimer.framework in Frameworks */,
 				FC2C894D6877E64F5E227E90 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A9D91F565BF6DF8F1CBC175 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */,
+				B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,9 +197,8 @@
 		4CE9ED8D1631C1BC1BD0BAC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE7F5A032E788A284E298C63 /* Pods_AnodaTurnTimer.framework */,
 				2DA1BD85F0C21876F04FF4A8 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework */,
-				ED03F8614E3C4D9F010D7093 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */,
+				67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,6 +324,7 @@
 				D75F79791F69F73A00DFF3AA /* String+Ext.swift */,
 				D75F797A1F69F73A00DFF3AA /* UIButton+Ext.swift */,
 				D75F797B1F69F73A00DFF3AA /* UIDevice+Ext.swift */,
+				D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,12 +444,6 @@
 		EF87D74EFA7893DA78C57AA3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F921CEDB8667E1B7DFEE3C82 /* Pods-AnodaGameTimer.debug.xcconfig */,
-				8B19A15C88758FB5095FA3ED /* Pods-AnodaGameTimer.release.xcconfig */,
-				33C63AF0380EBF50D090DBF6 /* Pods-AnodaGameTimerTests.debug.xcconfig */,
-				621E50AC711666BEB9964DD8 /* Pods-AnodaGameTimerTests.release.xcconfig */,
-				62D20570DD56A1143D42CFE2 /* Pods-AnodaTurnTimer.debug.xcconfig */,
-				C9A1FD7EA4E5D7285E523F42 /* Pods-AnodaTurnTimer.release.xcconfig */,
 				77136240DC03831EF6FC281B /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig */,
 				7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */,
 				42B4BB6869F0AB3D36C27D9D /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.debug.xcconfig */,
@@ -714,6 +702,7 @@
 				D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */,
 				D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */,
 				D75F79BE1F69F73A00DFF3AA /* MainView.swift in Sources */,
+				D4F660CD20B7E6B200508BC5 /* UIColor+Ext.swift in Sources */,
 				D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */,
 				D4F660B820B6DD9900508BC5 /* WatchConnectivityService.swift in Sources */,
 				D4F660BD20B6EDFC00508BC5 /* Enums.swift in Sources */,
@@ -737,6 +726,7 @@
 				D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */,
 				D4F660C620B7040200508BC5 /* TimerService.swift in Sources */,
 				D4F660C320B700E300508BC5 /* String+Ext.swift in Sources */,
+				D4F660CE20B7E71B00508BC5 /* UIColor+Ext.swift in Sources */,
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 			);
@@ -925,7 +915,7 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp";
@@ -934,7 +924,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -947,7 +937,7 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp";
@@ -956,7 +946,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -979,7 +969,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -1002,7 +992,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};

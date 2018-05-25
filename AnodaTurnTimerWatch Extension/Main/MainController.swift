@@ -74,11 +74,11 @@ class MainController: WKInterfaceController {
     
     private func startTimer() {
         timerService.startTimer()
-        ibTimerLabel.setTextColor(.green)
+        ibTimerLabel.setTextColor(UIColor.apple)
     }
     
     private func stopTimer() {
-        ibTimerLabel.setTextColor(.red)
+        ibTimerLabel.setTextColor(UIColor.lipstick)
         timerService.stopTimer()
         updateTimerLabel()
     }

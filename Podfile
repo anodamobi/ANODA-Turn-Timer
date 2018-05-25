@@ -23,7 +23,7 @@ abstract_target 'AnodaTurnTimerAbstract' do
     end
 
     target 'AnodaTurnTimerWatch Extension' do
-        platform :watchos, '4.3'
+        platform :watchos, '4.0'
     end
 
 end
