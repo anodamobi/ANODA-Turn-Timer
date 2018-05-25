@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
+		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -112,6 +113,7 @@
 		7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimerWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6609020B5AD8F00508BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D4F6609220B5AD9000508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D41E5EB820B7F5CC004F79A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D4F6608E20B5AD8F00508BC5 /* AnodaTurnTimerWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		D4F6609D20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D41E5EB820B7F5CC004F79A8 /* Extensions */,
 				D4F660C920B70B0900508BC5 /* Helpers */,
 				D4F660C420B701B400508BC5 /* Resources */,
 				D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */,
@@ -721,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
+				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
 				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
 				D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */,

@@ -16,27 +16,21 @@
                     <items>
                         <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
                             <items>
-                                <label width="136" height="86" alignment="center" text="00:00" textAlignment="center" id="YYu-Ev-JWq">
-                                    <color key="textColor" red="1" green="0.2541172710359727" blue="0.047874807887875792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <button width="1" height="129" alignment="left" title="00:00" id="O6Z-it-Rmz">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="52"/>
-                                </label>
+                                </button>
                                 <button width="1" height="40" alignment="left" title="Settings" id="Uw6-rI-2Rb">
                                     <connections>
                                         <action selector="didPressSettings" destination="AgC-eL-Hgc" id="wae-zG-NaO"/>
-                                    </connections>
-                                </button>
-                                <button width="1" height="40" alignment="left" title="Restart" id="vnW-Cp-27E">
-                                    <connections>
-                                        <action selector="didPressRestart" destination="AgC-eL-Hgc" id="dnn-da-rhf"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="ibRestartButton" destination="vnW-Cp-27E" id="pRj-nF-Ji7"/>
                         <outlet property="ibSettingsButton" destination="Uw6-rI-2Rb" id="rPG-dU-qoo"/>
-                        <outlet property="ibTimerLabel" destination="YYu-Ev-JWq" id="01Q-5e-C45"/>
+                        <outlet property="ibTimerButton" destination="O6Z-it-Rmz" id="a9s-7S-O03"/>
                     </connections>
                 </controller>
             </objects>

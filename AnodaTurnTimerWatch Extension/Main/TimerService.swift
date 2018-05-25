@@ -22,6 +22,11 @@ class TimerService {
             timeRemaining = choosenInterval
         }
     }
+    
+    var isTimerOn: Bool {
+        return timer.isValid
+    }
+    
     var timeRemaining: Double = 0.0
     var beepInterval: Double = 1.0   // Seconds before round ends
     

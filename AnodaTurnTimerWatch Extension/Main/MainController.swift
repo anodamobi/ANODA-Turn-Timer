@@ -35,7 +35,7 @@ class MainController: WKInterfaceController {
 
     @IBOutlet private var ibRestartButton: WKInterfaceButton!
     @IBOutlet private var ibSettingsButton: WKInterfaceButton!
-    @IBOutlet private var ibTimerLabel: WKInterfaceLabel!
+    @IBOutlet private var ibTimerButton: WKInterfaceButton!
     
     let session = WCSession.default
     let timerService = TimerService()
@@ -67,18 +67,18 @@ class MainController: WKInterfaceController {
     
     
     func updateTimerLabel() {
-        ibTimerLabel.setText(timerService.updatedTimerLabelString())
+        let title = timerService.updatedTimerLabelString()
+        let color = timerService.isTimerOn ? UIColor.apple : UIColor.lipstick
+        ibTimerButton.setTitleWithColor(title: title, color: color)
     }
     
     // MARK: Timer controls
     
     private func startTimer() {
         timerService.startTimer()
-        ibTimerLabel.setTextColor(UIColor.apple)
     }
     
     private func stopTimer() {
-        ibTimerLabel.setTextColor(UIColor.lipstick)
         timerService.stopTimer()
         updateTimerLabel()
     }
