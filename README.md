@@ -25,7 +25,9 @@ Feel free to fork and submit your pull requests
 
 ## Authors
 
-iOS Developer: Oksana Kovalchuk <oksana@anoda.mobi>
+Lead iOS Developer: Oksana Kovalchuk <oksana@anoda.mobi>
+iOS Developer: Pavel Mosunov <pavel.mosunov@anoda.mobi>
+iOS Developer: Alexander Kravchenko <alex.kravchenko@anoda.mobi>
 
 UI Designer: Alex Zavrazhniy <alex@anoda.mobi>
 
