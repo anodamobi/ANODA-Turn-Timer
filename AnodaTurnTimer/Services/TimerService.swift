@@ -15,7 +15,6 @@ class TimerService: NSObject {
     var beepValue: Int = 0
     var timerSecondsValue: Int = 0
     var timer = Timer()
-    var seconds: Int = 0
     
     var state: TimerState = .initial
     
@@ -62,14 +61,14 @@ class TimerService: NSObject {
     
 
     func updateTimer() {
-        if seconds < 1 {
+        if store.state.roundAppState.roundTimeProgress < 1 {
             updateTo(state: .isOut)
             return
         } else {
-            seconds -= 1
-            store.dispatch(RoundTimeInterval(timer: seconds))
+            let seconds = store.state.roundAppState.roundTimeProgress - 1
+            store.dispatch(RoundTimeInterval(timer: seconds ))
         }
-        let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
+        let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(timerSecondsValue)))
         store.dispatch(RoundProgress(progress: progress))
     }
     
@@ -87,7 +86,7 @@ class TimerService: NSObject {
         case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
                 SoundManager.startEndSound()
-                seconds = timerSecondsValue
+                store.dispatch(RoundTimeInterval(timer: timerSecondsValue))
             }
             runTimer()
             
