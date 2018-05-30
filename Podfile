@@ -6,6 +6,7 @@ target 'AnodaTurnTimer' do
 
     inhibit_all_warnings!
 
+    pod 'ReSwift', '~> 4.0.1'
     # UI Core
 
     pod 'SnapKit'
@@ -13,6 +14,7 @@ target 'AnodaTurnTimer' do
     # UI Controls
     pod 'SwiftySound'
     pod 'SwiftyUserDefaults'
+    pod 'R.swift'
 
     # Analytics / Testing / Reporting
     pod 'Fabric'

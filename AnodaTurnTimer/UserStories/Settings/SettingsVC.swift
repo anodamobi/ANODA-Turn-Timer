@@ -11,23 +11,12 @@ import UIKit
 import SwiftyUserDefaults
 import Crashlytics
 
-protocol DataUpdated: class {
-    func loadData()
-}
-
 class SettingsVC: UIViewController {
     
     let contentView = SettingsView()
-    weak var delegate: DataUpdated?
     
-    init(delegate: DataUpdated) {
-        super.init(nibName: nil, bundle: nil)
-        self.delegate = delegate
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var timeInterval: Int = 0
+    var beepInterval: Int = 0
     
     override func loadView() {
         view = contentView
@@ -36,8 +25,11 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.roundDurationSection.picker.timeInterval = TimeInterval(Defaults[.timerInterval])
-        contentView.beepSection.picker.timeInterval = TimeInterval(Defaults[.beepInterval])
+        timeInterval = store.state.timerAppState.timeInterval
+        beepInterval = store.state.timerAppState.beepInterval
+        
+        contentView.roundDurationSection.picker.timeInterval = Double(timeInterval)
+        contentView.beepSection.picker.timeInterval = Double(beepInterval)
         
         contentView.roundDurationSection.picker.addTarget(self,
                                                           action: #selector(timeChanged(_:)),
@@ -47,15 +39,15 @@ class SettingsVC: UIViewController {
                                                  action: #selector(beepChanged(_:)),
                                                  for: .valueChanged)
         
-        contentView.backButton.addTargetClosure { (button) in
-            Answers.logCustomEvent(withName: "Settings updated",
-                                   customAttributes: ["Total": Defaults[.timerInterval], "Beep": Defaults[.beepInterval])
-            self.delegate?.loadData()
-            self.navigationController?.popViewController(animated: true)
+        contentView.backButton.addTargetClosure { [unowned self] (button) in
+            
+        store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
+                                           beepInterval: self.beepInterval,
+                                           settingsVC: self))
         }
         
         contentView.shareButton.addTargetClosure { (button) in
-            let message = "ANODA Turn Timer. Enjoy games with friends"
+            let message =  Localizable.turnTimer()
             if let link = NSURL(string: "http://itunes.apple.com/app/id1282215925") {
                 let objectsToShare: [Any] = [message, link]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -66,10 +58,10 @@ class SettingsVC: UIViewController {
     }
     
     func timeChanged(_ picker: LETimeIntervalPicker) {
-        Defaults[.timerInterval] = Int(picker.timeInterval)
+        timeInterval = Int(picker.timeInterval)
     }
     
     func beepChanged(_ picker: LETimeIntervalPicker) {
-        Defaults[.beepInterval] = Int(picker.timeInterval)
+        beepInterval = Int(picker.timeInterval)
     }
 }

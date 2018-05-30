@@ -14,6 +14,17 @@ extension String {
     }
     
     func isNotEmpty() -> Bool {
-        return characters.count > 0
+        return count > 0
     }
+    
+    static func timeString(time: TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        if minutes > 0 {
+            return  self.init(format:"%02i:%02i", minutes, seconds)
+        } else {
+            return  self.init(format:"%i", seconds)
+        }
+    }
+    
 }

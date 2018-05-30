@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import SwiftySound
-import SwiftyUserDefaults
-import Crashlytics
+import ReSwift
 
-class MainVC: UIViewController, TimerDelegate {
+class MainVC: UIViewController, StoreSubscriber {
     
     let contentView: MainView = MainView(frame: CGRect.zero)
     let timer: TimerService = TimerService()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        timer.delegate = self
+
+        store.dispatch(RoundInitialAction(progress: 0))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,68 +29,70 @@ class MainVC: UIViewController, TimerDelegate {
         view = contentView
     }
     
+    func newState(state: RoundState) {
+        
+        contentView.pieView.update(to: state.progress, animated: true)
+        
+        switch state.roundState {
+        case .initial:
+            contentView.pieView.update(to: 0, animated: true)
+            contentView.updateRestartIcon(visible: false)
+
+        case .running:
+            self.contentView.updatePlay(toPause: true)
+
+        case .paused:
+            self.contentView.updatePlay(toPause: false)
+
+        case .isOut:
+            self.contentView.updateRestartIcon(visible: true)
+        }
+        
+        updated(timeInterval: state.roundTimeProgress)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         contentView.pauseButton.addTargetClosure { (button) in
-            if self.timer.state == .paused || self.timer.state == .initial {
-                self.timer.updateTo(state: .running)
-            } else if self.timer.state == .running {
-                self.timer.updateTo(state: .paused)
+            let state: TimerState = store.state.roundAppState.roundState
+            
+            if state == .paused || state == .initial {
+                store.dispatch(RoundRunningAction())
+            } else if state == .running {
+                store.dispatch(RoundPausedAction())
             }
         }
         
         contentView.restartButton.addTargetClosure { (button) in
-            Answers.logCustomEvent(withName: "Timer restart",
-                                   customAttributes: ["Total": self.timer.timerSecondsValue, "Beep": self.timer.beepValue])
-            self.timer.updateTo(state: .initial)
-            self.timer.updateTo(state: .running)
+            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
+                                             beepValue: store.state.timerAppState.beepInterval))
+            store.dispatch(RoundInitialAction(progress: 0))
+            store.dispatch(RoundRunningAction())
         }
         
         contentView.settingsButton.addTargetClosure { (button) in
-            self.navigationController?.pushViewController(SettingsVC.init(delegate: self.timer), animated: true)
+            store.dispatch(RoundPausedAction())
+            self.navigationController?.pushViewController(SettingsVC(), animated: true)
         }
     }
     
-    func updated(state: TimerState) {
-        switch state {
-        case .initial:
-            contentView.pieView.update(to: 0, animated: true)
-            contentView.updateRestartIcon(visible: false)
-        case .running:
-            self.contentView.updatePlay(toPause: true)
-        case .paused:
-            self.contentView.updatePlay(toPause: false)
-        case .isOut:
-            Answers.logCustomEvent(withName: "Time is out",
-                                   customAttributes: ["Total": timer.timerSecondsValue, "Beep": timer.beepValue])
-            self.contentView.updateRestartIcon(visible: true)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
     }
     
-    func updated(progress: CGFloat) {
-        contentView.pieView.update(to: progress, animated: true)
+    override func viewWillDisappear(_ animated: Bool) {
+        store.unsubscribe(self)
+        super.viewWillDisappear(animated)
     }
     
-    func updated(timeInterval: Int?) {
+    func updated(timeInterval: Int) {
         
         var text: String
+        text = String.timeString(time: TimeInterval(timeInterval))
         
-        if let time = timeInterval {
-            text = timeString(time: TimeInterval(time))
-        } else {
-            text = ""
-        }
         contentView.timerLabel.text = text
-    }
-    
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        if minutes > 0 {
-            return  String(format:"%02i:%02i", minutes, seconds)
-        } else {
-            return  String(format:"%i", seconds)
-        }
     }
 }
