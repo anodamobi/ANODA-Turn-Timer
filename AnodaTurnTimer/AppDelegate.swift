@@ -26,10 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Fabric.with([Crashlytics.self])
 
+        if Defaults[.wasLaunched] != true {
+            
+            Defaults[.wasLaunched] = true
+            Defaults[.timerInterval] = 60
+            Defaults[.beepInterval] = 10
+        }
+        
+        
         store.dispatch(TimerAppLaunchAction(beepInterval: Defaults[.beepInterval],
-                                            timeInterval: Defaults[.timerInterval],
-                                            wasLaunched: Defaults[.wasLaunched]))
-
+                                            timeInterval: Defaults[.timerInterval]))
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         let nc = UINavigationController(rootViewController: MainVC())

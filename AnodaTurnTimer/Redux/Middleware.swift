@@ -16,20 +16,9 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
         return { action in
             
             switch action {
-                
-            case var actionState as TimerAppLaunchAction:
-                if actionState.wasLaunched != true {
-                    
-                    Defaults[.wasLaunched] = true
-                    Defaults[.timerInterval] = 60
-                    Defaults[.beepInterval] = 10
-                }
-                actionState.timeInterval = Defaults[.timerInterval]
-                actionState.beepInterval = Defaults[.beepInterval]
-                next(actionState)
-                break
+            
             case let actionState as TimerUpdateSettings:
-                EventHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
+                AnalyticsHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
                                                 beepValue: actionState.beepInterval)
                 
                 Defaults[.timerInterval] = actionState.timeInterval
@@ -52,7 +41,7 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             
             switch action {
             case let actionState as RoundIsOutAction:
-                EventHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
+                AnalyticsHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
                 SoundManager.startEndSound()
             case let actionState as RoundInitialAction:
                 break
@@ -61,10 +50,12 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             case let actionState as RoundPausedAction:
                 break
             case let actionState as RoundReplayAction:
-                EventHandler.logTimeRestart(timerValue: actionState.timeValue, beepValue: actionState.beepValue)
+                AnalyticsHandler.logTimeRestart(timerValue: actionState.timeValue, beepValue: actionState.beepValue)
             case let actionState as RoundTimeInterval:
                 if actionState.timer == Defaults[.beepInterval] {
-                    SoundManager.alertSound()
+                    if actionState.timer > 0 {
+                        SoundManager.alertSound()
+                    }
                 }
             default:
                 break
