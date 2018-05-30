@@ -13,7 +13,6 @@ import protocol ReSwift.Action
 struct TimerAppLaunchAction: Action {
     var beepInterval: Int
     var timeInterval: Int
-    var wasLaunched: Bool
 }
 
 struct TimerUpdateSettings: Action {

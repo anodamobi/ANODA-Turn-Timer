@@ -36,11 +36,11 @@ class TimerService: NSObject {
         
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
                 store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
-            }) { [unowned self] (state) in
+            }) { [weak self] (state) in
                 
-                self.timerSecondsValue = state.timeInterval
-                self.beepValue = state.beepInterval
-            
+                self?.timerSecondsValue = state.timeInterval
+                self?.beepValue = state.beepInterval
+                
                 store.dispatch(RoundInitialAction(progress: 0))
         }
         

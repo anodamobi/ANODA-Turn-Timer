@@ -12,12 +12,12 @@ import ReSwift
 class MainVC: UIViewController, StoreSubscriber {
     
     let contentView: MainView = MainView(frame: CGRect.zero)
-    let timer: TimerService = TimerService()
+    let timer: TimerService
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+        timer = TimerService()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        store.dispatch(RoundInitialAction(progress: 0))
         
     }
     
@@ -80,6 +80,7 @@ class MainVC: UIViewController, StoreSubscriber {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        timer.setupSubscription()
         store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
     }
     
