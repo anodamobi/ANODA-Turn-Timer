@@ -58,10 +58,13 @@ class TimerService: NSObject {
                                      userInfo: nil,
                                      repeats: true)
     }
+    
+    
 
     func updateTimer() {
         if seconds < 1 {
             updateTo(state: .isOut)
+            return
         } else {
             seconds -= 1
             store.dispatch(RoundTimeInterval(timer: seconds))
