@@ -3,7 +3,7 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/11/17.
-//  Copyright © 2017 ANODA. All rights reserved.
+//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
 //
 
 import Foundation
@@ -38,36 +38,34 @@ class SettingsView: UIView {
         }
         
         addSubview(backButton)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelNormal", atWidth: 75), for: .normal)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .selected)
-        backButton.setImage(UIImage.init(pdfNamed: "cancelPressed", atWidth: 75), for: .highlighted)
+        backButton.setupButtonImages(imageName: ("cancelNormal", "cancelPressed", "cancelPressed"), width: 75)
         backButton.snp.makeConstraints { (make) in
-            make.top.equalTo(25)
+            make.top.equalTo(self.safeArea.top).offset(25)
             make.left.equalTo(10)
         }
         
         addSubview(shareButton)
-        shareButton.setImage(UIImage.init(pdfNamed: "shareNormal", atWidth: 75), for: .normal)
-        shareButton.setImage(UIImage.init(pdfNamed: "sharePressed", atWidth: 75), for: .selected)
-        shareButton.setImage(UIImage.init(pdfNamed: "sharePressed", atWidth: 75), for: .highlighted)
+        shareButton.setupButtonImages(imageName: ("shareNormal", "sharePressed", "sharePressed"), width: 75)
         shareButton.snp.makeConstraints { (make) in
             make.right.equalTo(-10)
             make.top.equalTo(backButton)
         }
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = "Round duration"
+        roundDurationSection.title.text = Localizable.roundDuration()
         roundDurationSection.snp.makeConstraints { (make) in
             make.top.equalTo(backButton.snp.bottom)
             make.left.right.equalTo(self)
+            make.height.equalTo(250)
         }
         
         addSubview(beepSection)
         beepSection.picker.tag = 1
-        beepSection.title.text = "Beep before round ends"
+        beepSection.title.text = Localizable.beepBeforeRoundEnds()
         beepSection.snp.makeConstraints { (make) in
             make.top.equalTo(roundDurationSection.snp.bottom).offset(16)
             make.width.equalTo(roundDurationSection)
+            make.height.equalTo(roundDurationSection)
         }
     }
 }
@@ -97,6 +95,7 @@ class SettingsSectionView: UIView {
         title.textColor = UIColor.gtVeryLightPink
         title.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self)
+            make.height.equalTo(44)
         }
         
         addSubview(background)
@@ -106,7 +105,6 @@ class SettingsSectionView: UIView {
         background.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom)
             make.centerX.equalTo(self)
-            make.bottom.equalTo(self)
             make.height.equalTo(170)
             make.width.equalTo(320)
         }
@@ -114,8 +112,8 @@ class SettingsSectionView: UIView {
         background.addSubview(picker)
         picker.unitsStyle = .short
         picker.components = [.minutes, .seconds]
-        picker.textFont = UIFont.gtPickerFont()!
-        picker.numberFont = UIFont.gtPickerFont()!
+        picker.textFont = UIFont.gtPickerFont()
+        picker.numberFont = UIFont.gtPickerFont()
         picker.tintColor = UIColor.white
         picker.snp.makeConstraints { (make) in
             make.edges.equalTo(background)

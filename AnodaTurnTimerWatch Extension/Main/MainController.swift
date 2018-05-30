@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import ReSwift
 
 class TransitionHelper: NSObject {
     var delegate: TimeIntervalPickerDelegate?
@@ -31,14 +32,14 @@ enum StartButtonState {
     }
 }
 
-class MainController: WKInterfaceController {
+class MainController: WKInterfaceController, StoreSubscriber {
 
     @IBOutlet private var ibRestartButton: WKInterfaceButton!
     @IBOutlet private var ibSettingsButton: WKInterfaceButton!
     @IBOutlet private var ibTimerButton: WKInterfaceButton!
     
     let session = WCSession.default
-    let timerService = TimerService()
+    let timerService = WatchTimerService()
     
     var startButtonState: StartButtonState = .start {
         didSet {
@@ -108,6 +109,33 @@ class MainController: WKInterfaceController {
         transitionHelper.delegate = self
         self.pushController(withName: Constants.settingsControllerClassName, context: transitionHelper)
     }
+    
+    func newState(state: RoundState) {
+        
+//        contentView.pieView.update(to: state.progress, animated: true)
+        
+        switch state.roundState {
+        case .initial:
+//            contentView.pieView.update(to: 0, animated: true)
+//            contentView.updateRestartIcon(visible: false)
+            break
+            
+        case .running:
+//            self.contentView.updatePlay(toPause: true)
+            break
+            
+        case .paused:
+//            self.contentView.updatePlay(toPause: false)
+            break
+            
+        case .isOut:
+//            self.contentView.updateRestartIcon(visible: true)
+            break
+        }
+        
+//        updated(timeInterval: state.roundTimeProgress)
+    }
+
 }
 
 extension MainController: TimeIntervalPickerDelegate {

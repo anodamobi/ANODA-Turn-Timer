@@ -3,58 +3,51 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/12/17.
-//  Copyright © 2017 ANODA. All rights reserved.
+//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
 //
 
 import Foundation
-import SwiftyUserDefaults
-import SwiftySound
+//import SwiftySound
+import ReSwift
 
-enum TimerState {
-    case initial
-    case running
-    case paused
-    case isOut
-}
+class TimerService: NSObject {
 
-protocol TimerDelegate: class {
-    func updated(timeInterval: Int?)
-    func updated(state: TimerState)
-    func updated(progress: CGFloat)
-}
-
-class TimerService: NSObject, DataUpdated {
-    
-    var beepValue: Int
-    var timerSecondsValue: Int
+    var beepValue: Int = 0
+    var timerSecondsValue: Int = 0
     var timer = Timer()
     var seconds: Int = 0
     
-    var isTimerRunning = false
-    var isPaused = false
     var state: TimerState = .initial
     
-    weak var delegate: TimerDelegate? {
-        didSet {
-            updateTo(state: .initial)
-        }
+    private var timerAppState: ReduxHelper<TimerAppState>?
+    
+    private var roundAppState: ReduxHelper<RoundState>?
+
+
+    override init() { 
+        super.init()
+        timerSecondsValue = store.state.timerAppState.timeInterval
+        beepValue = store.state.timerAppState.beepInterval
+        setupSubscription()
+
     }
-
-    override init() {
-        timerSecondsValue = Defaults[.timerInterval]
-        beepValue = Defaults[.beepInterval]
-    }
-
-    func loadData() {
-
-        let isChangedSeconds = timerSecondsValue != Defaults[.timerInterval]
-        let isChangedBeep = beepValue != Defaults[.beepInterval]
+    
+    func setupSubscription() {
         
-        timerSecondsValue = Defaults[.timerInterval]
-        beepValue = Defaults[.beepInterval]
-
-        if isChangedBeep || isChangedSeconds {
-            updateTo(state: .initial)
+        timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
+                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
+            }) { [unowned self] (state) in
+                
+                self.timerSecondsValue = state.timeInterval
+                self.beepValue = state.beepInterval
+            
+                store.dispatch(RoundInitialAction(progress: 0))
+        }
+        
+        roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
+                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0.0 == $0.1 }) }
+            }) { [unowned self] (state) in
+                self.updateTo(state: state.roundState)
         }
     }
     
@@ -71,37 +64,37 @@ class TimerService: NSObject, DataUpdated {
             updateTo(state: .isOut)
         } else {
             seconds -= 1
-            if seconds == beepValue {
-                Sound.play(file: "alarm.mp3")
-            }
-            delegate?.updated(timeInterval: seconds)
+            store.dispatch(RoundTimeInterval(timer: seconds))
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
-        delegate?.updated(progress: progress)
+        store.dispatch(RoundProgress(progress: progress))
     }
     
-    func updateTo(state: TimerState) {
+ func updateTo(state: TimerState) {
         timer.invalidate()
         
         switch state {
+            
         case .initial: // Restart
-            delegate?.updated(timeInterval: timerSecondsValue)
+            updateTimeInterval(timeInterval: timerSecondsValue)
             
         case .paused: // pause
-            delegate?.updated(state: .paused)
-        case .running: // resume if paused or started
+            store.dispatch(RoundPausedAction())
             
+        case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
-                delegate?.updated(timeInterval: timerSecondsValue)
-                Sound.play(file: "start_end.mp3")
+                SoundManager.startEndSound()
                 seconds = timerSecondsValue
             }
             runTimer()
+            
         case .isOut: // time is end
-            delegate?.updated(timeInterval: nil)
-            Sound.play(file: "start_end.mp3")
+            store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
         }
         self.state = state
-        delegate?.updated(state: state)
+    }
+    
+    func updateTimeInterval(timeInterval: Int) {
+        store.dispatch(RoundTimeInterval(timer: timeInterval))
     }
 }

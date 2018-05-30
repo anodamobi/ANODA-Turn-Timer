@@ -1,5 +1,5 @@
 //
-//  TimerService.swift
+//  WatchTimerService.swift
 //  AnodaTurnTimerWatch Extension
 //
 //  Created by Alexander Kravchenko on 5/24/18.
@@ -14,7 +14,7 @@ protocol TimerServiceDelegate: class {
     func timerUpdated()
 }
 
-class TimerService {
+class WatchTimerService {
     
     private var timer = Timer()
     var choosenInterval: Double = 0.0 {

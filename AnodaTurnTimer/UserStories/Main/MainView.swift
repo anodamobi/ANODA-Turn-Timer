@@ -3,7 +3,7 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/10/17.
-//  Copyright © 2017 ANODA. All rights reserved.
+//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
 //
 
 import Foundation
@@ -12,11 +12,13 @@ import SnapKit
 import UIImagePDF
 import CoreGraphics
 
+fileprivate let sizeConst = UIScreen.width - 40
+fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: sizeConst)
+
 class MainView: UIView {
     
     let background = UIImageView()
-    //TODO: constants
-    let pieView = MainPieView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.width - 40))
+    let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
@@ -30,11 +32,9 @@ class MainView: UIView {
     }
     
     func updateRestartIcon(visible: Bool) {
-        if visible {
-            restartButton.setImage(UIImage.init(pdfNamed: "reset", atHeight: 192), for: .normal)
-        } else {
-            restartButton.setImage(nil, for: .normal)
-        }
+        let image: UIImage = UIImage.init(pdfNamed: "reset", atHeight: 192)
+        restartButton.setImage(visible ? image : nil, for: .normal)
+        timerLabel.isHidden = visible
     }
     
     override init(frame: CGRect) {
@@ -48,21 +48,25 @@ class MainView: UIView {
         
         addSubview(pieView)
         pieView.snp.makeConstraints { (make) in
+            
+            //HACK (Pavel.Mosunov) to not make a huge constraints for safe area as safeArea ext cannot into EDGES :'(
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
-            make.top.left.right.equalTo(self).inset(edges)
-            make.height.equalTo(UIScreen.main.bounds.width - edges.left - edges.right)
+            let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
+            let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
+            
+            make.top.left.right.equalTo(self).inset(edge)
+            make.height.equalTo(UIScreen.width - edge.left - edge.right)
         }
         
         updatePlay(toPause: false)
         addSubview(pauseButton)
         pauseButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self).offset(-20)
+            
+            make.bottom.equalTo(self.safeArea.bottom).offset(-20)
             make.left.equalTo(self).offset(20)
         }
         
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsNormal", atWidth: 100), for: .normal)
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsPressed", atWidth: 100), for: .selected)
-        settingsButton.setImage(UIImage.init(pdfNamed: "settingsPressed", atWidth: 100), for: .highlighted)
+        settingsButton.setupButtonImages(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
         addSubview(settingsButton)
         settingsButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(pauseButton)
@@ -72,13 +76,9 @@ class MainView: UIView {
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setImage(UIImage.init(pdfNamed: "pauseNormal", atWidth: 100), for: .normal)
-            pauseButton.setImage(UIImage.init(pdfNamed: "pausePressed", atWidth: 100), for: .selected)
-            pauseButton.setImage(UIImage.init(pdfNamed: "pausePressed", atWidth: 100), for: .highlighted)
+            pauseButton.setupButtonImages(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
         } else {
-            pauseButton.setImage(UIImage.init(pdfNamed: "playNormal", atWidth: 100), for: .normal)
-            pauseButton.setImage(UIImage.init(pdfNamed: "playPressed", atWidth: 100), for: .selected)
-            pauseButton.setImage(UIImage.init(pdfNamed: "playPressed", atWidth: 100), for: .highlighted)
+            pauseButton.setupButtonImages(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
         }
     }
     

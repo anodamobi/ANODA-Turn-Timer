@@ -4,6 +4,8 @@ abstract_target 'AnodaTurnTimerAbstract' do
     use_frameworks!
     inhibit_all_warnings!
     
+    pod 'ReSwift', '~> 4.0.1'
+    
     target 'AnodaTurnTimer' do
         platform :ios, '10.0'
         
@@ -14,7 +16,10 @@ abstract_target 'AnodaTurnTimerAbstract' do
         # UI Controls
         pod 'SwiftySound'
         pod 'SwiftyUserDefaults'
+
+        pod 'R.swift'
         # Analytics / Testing / Reporting
+
         pod 'Fabric'
         pod 'Crashlytics'
         

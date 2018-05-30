@@ -9,6 +9,42 @@
 /* Begin PBXBuildFile section */
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
+		D41E5EE220BEC647004F79A8 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ECC20BEC647004F79A8 /* ColorScheme+Ext.swift */; };
+		D41E5EE320BEC647004F79A8 /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ECD20BEC647004F79A8 /* DefaultsKeys+Ext.swift */; };
+		D41E5EE420BEC647004F79A8 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ECE20BEC647004F79A8 /* String+Ext.swift */; };
+		D41E5EE520BEC647004F79A8 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ECF20BEC647004F79A8 /* UIButton+Ext.swift */; };
+		D41E5EE620BEC647004F79A8 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED020BEC647004F79A8 /* UIColor+Ext.swift */; };
+		D41E5EE720BEC647004F79A8 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED120BEC647004F79A8 /* UIDevice+Ext.swift */; };
+		D41E5EE820BEC647004F79A8 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED320BEC647004F79A8 /* EventHandler.swift */; };
+		D41E5EE920BEC647004F79A8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED420BEC647004F79A8 /* SoundManager.swift */; };
+		D41E5EEA20BEC647004F79A8 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED520BEC647004F79A8 /* TimerService.swift */; };
+		D41E5EEB20BEC647004F79A8 /* WatchConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED620BEC647004F79A8 /* WatchConnectivityService.swift */; };
+		D41E5EED20BEC647004F79A8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EDB20BEC647004F79A8 /* MainVC.swift */; };
+		D41E5EEE20BEC647004F79A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EDC20BEC647004F79A8 /* MainView.swift */; };
+		D41E5EEF20BEC647004F79A8 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EDE20BEC647004F79A8 /* SettingsVC.swift */; };
+		D41E5EF020BEC647004F79A8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EDF20BEC647004F79A8 /* SettingsView.swift */; };
+		D41E5EF120BEC647004F79A8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EE120BEC647004F79A8 /* Enums.swift */; };
+		D41E5EF220BEC7FD004F79A8 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED020BEC647004F79A8 /* UIColor+Ext.swift */; };
+		D41E5EF320BEC808004F79A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F79D91F69F77D00DFF3AA /* Localizable.strings */; };
+		D41E5EF420BEC821004F79A8 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ECE20BEC647004F79A8 /* String+Ext.swift */; };
+		D41E5EF520BEC829004F79A8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EE120BEC647004F79A8 /* Enums.swift */; };
+		D41E5EFC20BEC887004F79A8 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF720BEC887004F79A8 /* AppActions.swift */; };
+		D41E5EFD20BEC887004F79A8 /* AppReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF820BEC887004F79A8 /* AppReducers.swift */; };
+		D41E5EFE20BEC887004F79A8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF920BEC887004F79A8 /* AppState.swift */; };
+		D41E5EFF20BEC887004F79A8 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EFA20BEC887004F79A8 /* Middleware.swift */; };
+		D41E5F0020BEC887004F79A8 /* ReduxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EFB20BEC887004F79A8 /* ReduxHelper.swift */; };
+		D41E5F0220BECBE4004F79A8 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0120BECBE4004F79A8 /* UIView+Ext.swift */; };
+		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
+		D452E7B520BEE3D100F05FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B120BEE3D100F05FC6 /* Assets.xcassets */; };
+		D452E7B720BEE3D100F05FC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B420BEE3D100F05FC6 /* Info.plist */; };
+		D452E7B820BEE3EE00F05FC6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B220BEE3D100F05FC6 /* Interface.storyboard */; };
+		D452E7B920BEE3F000F05FC6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B220BEE3D100F05FC6 /* Interface.storyboard */; };
+		D452E7BA20BEE73F00F05FC6 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5ED520BEC647004F79A8 /* TimerService.swift */; };
+		D452E7BB20BEE79C00F05FC6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF920BEC887004F79A8 /* AppState.swift */; };
+		D452E7BC20BEE87300F05FC6 /* ReduxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EFB20BEC887004F79A8 /* ReduxHelper.swift */; };
+		D452E7BD20BEE89E00F05FC6 /* AppReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF820BEC887004F79A8 /* AppReducers.swift */; };
+		D452E7BE20BEE8B400F05FC6 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EF720BEC887004F79A8 /* AppActions.swift */; };
+		D452E7BF20BEE90D00F05FC6 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EFA20BEC887004F79A8 /* Middleware.swift */; };
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,27 +53,11 @@
 		D4F660A320B5AD9100508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F660A220B5AD9100508BC5 /* Assets.xcassets */; };
 		D4F660A720B5AD9100508BC5 /* AnodaTurnTimerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */; };
 		D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B120B6968900508BC5 /* SettingsController.swift */; };
-		D4F660B820B6DD9900508BC5 /* WatchConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B720B6DD9900508BC5 /* WatchConnectivityService.swift */; };
-		D4F660BD20B6EDFC00508BC5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660BC20B6EDFC00508BC5 /* Enums.swift */; };
-		D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660BC20B6EDFC00508BC5 /* Enums.swift */; };
 		D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F660C120B700AF00508BC5 /* Localizable.strings */; };
-		D4F660C320B700E300508BC5 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79791F69F73A00DFF3AA /* String+Ext.swift */; };
-		D4F660C620B7040200508BC5 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C520B7040200508BC5 /* TimerService.swift */; };
+		D4F660C620B7040200508BC5 /* WatchTimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C520B7040200508BC5 /* WatchTimerService.swift */; };
 		D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C720B707C600508BC5 /* MainController+Session.swift */; };
 		D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CA20B70B1300508BC5 /* Constants.swift */; };
-		D4F660CD20B7E6B200508BC5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */; };
-		D4F660CE20B7E71B00508BC5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
-		D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */; };
-		D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */; };
-		D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79791F69F73A00DFF3AA /* String+Ext.swift */; };
-		D75F79A71F69F73A00DFF3AA /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F797A1F69F73A00DFF3AA /* UIButton+Ext.swift */; };
-		D75F79A81F69F73A00DFF3AA /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F797B1F69F73A00DFF3AA /* UIDevice+Ext.swift */; };
-		D75F79BB1F69F73A00DFF3AA /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79941F69F73A00DFF3AA /* TimerService.swift */; };
-		D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79981F69F73A00DFF3AA /* MainVC.swift */; };
-		D75F79BE1F69F73A00DFF3AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79991F69F73A00DFF3AA /* MainView.swift */; };
-		D75F79BF1F69F73A00DFF3AA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799B1F69F73A00DFF3AA /* SettingsVC.swift */; };
-		D75F79C01F69F73A00DFF3AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799C1F69F73A00DFF3AA /* SettingsView.swift */; };
 		D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */; };
 		D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F79A01F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings */; };
 		D75F79DD1F69F77D00DFF3AA /* Rancho-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D75F79C61F69F77D00DFF3AA /* Rancho-Regular.ttf */; };
@@ -114,6 +134,31 @@
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ECC20BEC647004F79A8 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ECD20BEC647004F79A8 /* DefaultsKeys+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ECE20BEC647004F79A8 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ECF20BEC647004F79A8 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ED020BEC647004F79A8 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ED120BEC647004F79A8 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
+		D41E5ED320BEC647004F79A8 /* EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		D41E5ED420BEC647004F79A8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		D41E5ED520BEC647004F79A8 /* TimerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		D41E5ED620BEC647004F79A8 /* WatchConnectivityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityService.swift; sourceTree = "<group>"; };
+		D41E5EDB20BEC647004F79A8 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		D41E5EDC20BEC647004F79A8 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D41E5EDE20BEC647004F79A8 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		D41E5EDF20BEC647004F79A8 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D41E5EE120BEC647004F79A8 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D41E5EF720BEC887004F79A8 /* AppActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		D41E5EF820BEC887004F79A8 /* AppReducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducers.swift; sourceTree = "<group>"; };
+		D41E5EF920BEC887004F79A8 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D41E5EFA20BEC887004F79A8 /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		D41E5EFB20BEC887004F79A8 /* ReduxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduxHelper.swift; sourceTree = "<group>"; };
+		D41E5F0120BECBE4004F79A8 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D452E7B120BEE3D100F05FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D452E7B320BEE3D100F05FC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D452E7B420BEE3D100F05FC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimerWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6609020B5AD8F00508BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D4F6609220B5AD9000508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,25 +171,12 @@
 		D4F660B120B6968900508BC5 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnodaTurnTimer.entitlements; sourceTree = "<group>"; };
 		D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AnodaTurnTimerWatch Extension.entitlements"; sourceTree = "<group>"; };
-		D4F660B720B6DD9900508BC5 /* WatchConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityService.swift; sourceTree = "<group>"; };
-		D4F660BC20B6EDFC00508BC5 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D4F660C120B700AF00508BC5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		D4F660C520B7040200508BC5 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		D4F660C520B7040200508BC5 /* WatchTimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTimerService.swift; sourceTree = "<group>"; };
 		D4F660C720B707C600508BC5 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
 		D4F660CA20B70B1300508BC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75F79751F69F73A00DFF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
-		D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Ext.swift"; sourceTree = "<group>"; };
-		D75F79791F69F73A00DFF3AA /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		D75F797A1F69F73A00DFF3AA /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
-		D75F797B1F69F73A00DFF3AA /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
-		D75F79941F69F73A00DFF3AA /* TimerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
-		D75F79981F69F73A00DFF3AA /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		D75F79991F69F73A00DFF3AA /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		D75F799B1F69F73A00DFF3AA /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		D75F799C1F69F73A00DFF3AA /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LETimeIntervalPicker.swift; sourceTree = "<group>"; };
 		D75F79A01F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LETimeIntervalPickerLocalizable.strings; sourceTree = "<group>"; };
 		D75F79C61F69F77D00DFF3AA /* Rancho-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rancho-Regular.ttf"; sourceTree = "<group>"; };
@@ -208,6 +240,8 @@
 		C73F45501F64D4CF00254F49 = {
 			isa = PBXGroup;
 			children = (
+				D452E7B020BEE3D100F05FC6 /* AnodaTurnTimerWatch */,
+				D41E5F0420BECCEC004F79A8 /* R.generated.swift */,
 				D75F79711F69F73A00DFF3AA /* AnodaTurnTimer */,
 				D4F6608E20B5AD8F00508BC5 /* AnodaTurnTimerWatch */,
 				D4F6609D20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension */,
@@ -233,6 +267,88 @@
 				D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D41E5ECB20BEC647004F79A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5F0120BECBE4004F79A8 /* UIView+Ext.swift */,
+				D41E5ECC20BEC647004F79A8 /* ColorScheme+Ext.swift */,
+				D41E5ECD20BEC647004F79A8 /* DefaultsKeys+Ext.swift */,
+				D41E5ECE20BEC647004F79A8 /* String+Ext.swift */,
+				D41E5ECF20BEC647004F79A8 /* UIButton+Ext.swift */,
+				D41E5ED020BEC647004F79A8 /* UIColor+Ext.swift */,
+				D41E5ED120BEC647004F79A8 /* UIDevice+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D41E5ED220BEC647004F79A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5ED320BEC647004F79A8 /* EventHandler.swift */,
+				D41E5ED420BEC647004F79A8 /* SoundManager.swift */,
+				D41E5ED520BEC647004F79A8 /* TimerService.swift */,
+				D41E5ED620BEC647004F79A8 /* WatchConnectivityService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D41E5ED920BEC647004F79A8 /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EDA20BEC647004F79A8 /* Main */,
+				D41E5EDD20BEC647004F79A8 /* Settings */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		D41E5EDA20BEC647004F79A8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EDB20BEC647004F79A8 /* MainVC.swift */,
+				D41E5EDC20BEC647004F79A8 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D41E5EDD20BEC647004F79A8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EDE20BEC647004F79A8 /* SettingsVC.swift */,
+				D41E5EDF20BEC647004F79A8 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D41E5EE020BEC647004F79A8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EE120BEC647004F79A8 /* Enums.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D41E5EF620BEC887004F79A8 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				D41E5EF720BEC887004F79A8 /* AppActions.swift */,
+				D41E5EF820BEC887004F79A8 /* AppReducers.swift */,
+				D41E5EF920BEC887004F79A8 /* AppState.swift */,
+				D41E5EFA20BEC887004F79A8 /* Middleware.swift */,
+				D41E5EFB20BEC887004F79A8 /* ReduxHelper.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		D452E7B020BEE3D100F05FC6 /* AnodaTurnTimerWatch */ = {
+			isa = PBXGroup;
+			children = (
+				D452E7B120BEE3D100F05FC6 /* Assets.xcassets */,
+				D452E7B220BEE3D100F05FC6 /* Interface.storyboard */,
+				D452E7B420BEE3D100F05FC6 /* Info.plist */,
+			);
+			path = AnodaTurnTimerWatch;
 			sourceTree = "<group>";
 		};
 		D4F6608E20B5AD8F00508BC5 /* AnodaTurnTimerWatch */ = {
@@ -273,18 +389,10 @@
 			isa = PBXGroup;
 			children = (
 				D4F6609E20B5AD9100508BC5 /* MainController.swift */,
-				D4F660C520B7040200508BC5 /* TimerService.swift */,
+				D4F660C520B7040200508BC5 /* WatchTimerService.swift */,
 				D4F660C720B707C600508BC5 /* MainController+Session.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		D4F660BB20B6EDE500508BC5 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D4F660BC20B6EDFC00508BC5 /* Enums.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D4F660C420B701B400508BC5 /* Resources */ = {
@@ -306,13 +414,14 @@
 		D75F79711F69F73A00DFF3AA /* AnodaTurnTimer */ = {
 			isa = PBXGroup;
 			children = (
-				D4F660BB20B6EDE500508BC5 /* Helpers */,
+				D41E5EF620BEC887004F79A8 /* Redux */,
+				D41E5ECB20BEC647004F79A8 /* Extensions */,
+				D41E5EE020BEC647004F79A8 /* Helpers */,
+				D41E5ED220BEC647004F79A8 /* Services */,
+				D41E5ED920BEC647004F79A8 /* UserStories */,
 				D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */,
 				D75F79721F69F73A00DFF3AA /* AppDelegate.swift */,
 				D75F79731F69F73A00DFF3AA /* BundleFiles */,
-				D75F79761F69F73A00DFF3AA /* Extensions */,
-				D75F79931F69F73A00DFF3AA /* Services */,
-				D75F79951F69F73A00DFF3AA /* UserStories */,
 				D75F79C41F69F77D00DFF3AA /* Resources */,
 				D75F799D1F69F73A00DFF3AA /* Vendor */,
 			);
@@ -325,55 +434,6 @@
 				D75F79751F69F73A00DFF3AA /* Info.plist */,
 			);
 			path = BundleFiles;
-			sourceTree = "<group>";
-		};
-		D75F79761F69F73A00DFF3AA /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D75F79771F69F73A00DFF3AA /* ColorScheme+Ext.swift */,
-				D75F79781F69F73A00DFF3AA /* DefaultsKeys+Ext.swift */,
-				D75F79791F69F73A00DFF3AA /* String+Ext.swift */,
-				D75F797A1F69F73A00DFF3AA /* UIButton+Ext.swift */,
-				D75F797B1F69F73A00DFF3AA /* UIDevice+Ext.swift */,
-				D4F660CC20B7E6B200508BC5 /* UIColor+Ext.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D75F79931F69F73A00DFF3AA /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D75F79941F69F73A00DFF3AA /* TimerService.swift */,
-				D4F660B720B6DD9900508BC5 /* WatchConnectivityService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		D75F79951F69F73A00DFF3AA /* UserStories */ = {
-			isa = PBXGroup;
-			children = (
-				D75F79961F69F73A00DFF3AA /* Main */,
-				D75F799A1F69F73A00DFF3AA /* Settings */,
-			);
-			path = UserStories;
-			sourceTree = "<group>";
-		};
-		D75F79961F69F73A00DFF3AA /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				D75F79981F69F73A00DFF3AA /* MainVC.swift */,
-				D75F79991F69F73A00DFF3AA /* MainView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		D75F799A1F69F73A00DFF3AA /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				D75F799B1F69F73A00DFF3AA /* SettingsVC.swift */,
-				D75F799C1F69F73A00DFF3AA /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		D75F799D1F69F73A00DFF3AA /* Vendor */ = {
@@ -471,6 +531,7 @@
 			buildConfigurationList = C73F45761F64D4CF00254F49 /* Build configuration list for PBXNativeTarget "AnodaTurnTimer" */;
 			buildPhases = (
 				76D44AB941BFB12036A5D49B /* [CP] Check Pods Manifest.lock */,
+				D41E5F0320BECCAA004F79A8 /* R.swift */,
 				C73F45551F64D4CF00254F49 /* Sources */,
 				C73F45561F64D4CF00254F49 /* Frameworks */,
 				C73F45571F64D4CF00254F49 /* Resources */,
@@ -514,6 +575,7 @@
 				D4F6609520B5AD9000508BC5 /* Sources */,
 				D4F6609620B5AD9000508BC5 /* Frameworks */,
 				D4F6609720B5AD9000508BC5 /* Resources */,
+				0C6F34FDD86CFD3816FD41BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,7 +593,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Oksana Kovalchuk";
 				TargetAttributes = {
 					C73F45581F64D4CF00254F49 = {
@@ -587,10 +649,12 @@
 				D75F79E61F69F77D00DFF3AA /* playNormal.pdf in Resources */,
 				D75F79EA1F69F77D00DFF3AA /* settingsPressed.pdf in Resources */,
 				D75F79E71F69F77D00DFF3AA /* playPressed.pdf in Resources */,
+				D452E7B520BEE3D100F05FC6 /* Assets.xcassets in Resources */,
 				D75F79EE1F69F77D00DFF3AA /* alarm.mp3 in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
 				D75F79E01F69F77D00DFF3AA /* background-i6.pdf in Resources */,
 				D75F79E91F69F77D00DFF3AA /* settingsNormal.pdf in Resources */,
+				D452E7B720BEE3D100F05FC6 /* Info.plist in Resources */,
 				D75F79E51F69F77D00DFF3AA /* pausePressed.pdf in Resources */,
 				D75F79EC1F69F77D00DFF3AA /* sharePressed.pdf in Resources */,
 				D75F79DE1F69F77D00DFF3AA /* Assets.xcassets in Resources */,
@@ -611,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */,
+				D452E7B820BEE3EE00F05FC6 /* Interface.storyboard in Resources */,
 				D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,7 +684,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D452E7B920BEE3F000F05FC6 /* Interface.storyboard in Resources */,
 				D4F660A320B5AD9100508BC5 /* Assets.xcassets in Resources */,
+				D41E5EF320BEC808004F79A8 /* Localizable.strings in Resources */,
 				D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +694,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C6F34FDD86CFD3816FD41BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift-watchOS/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2F4D0347691C96D6AB8915AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,6 +755,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
@@ -677,6 +764,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -686,6 +775,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D41E5F0320BECCAA004F79A8 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
 		D7D43AB61F6A0F8D00F4EB1E /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -708,22 +811,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75F79BF1F69F73A00DFF3AA /* SettingsVC.swift in Sources */,
-				D75F79A71F69F73A00DFF3AA /* UIButton+Ext.swift in Sources */,
+				D41E5EEF20BEC647004F79A8 /* SettingsVC.swift in Sources */,
+				D41E5EE420BEC647004F79A8 /* String+Ext.swift in Sources */,
+				D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */,
+				D41E5EED20BEC647004F79A8 /* MainVC.swift in Sources */,
+				D41E5EF020BEC647004F79A8 /* SettingsView.swift in Sources */,
+				D41E5EE220BEC647004F79A8 /* ColorScheme+Ext.swift in Sources */,
+				D41E5EE520BEC647004F79A8 /* UIButton+Ext.swift in Sources */,
+				D41E5EEA20BEC647004F79A8 /* TimerService.swift in Sources */,
+				D41E5EE320BEC647004F79A8 /* DefaultsKeys+Ext.swift in Sources */,
+				D41E5F0220BECBE4004F79A8 /* UIView+Ext.swift in Sources */,
+				D41E5EFC20BEC887004F79A8 /* AppActions.swift in Sources */,
+				D41E5EFE20BEC887004F79A8 /* AppState.swift in Sources */,
+				D41E5F0020BEC887004F79A8 /* ReduxHelper.swift in Sources */,
 				D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */,
-				D75F79A41F69F73A00DFF3AA /* ColorScheme+Ext.swift in Sources */,
-				D75F79BE1F69F73A00DFF3AA /* MainView.swift in Sources */,
-				D4F660CD20B7E6B200508BC5 /* UIColor+Ext.swift in Sources */,
-				D75F79A51F69F73A00DFF3AA /* DefaultsKeys+Ext.swift in Sources */,
-				D4F660B820B6DD9900508BC5 /* WatchConnectivityService.swift in Sources */,
-				D4F660BD20B6EDFC00508BC5 /* Enums.swift in Sources */,
-				D75F79BD1F69F73A00DFF3AA /* MainVC.swift in Sources */,
-				D75F79A61F69F73A00DFF3AA /* String+Ext.swift in Sources */,
+				D41E5EE720BEC647004F79A8 /* UIDevice+Ext.swift in Sources */,
+				D41E5EE620BEC647004F79A8 /* UIColor+Ext.swift in Sources */,
+				D41E5EFF20BEC887004F79A8 /* Middleware.swift in Sources */,
+				D41E5EEE20BEC647004F79A8 /* MainView.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,
-				D75F79BB1F69F73A00DFF3AA /* TimerService.swift in Sources */,
-				D75F79C01F69F73A00DFF3AA /* SettingsView.swift in Sources */,
+				D41E5EEB20BEC647004F79A8 /* WatchConnectivityService.swift in Sources */,
 				D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */,
-				D75F79A81F69F73A00DFF3AA /* UIDevice+Ext.swift in Sources */,
+				D41E5EE920BEC647004F79A8 /* SoundManager.swift in Sources */,
+				D41E5EE820BEC647004F79A8 /* EventHandler.swift in Sources */,
+				D41E5EFD20BEC887004F79A8 /* AppReducers.swift in Sources */,
+				D41E5EF120BEC647004F79A8 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,16 +843,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41E5EF420BEC821004F79A8 /* String+Ext.swift in Sources */,
 				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
+				D452E7BC20BEE87300F05FC6 /* ReduxHelper.swift in Sources */,
+				D41E5EF520BEC829004F79A8 /* Enums.swift in Sources */,
+				D452E7BB20BEE79C00F05FC6 /* AppState.swift in Sources */,
 				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
 				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
-				D4F660BE20B6EE0700508BC5 /* Enums.swift in Sources */,
-				D4F660C620B7040200508BC5 /* TimerService.swift in Sources */,
-				D4F660C320B700E300508BC5 /* String+Ext.swift in Sources */,
-				D4F660CE20B7E71B00508BC5 /* UIColor+Ext.swift in Sources */,
+				D452E7BD20BEE89E00F05FC6 /* AppReducers.swift in Sources */,
+				D452E7BF20BEE90D00F05FC6 /* Middleware.swift in Sources */,
+				D452E7BA20BEE73F00F05FC6 /* TimerService.swift in Sources */,
+				D4F660C620B7040200508BC5 /* WatchTimerService.swift in Sources */,
+				D41E5EF220BEC7FD004F79A8 /* UIColor+Ext.swift in Sources */,
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
+				D452E7BE20BEE8B400F05FC6 /* AppActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +878,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D452E7B220BEE3D100F05FC6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D452E7B320BEE3D100F05FC6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -785,6 +911,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -792,6 +919,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -805,6 +933,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -843,6 +972,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -850,6 +980,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -863,6 +994,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
