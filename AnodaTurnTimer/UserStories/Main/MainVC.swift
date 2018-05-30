@@ -12,12 +12,12 @@ import ReSwift
 class MainVC: UIViewController, StoreSubscriber {
     
     let contentView: MainView = MainView(frame: CGRect.zero)
-    let timer: TimerService = TimerService()
+    let timer: TimerService
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+        timer = TimerService()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
-        store.dispatch(RoundInitialAction(progress: 0))
         
     }
     
@@ -31,7 +31,7 @@ class MainVC: UIViewController, StoreSubscriber {
     
     func newState(state: RoundState) {
         
-        contentView.pieView.update(to: state.progress, animated: true)
+        contentView.pieView.update(to: CGFloat(state.progress), animated: true)
         
         switch state.roundState {
         case .initial:
@@ -46,6 +46,7 @@ class MainVC: UIViewController, StoreSubscriber {
 
         case .isOut:
             self.contentView.updateRestartIcon(visible: true)
+            self.contentView.updatePlay(toPause: false)
         }
         
         updated(timeInterval: state.roundTimeProgress)
@@ -62,25 +63,31 @@ class MainVC: UIViewController, StoreSubscriber {
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
+            } else if state == .isOut {
+                replayAction()
             }
         }
         
         contentView.restartButton.addTargetClosure { (button) in
-            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
-                                             beepValue: store.state.timerAppState.beepInterval))
-            store.dispatch(RoundInitialAction(progress: 0))
-            store.dispatch(RoundRunningAction())
+            replayAction()
         }
         
         contentView.settingsButton.addTargetClosure { (button) in
             store.dispatch(RoundPausedAction())
             self.navigationController?.pushViewController(SettingsVC(), animated: true)
         }
+        
+        func replayAction() {
+            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
+                                             beepValue: store.state.timerAppState.beepInterval))
+            store.dispatch(RoundInitialAction(progress: 0))
+            store.dispatch(RoundRunningAction())
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
+        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0 == $1})}
     }
     
     override func viewWillDisappear(_ animated: Bool) {

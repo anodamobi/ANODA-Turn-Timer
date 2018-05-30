@@ -18,7 +18,7 @@ class WatchConnectivityService: NSObject, WCSessionDelegate {
     
     func start() {
         if WCSession.isSupported() {
-            session = WCSession.default()
+            session = WCSession.default
             session?.delegate = self
             session?.activate()
         }

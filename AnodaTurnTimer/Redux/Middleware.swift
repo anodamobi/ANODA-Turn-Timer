@@ -9,32 +9,22 @@
 import Foundation
 import ReSwift
 import SwiftyUserDefaults
+#if os(watchOS)
+import WatchKit
+#endif
 
 let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in
         return { action in
             
             switch action {
-                
-            case var actionState as TimerAppLaunchAction:
-                if actionState.wasLaunched != true {
-                    
-                    Defaults[.wasLaunched] = true
-                    Defaults[.timerInterval] = 60
-                    Defaults[.beepInterval] = 10
-                }
-                actionState.timeInterval = Defaults[.timerInterval]
-                actionState.beepInterval = Defaults[.beepInterval]
-                next(actionState)
-                break
-            case let actionState as TimerUpdateSettings:
-                EventHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
+            
+            case let actionState as TimerUpdateSettingsAction:
+                AnalyticsHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
                                                 beepValue: actionState.beepInterval)
                 
                 Defaults[.timerInterval] = actionState.timeInterval
                 Defaults[.beepInterval] = actionState.beepInterval
-                
-                actionState.settingsVC.navigationController?.popViewController(animated: true)
                 
             default:
                 break
@@ -51,8 +41,12 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             
             switch action {
             case let actionState as RoundIsOutAction:
-                EventHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
+                AnalyticsHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
+                #if os(iOS)
                 SoundManager.startEndSound()
+                #elseif os(watchOS)
+                WKInterfaceDevice.current().play(.success)
+                #endif
             case let actionState as RoundInitialAction:
                 break
             case let actionState as RoundRunningAction:
@@ -60,10 +54,16 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             case let actionState as RoundPausedAction:
                 break
             case let actionState as RoundReplayAction:
-                EventHandler.logTimeRestart(timerValue: actionState.timeValue, beepValue: actionState.beepValue)
+                AnalyticsHandler.logTimeRestart(timerValue: actionState.timeValue, beepValue: actionState.beepValue)
             case let actionState as RoundTimeInterval:
                 if actionState.timer == Defaults[.beepInterval] {
-                    SoundManager.alertSound()
+                    if actionState.timer > 0 {
+                        #if os(iOS)
+                        SoundManager.alertSound()
+                        #elseif os(watchOS)
+                        WKInterfaceDevice.current().play(.notification)
+                        #endif
+                    }
                 }
             default:
                 break

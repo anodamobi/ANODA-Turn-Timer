@@ -35,17 +35,17 @@ class TimerService: NSObject {
     func setupSubscription() {
         
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
-                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
-            }) { [unowned self] (state) in
+                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0 == $1 })}
+            }) { [weak self] (state) in
                 
-                self.timerSecondsValue = state.timeInterval
-                self.beepValue = state.beepInterval
-            
+                self?.timerSecondsValue = state.timeInterval
+                self?.beepValue = state.beepInterval
+                
                 store.dispatch(RoundInitialAction(progress: 0))
         }
         
         roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
-                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0.0 == $0.1 }) }
+                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0 == $1 }) }
             }) { [unowned self] (state) in
                 self.updateTo(state: state.roundState)
         }
@@ -59,7 +59,7 @@ class TimerService: NSObject {
                                      repeats: true)
     }
 
-    func updateTimer() {
+    @objc func updateTimer() {
         if seconds < 1 {
             updateTo(state: .isOut)
         } else {
@@ -67,7 +67,7 @@ class TimerService: NSObject {
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
         let progress = CGFloat(1 - (CGFloat(seconds) / CGFloat(timerSecondsValue)))
-        store.dispatch(RoundProgress(progress: progress))
+        store.dispatch(RoundProgress(progress: Float(progress)))
     }
     
  func updateTo(state: TimerState) {

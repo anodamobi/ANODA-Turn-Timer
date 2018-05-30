@@ -19,7 +19,7 @@ func timerReducer(action: Action, state: TimerAppState?) -> TimerAppState {
     
     switch action {
         
-    case let act as TimerUpdateSettings:
+    case let act as TimerUpdateSettingsAction:
         state.timeInterval = act.timeInterval
         state.beepInterval = act.beepInterval
         

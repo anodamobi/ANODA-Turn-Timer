@@ -41,9 +41,9 @@ class SettingsVC: UIViewController {
         
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             
-        store.dispatch(TimerUpdateSettings(timeInterval: self.timeInterval,
-                                           beepInterval: self.beepInterval,
-                                           settingsVC: self))
+            store.dispatch(TimerUpdateSettingsAction(timeInterval: self.timeInterval,
+                                               beepInterval: self.beepInterval))
+            self.navigationController?.popViewController(animated: true)
         }
         
         contentView.shareButton.addTargetClosure { (button) in
@@ -57,11 +57,11 @@ class SettingsVC: UIViewController {
         }
     }
     
-    func timeChanged(_ picker: LETimeIntervalPicker) {
+    @objc func timeChanged(_ picker: LETimeIntervalPicker) {
         timeInterval = Int(picker.timeInterval)
     }
     
-    func beepChanged(_ picker: LETimeIntervalPicker) {
+    @objc func beepChanged(_ picker: LETimeIntervalPicker) {
         beepInterval = Int(picker.timeInterval)
     }
 }

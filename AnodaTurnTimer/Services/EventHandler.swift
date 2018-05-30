@@ -7,24 +7,28 @@
 //
 
 import Foundation
+#if os(iOS)
 import Crashlytics
+#endif
 
-class EventHandler {
+class AnalyticsHandler {
     
     static func logTimeRestart(timerValue: Int, beepValue: Int) {
-        EventHandler.logEvent(with: "Timer restart", atr: (timerValue, beepValue))
+        AnalyticsHandler.logEvent(with: "Timer restart", atr: (timerValue, beepValue))
     }
     
     static func logSettingsUpdates(timerValue: Int, beepValue: Int) {
-        EventHandler.logEvent(with: "Settings updated", atr: (timerValue, beepValue))
+        AnalyticsHandler.logEvent(with: "Settings updated", atr: (timerValue, beepValue))
     }
     
     static func logTimeIsOut(timerValue: Int, beepValue: Int) {
-        EventHandler.logEvent(with: "Time is out", atr: (timerValue, beepValue))
+        AnalyticsHandler.logEvent(with: "Time is out", atr: (timerValue, beepValue))
     }
     
     private static func logEvent(with name: String, atr: (Int, Int)) {
+        #if os(iOS)
         Answers.logCustomEvent(withName: name, customAttributes: ["Total": atr.0,
                                                                   "Beep": atr.1])
+        #endif
     }
 }

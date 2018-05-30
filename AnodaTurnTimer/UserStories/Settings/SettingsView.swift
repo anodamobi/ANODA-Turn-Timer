@@ -52,7 +52,7 @@ class SettingsView: UIView {
         }
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = Localizable.roundDuration()
+        roundDurationSection.title.text = Localizable.roundDuration(())
         roundDurationSection.snp.makeConstraints { (make) in
             make.top.equalTo(backButton.snp.bottom)
             make.left.right.equalTo(self)
@@ -61,7 +61,7 @@ class SettingsView: UIView {
         
         addSubview(beepSection)
         beepSection.picker.tag = 1
-        beepSection.title.text = Localizable.beepBeforeRoundEnds()
+        beepSection.title.text = Localizable.beepBeforeRoundEnds(())
         beepSection.snp.makeConstraints { (make) in
             make.top.equalTo(roundDurationSection.snp.bottom).offset(16)
             make.width.equalTo(roundDurationSection)

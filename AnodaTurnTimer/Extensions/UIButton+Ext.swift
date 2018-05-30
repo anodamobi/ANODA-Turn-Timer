@@ -39,7 +39,7 @@ extension UIButton {
         addTarget(self, action: #selector(UIButton.closureAction), for: .touchUpInside)
     }
     
-    func closureAction() {
+    @objc func closureAction() {
         guard let targetClosure = targetClosure else { return }
         targetClosure(self)
     }
