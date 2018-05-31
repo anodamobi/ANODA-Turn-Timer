@@ -18,7 +18,6 @@ struct TimerAppLaunchAction: Action {
 struct TimerUpdateSettings: Action {
     var timeInterval: Int
     var beepInterval: Int
-    var settingsVC: SettingsVC
 }
 
 struct RoundRunningAction: Action {}
