@@ -19,6 +19,9 @@
                                 <button width="1" height="129" alignment="left" title="00:00" id="O6Z-it-Rmz">
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="52"/>
+                                    <connections>
+                                        <action selector="timerButtonAction" destination="AgC-eL-Hgc" id="FHE-ti-yie"/>
+                                    </connections>
                                 </button>
                                 <button width="1" height="40" alignment="left" title="Settings" id="Uw6-rI-2Rb">
                                     <connections>

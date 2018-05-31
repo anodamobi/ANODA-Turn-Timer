@@ -10,10 +10,6 @@
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
-		D452E7B520BEE3D100F05FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B120BEE3D100F05FC6 /* Assets.xcassets */; };
-		D452E7B720BEE3D100F05FC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B420BEE3D100F05FC6 /* Info.plist */; };
-		D452E7B820BEE3EE00F05FC6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B220BEE3D100F05FC6 /* Interface.storyboard */; };
-		D452E7B920BEE3F000F05FC6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D452E7B220BEE3D100F05FC6 /* Interface.storyboard */; };
 		D452E83920BEEAC300F05FC6 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */; };
 		D452E83A20BEEAC300F05FC6 /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */; };
 		D452E83B20BEEAC300F05FC6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80820BEEAC300F05FC6 /* String+Ext.swift */; };
@@ -63,6 +59,8 @@
 		D452E86820BEEDF900F05FC6 /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */; };
 		D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */; };
 		D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E83820BEEAC300F05FC6 /* Enums.swift */; };
+		D452E86B20BEF09300F05FC6 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E82E20BEEAC300F05FC6 /* TimerService.swift */; };
+		D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E82A20BEEAC300F05FC6 /* ReduxHelper.swift */; };
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -134,9 +132,6 @@
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		D452E7B120BEE3D100F05FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D452E7B320BEE3D100F05FC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		D452E7B420BEE3D100F05FC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
 		D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Ext.swift"; sourceTree = "<group>"; };
 		D452E80820BEEAC300F05FC6 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -239,7 +234,6 @@
 		C73F45501F64D4CF00254F49 = {
 			isa = PBXGroup;
 			children = (
-				D452E7B020BEE3D100F05FC6 /* AnodaTurnTimerWatch */,
 				D41E5F0420BECCEC004F79A8 /* R.generated.swift */,
 				D75F79711F69F73A00DFF3AA /* AnodaTurnTimer */,
 				D4F6608E20B5AD8F00508BC5 /* AnodaTurnTimerWatch */,
@@ -266,16 +260,6 @@
 				D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D452E7B020BEE3D100F05FC6 /* AnodaTurnTimerWatch */ = {
-			isa = PBXGroup;
-			children = (
-				D452E7B120BEE3D100F05FC6 /* Assets.xcassets */,
-				D452E7B220BEE3D100F05FC6 /* Interface.storyboard */,
-				D452E7B420BEE3D100F05FC6 /* Info.plist */,
-			);
-			path = AnodaTurnTimerWatch;
 			sourceTree = "<group>";
 		};
 		D452E80520BEEAC300F05FC6 /* Extensions */ = {
@@ -647,7 +631,6 @@
 			files = (
 				D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */,
 				D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */,
-				D452E7B520BEE3D100F05FC6 /* Assets.xcassets in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
 				D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
@@ -657,7 +640,6 @@
 				D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */,
 				D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */,
 				D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */,
-				D452E7B720BEE3D100F05FC6 /* Info.plist in Resources */,
 				D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */,
 				D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
@@ -675,7 +657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */,
-				D452E7B820BEE3EE00F05FC6 /* Interface.storyboard in Resources */,
 				D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,7 +665,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D452E7B920BEE3F000F05FC6 /* Interface.storyboard in Resources */,
 				D4F660A320B5AD9100508BC5 /* Assets.xcassets in Resources */,
 				D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */,
 			);
@@ -856,6 +836,8 @@
 				D4F660C620B7040200508BC5 /* WatchTimerService.swift in Sources */,
 				D452E86220BEEC4100F05FC6 /* AppActions.swift in Sources */,
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
+				D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */,
+				D452E86B20BEF09300F05FC6 /* TimerService.swift in Sources */,
 				D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 				D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */,
@@ -879,14 +861,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D452E7B220BEE3D100F05FC6 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D452E7B320BEE3D100F05FC6 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

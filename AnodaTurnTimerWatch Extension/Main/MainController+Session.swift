@@ -13,25 +13,25 @@ import WatchConnectivity
 extension MainController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        if startButtonState == .start || startButtonState == .restart {
-            DispatchQueue.main.async { [unowned self] in
-                self.processAppContext()
-            }
-        }
+//        if startButtonState == .start || startButtonState == .restart {
+//            DispatchQueue.main.async { [unowned self] in
+//                self.processAppContext()
+//            }
+//        }
     }
     
     func processAppContext() {
-        if let iPhoneContext = session.receivedApplicationContext as? [String : Double] {
-            
-            if let interval = iPhoneContext[WatchConnectivityKey.roundDuration.rawValue] {
-                timerService.choosenInterval = interval
-                updateTimerLabel()
-            }
-            
-            if let interval = iPhoneContext[WatchConnectivityKey.beepInterval.rawValue] {
-                timerService.beepInterval = interval
-            }
-        }
+//        if let iPhoneContext = session.receivedApplicationContext as? [String : Double] {
+//            
+//            if let interval = iPhoneContext[WatchConnectivityKey.roundDuration.rawValue] {
+//                timerService.choosenInterval = interval
+//                updateTimerLabel()
+//            }
+//            
+//            if let interval = iPhoneContext[WatchConnectivityKey.beepInterval.rawValue] {
+//                timerService.beepInterval = interval
+//            }
+//        }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
