@@ -25,10 +25,8 @@ class MainController: WKInterfaceController, StoreSubscriber {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        setupUI()
-        stopTimer()
+        updateTimerLabel()
         setupSession()
-        
         timer = TimerService()
     }
     
@@ -48,11 +46,6 @@ class MainController: WKInterfaceController, StoreSubscriber {
         session.delegate = self
         session.activate()
     }
-    
-    private func setupUI() {
-        updateTimerLabel()
-    }
-    
     
     func updateTimerLabel(isActive: Bool = false, isInitial: Bool = false) {
         let color = isActive ? UIColor.apple : UIColor.lipstick
@@ -79,19 +72,7 @@ class MainController: WKInterfaceController, StoreSubscriber {
         return "\(minutesString):\(secondsString)"
     }
     
-    // MARK: Timer controls
-    
-    private func startTimer() {
-//        timerService.startTimer()
-    }
-    
-    private func stopTimer() {
-//        timerService.stopTimer()
-        updateTimerLabel()
-    }
-    
     // MARK: Actions
-    
     @IBAction private func timerButtonAction() {
         let state: TimerState = store.state.roundAppState.roundState
         
@@ -112,7 +93,7 @@ class MainController: WKInterfaceController, StoreSubscriber {
     }
     
     @IBAction private func didPressSettings() {
-        stopTimer()
+        store.dispatch(RoundPausedAction())
         moveToSettings()
     }
     
@@ -122,29 +103,18 @@ class MainController: WKInterfaceController, StoreSubscriber {
     }
     
     func newState(state: RoundState) {
-        
-//        contentView.pieView.update(to: state.progress, animated: true)
-        
         switch state.roundState {
         case .initial:
-//            contentView.pieView.update(to: 0, animated: true)
-//            contentView.updateRestartIcon(visible: false)
             updateTimerLabel(isActive: false, isInitial: true)
             
         case .running:
-//            self.contentView.updatePlay(toPause: true)
             updateTimerLabel(isActive: true)
             
         case .paused:
-//            self.contentView.updatePlay(toPause: false)
             updateTimerLabel(isActive: false)
             
         case .isOut:
-//            self.contentView.updateRestartIcon(visible: true)
             updateTimerLabel(isActive: false)
         }
-        
-//        updated(timeInterval: state.roundTimeProgress)
     }
-
 }

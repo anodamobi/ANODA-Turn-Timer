@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import SwiftySound
 import ReSwift
 #if os(watchOS)
 import WatchKit
@@ -18,7 +17,6 @@ class TimerService: NSObject {
     var beepValue: Int = 0
     var timerSecondsValue: Int = 0
     var timer = Timer()
-    var seconds: Int = 0
     
     var state: TimerState = .initial
     
@@ -61,16 +59,19 @@ class TimerService: NSObject {
                                      userInfo: nil,
                                      repeats: true)
     }
+    
+    
 
     @objc func updateTimer() {
-        if seconds < 1 {
+        if store.state.roundAppState.roundTimeProgress < 1 {
             updateTo(state: .isOut)
+            return
         } else {
-            seconds -= 1
+            let seconds = store.state.roundAppState.roundTimeProgress - 1
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
-        let progress = Float(1 - (Float(seconds) / Float(timerSecondsValue)))
-        store.dispatch(RoundProgress(progress: progress))
+        let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(timerSecondsValue)))
+        store.dispatch(RoundProgress(progress: Float(progress)))
     }
     
  func updateTo(state: TimerState) {
@@ -86,12 +87,12 @@ class TimerService: NSObject {
             
         case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
+                store.dispatch(RoundTimeInterval(timer: timerSecondsValue))
                 #if os(iOS)
                     SoundManager.startEndSound()
                 #elseif os(watchOS)
                     WKInterfaceDevice.current().play(.success)
                 #endif
-                seconds = timerSecondsValue
             }
             runTimer()
             
