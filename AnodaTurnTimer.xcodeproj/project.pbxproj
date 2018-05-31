@@ -70,7 +70,6 @@
 		D4F660A720B5AD9100508BC5 /* AnodaTurnTimerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */; };
 		D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B120B6968900508BC5 /* SettingsController.swift */; };
 		D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F660C120B700AF00508BC5 /* Localizable.strings */; };
-		D4F660C620B7040200508BC5 /* WatchTimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C520B7040200508BC5 /* WatchTimerService.swift */; };
 		D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C720B707C600508BC5 /* MainController+Session.swift */; };
 		D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CA20B70B1300508BC5 /* Constants.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
@@ -185,7 +184,6 @@
 		D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnodaTurnTimer.entitlements; sourceTree = "<group>"; };
 		D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AnodaTurnTimerWatch Extension.entitlements"; sourceTree = "<group>"; };
 		D4F660C120B700AF00508BC5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		D4F660C520B7040200508BC5 /* WatchTimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTimerService.swift; sourceTree = "<group>"; };
 		D4F660C720B707C600508BC5 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
 		D4F660CA20B70B1300508BC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				D4F6609E20B5AD9100508BC5 /* MainController.swift */,
-				D4F660C520B7040200508BC5 /* WatchTimerService.swift */,
 				D4F660C720B707C600508BC5 /* MainController+Session.swift */,
 			);
 			path = Main;
@@ -833,7 +830,6 @@
 				D452E86720BEECBB00F05FC6 /* EventHandler.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
 				D452E86620BEECA500F05FC6 /* String+Ext.swift in Sources */,
-				D4F660C620B7040200508BC5 /* WatchTimerService.swift in Sources */,
 				D452E86220BEEC4100F05FC6 /* AppActions.swift in Sources */,
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */,

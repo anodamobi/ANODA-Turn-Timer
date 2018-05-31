@@ -91,8 +91,6 @@ class TimerService: NSObject {
                 #elseif os(watchOS)
                     WKInterfaceDevice.current().play(.success)
                 #endif
-
-                
                 seconds = timerSecondsValue
             }
             runTimer()
