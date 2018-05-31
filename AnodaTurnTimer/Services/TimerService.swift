@@ -14,21 +14,16 @@ import WatchKit
 
 class TimerService: NSObject {
 
-    var beepValue: Int = 0
-    var timerSecondsValue: Int = 0
     var timer = Timer()
     
     var state: TimerState = .initial
     
     private var timerAppState: ReduxHelper<TimerAppState>?
-    
     private var roundAppState: ReduxHelper<RoundState>?
 
 
     override init() { 
         super.init()
-        timerSecondsValue = store.state.timerAppState.timeInterval
-        beepValue = store.state.timerAppState.beepInterval
         setupSubscription()
 
     }
@@ -37,10 +32,7 @@ class TimerService: NSObject {
         
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
                 store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0 == $1 })}
-            }) { [weak self] (state) in
-                
-                self?.timerSecondsValue = state.timeInterval
-                self?.beepValue = state.beepInterval
+            }) { (state) in
                 
                 store.dispatch(RoundInitialAction(progress: 0))
         }
@@ -70,7 +62,8 @@ class TimerService: NSObject {
             let seconds = store.state.roundAppState.roundTimeProgress - 1
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
-        let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(timerSecondsValue)))
+        
+        let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(store.state.timerAppState.timeInterval)))
         store.dispatch(RoundProgress(progress: Float(progress)))
     }
     
@@ -80,14 +73,14 @@ class TimerService: NSObject {
         switch state {
             
         case .initial: // Restart
-            updateTimeInterval(timeInterval: timerSecondsValue)
+            updateTimeInterval(timeInterval: store.state.timerAppState.timeInterval)
             
         case .paused: // pause
             store.dispatch(RoundPausedAction())
             
         case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
-                store.dispatch(RoundTimeInterval(timer: timerSecondsValue))
+                store.dispatch(RoundTimeInterval(timer: store.state.timerAppState.timeInterval))
                 #if os(iOS)
                     SoundManager.startEndSound()
                 #elseif os(watchOS)
@@ -97,7 +90,8 @@ class TimerService: NSObject {
             runTimer()
             
         case .isOut: // time is end
-            store.dispatch(RoundIsOutAction(timerSecondsValue: timerSecondsValue, beepValue: beepValue))
+            store.dispatch(RoundIsOutAction(timerSecondsValue: store.state.timerAppState.timeInterval,
+                                            beepValue: store.state.timerAppState.beepInterval))
         }
         self.state = state
     }
