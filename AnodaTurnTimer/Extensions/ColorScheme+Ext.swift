@@ -3,7 +3,7 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/11/17.
-//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
+//  Copyright © 2017 ANODA. All rights reserved.
 //
 
 import Foundation
@@ -19,7 +19,6 @@ extension UIImage {
         switch UIScreen.screenType {
             case .iphone6: imageName = "background-i6"
             case .iphonePlus: imageName = "background-i6p"
-            case .iphoneX: imageName = "backgroundX"
             default: imageName = "background-i5"
         }
         return UIImage.init(pdfNamed: imageName, atWidth: UIScreen.width)

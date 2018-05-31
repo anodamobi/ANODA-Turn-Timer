@@ -31,7 +31,7 @@ class MainVC: UIViewController, StoreSubscriber {
     
     func newState(state: RoundState) {
         
-        contentView.pieView.update(to: state.progress, animated: true)
+        contentView.pieView.update(to: CGFloat(state.progress), animated: true)
         
         switch state.roundState {
         case .initial:
@@ -87,7 +87,7 @@ class MainVC: UIViewController, StoreSubscriber {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0.0 == $0.1})}
+        store.subscribe(self) { $0.select({ $0.roundAppState }).skipRepeats({$0 == $1})}
     }
     
     override func viewWillDisappear(_ animated: Bool) {

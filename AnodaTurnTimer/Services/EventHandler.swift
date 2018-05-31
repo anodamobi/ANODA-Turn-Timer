@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import Crashlytics
+#endif
 
 class AnalyticsHandler {
     
@@ -24,7 +26,9 @@ class AnalyticsHandler {
     }
     
     private static func logEvent(with name: String, atr: (Int, Int)) {
+        #if os(iOS)
         Answers.logCustomEvent(withName: name, customAttributes: ["Total": atr.0,
                                                                   "Beep": atr.1])
+        #endif
     }
 }

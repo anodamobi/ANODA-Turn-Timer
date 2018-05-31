@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import SwiftySound
 import ReSwift
+#if os(watchOS)
+import WatchKit
+#endif
 
 class TimerService: NSObject {
 
@@ -29,14 +31,14 @@ class TimerService: NSObject {
     func setupSubscription() {
         
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
-                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0.0 == $0.1 })}
+                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0 == $1 })}
             }) { (state) in
                 
                 store.dispatch(RoundInitialAction(progress: 0))
         }
         
         roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
-                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0.0 == $0.1 }) }
+                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0 == $1 }) }
             }) { [unowned self] (state) in
                 self.updateTo(state: state.roundState)
         }
@@ -52,7 +54,7 @@ class TimerService: NSObject {
     
     
 
-    func updateTimer() {
+    @objc func updateTimer() {
         if store.state.roundAppState.roundTimeProgress < 1 {
             updateTo(state: .isOut)
             return
@@ -62,7 +64,7 @@ class TimerService: NSObject {
         }
         
         let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(store.state.timerAppState.timeInterval)))
-        store.dispatch(RoundProgress(progress: progress))
+        store.dispatch(RoundProgress(progress: Float(progress)))
     }
     
  func updateTo(state: TimerState) {
@@ -78,8 +80,12 @@ class TimerService: NSObject {
             
         case .running: // resume if paused or started, state is internal for TimerService. Sound manager connot be sent to Middleware.
             if self.state == .initial {
-                SoundManager.startEndSound()
                 store.dispatch(RoundTimeInterval(timer: store.state.timerAppState.timeInterval))
+                #if os(iOS)
+                    SoundManager.startEndSound()
+                #elseif os(watchOS)
+                    WKInterfaceDevice.current().play(.success)
+                #endif
             }
             runTimer()
             

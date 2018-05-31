@@ -9,6 +9,8 @@
 import Foundation
 import ReSwift
 
+let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [timerAppStateMiddleware, roundStateMiddleware])
+
 enum TimerState {
     case initial
     case running
@@ -32,7 +34,7 @@ struct TimerAppState: StateType {
 }
 
 struct RoundState: StateType {
-    var progress: CGFloat = 0.0
+    var progress: Float = 0.0
     var roundState: TimerState = .initial
     
     var beepInterval: Int = 0

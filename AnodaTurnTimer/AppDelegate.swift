@@ -3,7 +3,7 @@
 //  AnodaGameTimer
 //
 //  Created by Oksana Kovalchuk on 9/10/17.
-//  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
+//  Copyright © 2017 ANODA. All rights reserved.
 //
 
 import UIKit
@@ -15,15 +15,13 @@ import ReSwift
 
 typealias Localizable = R.string.localizable
 
-let store = Store<AppState>(reducer: appReducer, state: nil, middleware: [timerAppStateMiddleware, roundStateMiddleware])
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        WatchConnectivityService.shared.start()
         Fabric.with([Crashlytics.self])
 
         if Defaults[.wasLaunched] != true {

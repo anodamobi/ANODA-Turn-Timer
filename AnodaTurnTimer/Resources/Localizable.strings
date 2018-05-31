@@ -3,9 +3,11 @@
   AnodaGameTimer
 
   Created by Oksana Kovalchuk on 9/11/17.
-  Copyright © 2017 Oksana Kovalchuk. All rights reserved.
+  Copyright © 2017 ANODA. All rights reserved.
 */
 
+"empty-timer" = "You need to specify round length";
+"empty-beep" = "You need to specify time before second beep";
 "round.duration" = "Round duration";
 "turn.timer" = "ANODA Turn Timer. Enjoy games with friends";
 "beep.before-round.ends" = "Beep before round ends";

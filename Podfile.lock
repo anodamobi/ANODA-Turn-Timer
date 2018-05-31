@@ -1,14 +1,14 @@
 PODS:
-  - Crashlytics (3.8.6):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.12)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.6)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
   - ReSwift (4.0.1)
-  - SnapKit (3.2.0)
-  - SwiftySound (0.7.0)
-  - SwiftyUserDefaults (3.0.0)
+  - SnapKit (4.0.0)
+  - SwiftySound (1.0.0)
+  - SwiftyUserDefaults (3.0.1)
   - UIImagePDF (0.9-beta1)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ DEPENDENCIES:
   - Fabric
   - R.swift
   - ReSwift (~> 4.0.1)
-  - SnapKit
+  - SnapKit (~> 4.0)
   - SwiftySound
   - SwiftyUserDefaults
   - "UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)"
@@ -44,16 +44,16 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:anodamobi/UIImage-PDF.git"
 
 SPEC CHECKSUMS:
-  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SwiftySound: bca0bb721690fb65249f4776cb0875abd98e9941
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftySound: b9c3370956fd4ed65ed79d45563070077a50a2cd
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UIImagePDF: 7cae10d97e503ae042a3ebbfa53d19e4bca4daf9
 
-PODFILE CHECKSUM: 20361c2b3b13bcdd3a6b7ce9077d1ceb4906b2ba
+PODFILE CHECKSUM: 59717d5a9a8131ac281b3dd7a3251eaa51cbb92f
 
 COCOAPODS: 1.5.0

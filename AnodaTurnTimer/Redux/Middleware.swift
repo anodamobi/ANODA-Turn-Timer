@@ -8,8 +8,10 @@
 
 import Foundation
 import ReSwift
-import Crashlytics
 import SwiftyUserDefaults
+//#if os(watchOS)
+import WatchKit
+//#endif
 
 let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in
@@ -17,7 +19,7 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
             
             switch action {
             
-            case let actionState as TimerUpdateSettings:
+            case let actionState as TimerUpdateSettingsAction:
                 AnalyticsHandler.logSettingsUpdates(timerValue: actionState.timeInterval,
                                                 beepValue: actionState.beepInterval)
                 
@@ -40,7 +42,11 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             switch action {
             case let actionState as RoundIsOutAction:
                 AnalyticsHandler.logTimeIsOut(timerValue: actionState.timerSecondsValue, beepValue: actionState.beepValue)
+                #if os(iOS)
                 SoundManager.startEndSound()
+                #elseif os(watchOS)
+                WKInterfaceDevice.current().play(.success)
+                #endif
             case let actionState as RoundInitialAction:
                 break
             case let actionState as RoundRunningAction:
@@ -52,7 +58,11 @@ let roundStateMiddleware: Middleware<AppState> = { dispatch, getState in
             case let actionState as RoundTimeInterval:
                 if actionState.timer == Defaults[.beepInterval] {
                     if actionState.timer > 0 {
+                        #if os(iOS)
                         SoundManager.alertSound()
+                        #elseif os(watchOS)
+                        WKInterfaceDevice.current().play(.notification)
+                        #endif
                     }
                 }
             default:
