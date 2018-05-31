@@ -24,8 +24,6 @@ let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
                 Defaults[.timerInterval] = actionState.timeInterval
                 Defaults[.beepInterval] = actionState.beepInterval
                 
-                actionState.settingsVC.navigationController?.popViewController(animated: true)
-                
             default:
                 break
             }
