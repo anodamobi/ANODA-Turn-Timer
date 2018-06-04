@@ -4,8 +4,6 @@ abstract_target 'AnodaTurnTimerAbstract' do
     use_frameworks!
     inhibit_all_warnings!
     
-    pod 'ReSwift', '~> 4.0.1'
-    pod 'SwiftyUserDefaults'
     
     target 'AnodaTurnTimer' do
         platform :ios, '10.0'
@@ -24,10 +22,16 @@ abstract_target 'AnodaTurnTimerAbstract' do
         
         pod 'UIImagePDF', :git=> 'git@github.com:anodamobi/UIImage-PDF.git', :branch => '0.9-beta1', :commit => '7d9dfbf'
         
+        
+        pod 'ReSwift', '~> 4.0.1'
+        pod 'SwiftyUserDefaults'
     end
 
     target 'AnodaTurnTimerWatch Extension' do
         platform :watchos, '4.0'
+        
+        pod 'ReSwift', '~> 4.0.1'
+        pod 'SwiftyUserDefaults'
     end
 
 end
