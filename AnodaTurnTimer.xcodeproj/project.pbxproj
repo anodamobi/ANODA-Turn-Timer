@@ -995,7 +995,7 @@
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1015,7 +1015,7 @@
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1027,7 +1027,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -1035,7 +1035,7 @@
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1049,7 +1049,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -1057,7 +1057,7 @@
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1076,12 +1076,14 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1099,12 +1101,14 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer-beta.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
