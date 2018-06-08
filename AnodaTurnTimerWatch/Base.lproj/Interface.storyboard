@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Main Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="MainController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
+                            <items>
+                                <button width="1" height="129" alignment="left" title="00:00" id="O6Z-it-Rmz">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="52"/>
+                                    <connections>
+                                        <action selector="timerButtonAction" destination="AgC-eL-Hgc" id="FHE-ti-yie"/>
+                                    </connections>
+                                </button>
+                                <button width="1" height="40" alignment="left" title="Settings" id="Uw6-rI-2Rb">
+                                    <connections>
+                                        <action selector="didPressSettings" destination="AgC-eL-Hgc" id="wae-zG-NaO"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="ibSettingsButton" destination="Uw6-rI-2Rb" id="rPG-dU-qoo"/>
+                        <outlet property="ibTimerButton" destination="O6Z-it-Rmz" id="a9s-7S-O03"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="313.84615384615387" y="440.69230769230774"/>
+        </scene>
+        <!--SettingsController-->
+        <scene sceneID="RcJ-w2-YxD">
+            <objects>
+                <controller identifier="SettingsController" id="MpI-c8-XTG" customClass="SettingsController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <picker height="128" alignment="left" id="Gjo-4Y-MBH">
+                            <connections>
+                                <action selector="didPickTimeInterval:" destination="MpI-c8-XTG" id="5Xf-j3-1zf"/>
+                            </connections>
+                        </picker>
+                        <button width="1" height="40" alignment="left" title="Set" id="rrO-zy-Qwf">
+                            <connections>
+                                <action selector="didPressSetButton" destination="MpI-c8-XTG" id="Vfa-A5-d7c"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="ibPicker" destination="Gjo-4Y-MBH" id="x4S-wr-HCZ"/>
+                        <outlet property="ibSetButton" destination="rrO-zy-Qwf" id="Dny-5N-Li8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="580.61538461538464" y="441.5641025641026"/>
+        </scene>
+    </scenes>
+</document>

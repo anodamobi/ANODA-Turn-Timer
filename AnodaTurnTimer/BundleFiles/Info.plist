@@ -15,13 +15,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>4</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string></string>
+		<string>ea7dfb6a1f6555e29edb99c288c71f9fdf6a47a3</string>
 		<key>Kits</key>
 		<array>
 			<dict>
