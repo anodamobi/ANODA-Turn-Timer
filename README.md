@@ -7,6 +7,10 @@ Download for iPhone [http://itunes.apple.com/app/id1282215925](http://itunes.app
 
 ![](http://s.themengzor.com/ANODA_Turn_Timer_on_the_App_Store_2017-10-04_01-16-06-3w512.png)
 
+## Demo        
+
+Try `ANODA-Turn-Timer` on [Appetize.io](https://appetize.io/app/u41vxty24d7u4wkjc35m2ghjq8).
+
 ## Build
 
 Building ANODA Turn Timer requres Xcode 9+ and CocoaPods.
