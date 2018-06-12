@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14269.12" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14224.3"/>
     </dependencies>
     <scenes>
         <!--Main Controller-->
@@ -16,9 +16,10 @@
                     <items>
                         <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
                             <items>
-                                <button width="1" height="129" alignment="left" title="00:00" id="O6Z-it-Rmz">
+                                <button width="1" height="130" alignment="left" title="00:00" id="O6Z-it-Rmz">
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <fontDescription key="font" type="system" pointSize="52"/>
+                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <variation key="device=watch38mm" height="100"/>
                                     <connections>
                                         <action selector="timerButtonAction" destination="AgC-eL-Hgc" id="FHE-ti-yie"/>
                                     </connections>
@@ -37,7 +38,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="313.84615384615387" y="440.69230769230774"/>
+            <point key="canvasLocation" x="310" y="438.5"/>
         </scene>
         <!--SettingsController-->
         <scene sceneID="RcJ-w2-YxD">
@@ -45,6 +46,7 @@
                 <controller identifier="SettingsController" id="MpI-c8-XTG" customClass="SettingsController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <picker height="128" alignment="left" id="Gjo-4Y-MBH">
+                            <variation key="device=watch38mm" height="100"/>
                             <connections>
                                 <action selector="didPickTimeInterval:" destination="MpI-c8-XTG" id="5Xf-j3-1zf"/>
                             </connections>
@@ -61,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="580.61538461538464" y="441.5641025641026"/>
+            <point key="canvasLocation" x="580" y="441.5"/>
         </scene>
     </scenes>
 </document>
