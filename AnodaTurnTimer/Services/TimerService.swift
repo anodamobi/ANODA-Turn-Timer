@@ -58,6 +58,8 @@ class TimerService: NSObject {
         if store.state.roundAppState.roundTimeProgress < 1 {
             updateTo(state: .isOut)
             return
+        } else if store.state.roundAppState.roundState == .paused {
+            return
         } else {
             let seconds = store.state.roundAppState.roundTimeProgress - 1
             store.dispatch(RoundTimeInterval(timer: seconds))
