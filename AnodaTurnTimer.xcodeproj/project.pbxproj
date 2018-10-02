@@ -10,6 +10,12 @@
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
+		D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD672163B93F00ADA904 /* resetIcon.pdf */; };
+		D420BD6E2163B94000ADA904 /* shareIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD682163B94000ADA904 /* shareIcon.pdf */; };
+		D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD692163B94000ADA904 /* playButtonIcon.pdf */; };
+		D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */; };
+		D420BD712163B94000ADA904 /* combinedShapeBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6B2163B94000ADA904 /* combinedShapeBackground.pdf */; };
+		D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6C2163B94000ADA904 /* settingsIcon.pdf */; };
 		D452E83920BEEAC300F05FC6 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */; };
 		D452E83A20BEEAC300F05FC6 /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */; };
 		D452E83B20BEEAC300F05FC6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80820BEEAC300F05FC6 /* String+Ext.swift */; };
@@ -131,6 +137,12 @@
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D420BD672163B93F00ADA904 /* resetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = resetIcon.pdf; sourceTree = "<group>"; };
+		D420BD682163B94000ADA904 /* shareIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareIcon.pdf; sourceTree = "<group>"; };
+		D420BD692163B94000ADA904 /* playButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playButtonIcon.pdf; sourceTree = "<group>"; };
+		D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseButtonIcon.pdf; sourceTree = "<group>"; };
+		D420BD6B2163B94000ADA904 /* combinedShapeBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = combinedShapeBackground.pdf; sourceTree = "<group>"; };
+		D420BD6C2163B94000ADA904 /* settingsIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsIcon.pdf; sourceTree = "<group>"; };
 		D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
 		D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Ext.swift"; sourceTree = "<group>"; };
 		D452E80820BEEAC300F05FC6 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -260,6 +272,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D420BD662163B93100ADA904 /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				D420BD6B2163B94000ADA904 /* combinedShapeBackground.pdf */,
+				D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */,
+				D420BD692163B94000ADA904 /* playButtonIcon.pdf */,
+				D420BD672163B93F00ADA904 /* resetIcon.pdf */,
+				D420BD6C2163B94000ADA904 /* settingsIcon.pdf */,
+				D420BD682163B94000ADA904 /* shareIcon.pdf */,
+			);
+			path = v2;
+			sourceTree = "<group>";
+		};
 		D452E80520BEEAC300F05FC6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +341,7 @@
 		D452E81520BEEAC300F05FC6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D420BD662163B93100ADA904 /* v2 */,
 				D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */,
 				D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */,
 				D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */,
@@ -628,16 +654,21 @@
 			files = (
 				D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */,
 				D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */,
+				D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
 				D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
+				D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */,
+				D420BD712163B94000ADA904 /* combinedShapeBackground.pdf in Resources */,
 				D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */,
 				D452E84220BEEAC300F05FC6 /* background-i6.pdf in Resources */,
 				D452E84B20BEEAC300F05FC6 /* settingsNormal.pdf in Resources */,
 				D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */,
 				D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */,
 				D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */,
+				D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */,
 				D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */,
+				D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */,
 				D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
 				D452E84120BEEAC300F05FC6 /* background-i5.pdf in Resources */,
@@ -646,6 +677,7 @@
 				D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */,
 				D452E84A20BEEAC300F05FC6 /* reset.pdf in Resources */,
 				D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */,
+				D420BD6E2163B94000ADA904 /* shareIcon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +765,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -742,6 +775,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",

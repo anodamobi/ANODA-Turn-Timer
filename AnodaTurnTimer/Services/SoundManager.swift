@@ -13,13 +13,13 @@ class SoundManager {
     
     static func startEndSound() {
         if let url = R.file.start_endMp3(()) {
-            Sound.play(url: url)
+//            Sound.play(url: url)
         }
     }
     
     static func alertSound() {
         if let url = R.file.alarmMp3(()) {
-            Sound.play(url: url)
+//            Sound.play(url: url)
         }
     }
 }

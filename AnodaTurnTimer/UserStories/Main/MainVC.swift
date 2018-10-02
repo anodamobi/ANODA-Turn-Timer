@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import Closures
 
 class MainVC: UIViewController, StoreSubscriber {
     
@@ -56,7 +57,7 @@ class MainVC: UIViewController, StoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        contentView.pauseButton.addTargetClosure { (button) in
+        contentView.pauseButton.onTap { [unowned self] in
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
@@ -64,25 +65,25 @@ class MainVC: UIViewController, StoreSubscriber {
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
             } else if state == .isOut {
-                replayAction()
+                self.replayAction()
             }
         }
         
-        contentView.restartButton.addTargetClosure { (button) in
-            replayAction()
+        contentView.restartButton.onTap { [unowned self] in
+            self.replayAction()
         }
         
-        contentView.settingsButton.addTargetClosure { (button) in
+        contentView.settingsButton.onTap { [unowned self] in
             store.dispatch(RoundPausedAction())
             self.navigationController?.pushViewController(SettingsVC(), animated: true)
         }
-        
-        func replayAction() {
-            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
-                                             beepValue: store.state.timerAppState.beepInterval))
-            store.dispatch(RoundInitialAction(progress: 0))
-            store.dispatch(RoundRunningAction())
-        }
+    }
+    
+    func replayAction() {
+        store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
+                                         beepValue: store.state.timerAppState.beepInterval))
+        store.dispatch(RoundInitialAction(progress: 0))
+        store.dispatch(RoundRunningAction())
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,4 +1,5 @@
 PODS:
+  - Closures (0.4)
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - Fabric (1.7.7)
@@ -12,6 +13,7 @@ PODS:
   - UIImagePDF (0.9-beta1)
 
 DEPENDENCIES:
+  - Closures
   - Crashlytics
   - Fabric
   - R.swift
@@ -22,7 +24,8 @@ DEPENDENCIES:
   - "UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)"
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - Closures
     - Crashlytics
     - Fabric
     - R.swift
@@ -44,6 +47,7 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:anodamobi/UIImage-PDF.git"
 
 SPEC CHECKSUMS:
+  Closures: fe9ecbda045d8d42cc13520209b4ea5208e38248
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UIImagePDF: 7cae10d97e503ae042a3ebbfa53d19e4bca4daf9
 
-PODFILE CHECKSUM: 4ca5ba69cfd98f4b4f52a10cf7aaaabe21b41e2c
+PODFILE CHECKSUM: 1b343e894ce08c0f90421172ef72e6f7315b3c59
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

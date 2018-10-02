@@ -17,11 +17,12 @@ fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: 
 
 class MainView: UIView {
     
-    let background = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
+    let shareButton = UIButton()
+    let buttonsBackgroundView = UIImageView()
     
     var restartButton: UIButton {
         return pieView.restartButton
@@ -39,12 +40,8 @@ class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
-        addSubview(background)
-        background.setImage(UIImage.backgroudImage())
-        background.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
-        }
+        
+        backgroundColor = .white
         
         addSubview(pieView)
         pieView.snp.makeConstraints { (make) in
@@ -58,27 +55,44 @@ class MainView: UIView {
             make.height.equalTo(UIScreen.width - edge.left - edge.right)
         }
         
-        updatePlay(toPause: false)
-        addSubview(pauseButton)
-        pauseButton.snp.makeConstraints { (make) in
-            
-            make.bottom.equalTo(self.safeArea.bottom).offset(-20)
-            make.left.equalTo(self).offset(20)
+        addSubview(buttonsBackgroundView)
+        buttonsBackgroundView.setImage(UIImage(pdfNamed: "combinedShapeBackground", atWidth: 315))
+        buttonsBackgroundView.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-120)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(315)
+            $0.height.equalTo(125)
         }
         
-        settingsButton.setupButtonImages(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
-        addSubview(settingsButton)
-        settingsButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(pauseButton)
-            make.right.equalTo(self).offset(-20)
+        buttonsBackgroundView.addSubview(settingsButton)
+        settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIcon", "settingsIcon"), width: 50)
+        settingsButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(12)
+            $0.size.equalTo(50)
+        }
+      
+        buttonsBackgroundView.addSubview(pauseButton)
+        updatePlay(toPause: false)
+        pauseButton.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(100)
+        }
+        
+        buttonsBackgroundView.addSubview(shareButton)
+        shareButton.setupButtonImages(imageName: ("shareIcon", "shareIcon", "shareIcon"), width: 50)
+        shareButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().offset(-12)
+            $0.size.equalTo(50)
         }
     }
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setupButtonImages(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("pauseButtonIcon", "pauseButtonIcon", "pauseButtonIcon"), width: 100)
         } else {
-            pauseButton.setupButtonImages(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("playButtonIcon", "playButtonIcon", "playButtonIcon"), width: 100)
         }
     }
     

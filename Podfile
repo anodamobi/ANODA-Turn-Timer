@@ -15,6 +15,7 @@ abstract_target 'AnodaTurnTimerAbstract' do
         # UI Controls
         pod 'SwiftySound'
         pod 'R.swift'
+        pod 'Closures'
         # Analytics / Testing / Reporting
 
         pod 'Fabric'
