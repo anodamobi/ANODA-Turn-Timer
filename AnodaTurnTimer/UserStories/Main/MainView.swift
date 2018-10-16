@@ -21,8 +21,9 @@ class MainView: UIView {
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
-    let shareButton = UIButton()
-    let buttonsBackgroundView = UIImageView()
+    let replayButton = UIButton()
+    let buttonsContainerView = UIView()
+    let buttonsBackgroundImage = UIImageView()
     
     var restartButton: UIButton {
         return pieView.restartButton
@@ -33,7 +34,7 @@ class MainView: UIView {
     }
     
     func updateRestartIcon(visible: Bool) {
-        let image: UIImage = UIImage.init(pdfNamed: "reset", atHeight: 192)
+        let image: UIImage = UIImage.init(pdfNamed: "resetIcon", atHeight: 192)
         restartButton.setImage(visible ? image : nil, for: .normal)
         timerLabel.isHidden = visible
     }
@@ -55,16 +56,21 @@ class MainView: UIView {
             make.height.equalTo(UIScreen.width - edge.left - edge.right)
         }
         
-        addSubview(buttonsBackgroundView)
-        buttonsBackgroundView.setImage(UIImage(pdfNamed: "combinedShapeBackground", atWidth: 315))
-        buttonsBackgroundView.snp.makeConstraints {
+        addSubview(buttonsContainerView)
+        buttonsContainerView.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-120)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(315)
             $0.height.equalTo(125)
         }
         
-        buttonsBackgroundView.addSubview(settingsButton)
+        buttonsContainerView.addSubview(buttonsBackgroundImage)
+        buttonsBackgroundImage.setImage(UIImage(pdfNamed: "buttonsContainerBackground", atWidth: 315))
+        buttonsBackgroundImage.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        buttonsContainerView.addSubview(settingsButton)
         settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIcon", "settingsIcon"), width: 50)
         settingsButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
@@ -72,16 +78,16 @@ class MainView: UIView {
             $0.size.equalTo(50)
         }
       
-        buttonsBackgroundView.addSubview(pauseButton)
+        buttonsContainerView.addSubview(pauseButton)
         updatePlay(toPause: false)
         pauseButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(100)
         }
         
-        buttonsBackgroundView.addSubview(shareButton)
-        shareButton.setupButtonImages(imageName: ("shareIcon", "shareIcon", "shareIcon"), width: 50)
-        shareButton.snp.makeConstraints {
+        buttonsContainerView.addSubview(replayButton)
+        replayButton.setupButtonImages(imageName: ("resetIcon", "resetIcon", "resetIcon"), width: 50)
+        replayButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().offset(-12)
             $0.size.equalTo(50)
@@ -142,17 +148,17 @@ class MainPieView: UIView {
 
         self.layer.insertSublayer(circleStrokeLayer, at: 0)
 
-        pieLayer.setCircleStrokeWidth(5)
-        pieLayer.setCircleStrokeColor(UIColor.clear,
-                                      circleFillColor: UIColor.clear,
-                                      progressCircleStrokeColor: UIColor.clear,
-                                      progressCircleFillColor: UIColor.white.withAlphaComponent(0.2))
+        pieLayer.setCircleStrokeWidth(15)
+        pieLayer.setCircleStrokeColor(UIColor.darkGray,
+                                      circleFillColor: UIColor.white,
+                                      progressCircleStrokeColor: UIColor.mango,
+                                      progressCircleFillColor: UIColor.clear)
 
         pieLayer.progress = 1
 
         addSubview(timerLabel)
         timerLabel.font = UIFont.gtTimerFont()
-        timerLabel.textColor = UIColor.gtVeryLightPink
+        timerLabel.textColor = UIColor.blackText
         timerLabel.textAlignment = .center
         timerLabel.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
@@ -162,7 +168,10 @@ class MainPieView: UIView {
         restartButton.setImage(UIImage(), for: .highlighted)
         addSubview(restartButton)
         restartButton.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            make.top.equalTo(self).offset(-67)
+            make.bottom.equalTo(self).offset(67)
+            make.left.equalTo(self).offset(-64)
+            make.right.equalTo(self).offset(43)
         }
     }
 }

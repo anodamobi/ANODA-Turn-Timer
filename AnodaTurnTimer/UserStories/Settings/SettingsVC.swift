@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import SwiftyUserDefaults
 import Crashlytics
+import IQKeyboardManagerSwift
 
 class SettingsVC: UIViewController {
     
     let contentView = SettingsView()
+    let textFieldDelegate = TimeFieldDelegate()
     
     var timeInterval: Int = 0
     var beepInterval: Int = 0
@@ -27,17 +29,6 @@ class SettingsVC: UIViewController {
         
         timeInterval = store.state.timerAppState.timeInterval
         beepInterval = store.state.timerAppState.beepInterval
-        
-        contentView.roundDurationSection.picker.timeInterval = Double(timeInterval)
-        contentView.beepSection.picker.timeInterval = Double(beepInterval)
-        
-        contentView.roundDurationSection.picker.addTarget(self,
-                                                          action: #selector(timeChanged(_:)),
-                                                          for: .valueChanged)
-        
-        contentView.beepSection.picker.addTarget(self,
-                                                 action: #selector(beepChanged(_:)),
-                                                 for: .valueChanged)
         
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             
@@ -55,6 +46,12 @@ class SettingsVC: UIViewController {
                 self.present(activityVC, animated: true, completion: nil)
             }
         }
+        
+        contentView.roundDurationSection.durationTextField.delegate = textFieldDelegate
+        contentView.beepSection.durationTextField.delegate = textFieldDelegate
+    
+        self.hideKeyboardOnTap()
+        
     }
     
     @objc func timeChanged(_ picker: LETimeIntervalPicker) {

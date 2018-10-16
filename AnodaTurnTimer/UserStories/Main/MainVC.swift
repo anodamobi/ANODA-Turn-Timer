@@ -38,13 +38,13 @@ class MainVC: UIViewController, StoreSubscriber {
         case .initial:
             contentView.pieView.update(to: 0, animated: true)
             contentView.updateRestartIcon(visible: false)
-
+            
         case .running:
             self.contentView.updatePlay(toPause: true)
-
+            
         case .paused:
             self.contentView.updatePlay(toPause: false)
-
+            
         case .isOut:
             self.contentView.updateRestartIcon(visible: true)
             self.contentView.updatePlay(toPause: false)
@@ -52,11 +52,15 @@ class MainVC: UIViewController, StoreSubscriber {
         
         updated(timeInterval: state.roundTimeProgress)
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        contentView.restartButton.onTap { [unowned self] in
+            self.replayAction()
+        }
+        
         contentView.pauseButton.onTap { [unowned self] in
             let state: TimerState = store.state.roundAppState.roundState
             
@@ -69,13 +73,13 @@ class MainVC: UIViewController, StoreSubscriber {
             }
         }
         
-        contentView.restartButton.onTap { [unowned self] in
-            self.replayAction()
-        }
-        
         contentView.settingsButton.onTap { [unowned self] in
             store.dispatch(RoundPausedAction())
             self.navigationController?.pushViewController(SettingsVC(), animated: true)
+        }
+        
+        contentView.replayButton.onTap { [unowned self] in
+            self.replayAction()
         }
     }
     
