@@ -11,11 +11,13 @@ import UIKit
 import SwiftyUserDefaults
 import Crashlytics
 import IQKeyboardManagerSwift
+import InputMask
 
-class SettingsVC: UIViewController {
+class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
+    
+    let textFieldDelegate: MaskedTextFieldDelegate = MaskedTextFieldDelegate()
     
     let contentView = SettingsView()
-    let textFieldDelegate = TimeFieldDelegate()
     
     var timeInterval: Int = 0
     var beepInterval: Int = 0
@@ -30,10 +32,13 @@ class SettingsVC: UIViewController {
         timeInterval = store.state.timerAppState.timeInterval
         beepInterval = store.state.timerAppState.beepInterval
         
+        contentView.roundDurationSection.timeTextField.text = String.timeString(time: TimeInterval(timeInterval))
+        contentView.beepSection.timeTextField.text = String.timeString(time: TimeInterval(beepInterval))
+        
         contentView.backButton.addTargetClosure { [unowned self] (button) in
-            
+            self.updateTimerSettings()
             store.dispatch(TimerUpdateSettingsAction(timeInterval: self.timeInterval,
-                                               beepInterval: self.beepInterval))
+                                                     beepInterval: self.beepInterval))
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -47,20 +52,48 @@ class SettingsVC: UIViewController {
             }
         }
         
-        contentView.roundDurationSection.durationTextField.delegate = textFieldDelegate
-        contentView.beepSection.durationTextField.delegate = textFieldDelegate
-    
+        textFieldDelegate.affinityCalculationStrategy = .prefix
+        textFieldDelegate.affineFormats = [ "[00]{:}[00]" ]
+        textFieldDelegate.delegate = self
+        
+        contentView.roundDurationSection.timeTextField.delegate = textFieldDelegate
+        contentView.roundDurationSection.timeTextField.tag = 0
+        contentView.beepSection.timeTextField.delegate = textFieldDelegate
+        contentView.beepSection.timeTextField.tag = 1
+        
         self.hideKeyboardOnTap()
         
     }
     
-    @objc func timeChanged(_ picker: LETimeIntervalPicker) {
-        timeInterval = Int(picker.timeInterval)
-        WatchConnectivityService.shared.updateTimeInterval(interval: picker.timeInterval, type: .roundDuration)
+    func updateTimerSettings(){
+        guard let roundDurationValue = contentView.roundDurationSection.timeTextField.text, let beepIntervalValue = contentView.beepSection.timeTextField.text else{
+            return
+        }
+        // Get round duration
+        if(roundDurationValue.contains(":")){
+            let values: [String] = roundDurationValue.components(separatedBy: ":")
+            let minutes: Int = (values[0] as NSString).integerValue * 60
+            let seconds: Int = (values[1] as NSString).integerValue
+            timeInterval = minutes + seconds
+        } else {
+            let minutes = roundDurationValue as NSString
+            timeInterval = minutes.integerValue * 60
+        }
+        
+        // Get beep duration
+        if(beepIntervalValue.contains(":")){
+            let values: [String] = beepIntervalValue.components(separatedBy: ":")
+            let minutes: Int = (values[0] as NSString).integerValue * 60
+            let seconds: Int = (values[1] as NSString).integerValue
+            beepInterval = minutes + seconds
+        } else {
+            let minutes = beepIntervalValue as NSString
+            beepInterval = minutes.integerValue * 60
+        }
+        
+        // Update watch OS values
+        WatchConnectivityService.shared.updateTimeInterval(interval: TimeInterval(timeInterval), type: .roundDuration)
+        WatchConnectivityService.shared.updateTimeInterval(interval: TimeInterval(beepInterval), type: .beepInterval)
     }
     
-    @objc func beepChanged(_ picker: LETimeIntervalPicker) {
-        beepInterval = Int(picker.timeInterval)
-        WatchConnectivityService.shared.updateTimeInterval(interval: picker.timeInterval, type: .beepInterval)
-    }
 }

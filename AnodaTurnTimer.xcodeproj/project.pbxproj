@@ -14,7 +14,8 @@
 		7C179A2C217610D80063C3F8 /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */; };
 		7C179A2D217610D80063C3F8 /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */; };
 		7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */; };
-		7C179A32217632FF0063C3F8 /* TimeFieldDelefate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A31217632FF0063C3F8 /* TimeFieldDelefate.swift */; };
+		7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */; };
+		7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -141,7 +142,8 @@
 		7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
 		7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
 		7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
-		7C179A31217632FF0063C3F8 /* TimeFieldDelefate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldDelefate.swift; sourceTree = "<group>"; };
+		7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewBackground.pdf; sourceTree = "<group>"; };
+		7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewResetIcon.pdf; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -281,7 +283,9 @@
 				D420BD6B2163B94000ADA904 /* buttonsContainerBackground.pdf */,
 				D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */,
 				D420BD692163B94000ADA904 /* playButtonIcon.pdf */,
+				7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */,
 				7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */,
+				7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */,
 				7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */,
 				D420BD672163B93F00ADA904 /* resetIcon.pdf */,
 				D420BD6C2163B94000ADA904 /* settingsIcon.pdf */,
@@ -406,7 +410,6 @@
 			children = (
 				D452E83520BEEAC300F05FC6 /* SettingsVC.swift */,
 				D452E83620BEEAC300F05FC6 /* SettingsView.swift */,
-				7C179A31217632FF0063C3F8 /* TimeFieldDelefate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -664,12 +667,14 @@
 				D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */,
 				D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */,
 				D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */,
+				7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */,
 				D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */,
 				D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */,
 				D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
 				D452E84520BEEAC300F05FC6 /* cancelPressed.pdf in Resources */,
 				D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */,
+				7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */,
 				D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,6 +768,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -774,6 +780,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -846,7 +853,6 @@
 				D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */,
 				D452E85520BEEAC300F05FC6 /* Middleware.swift in Sources */,
 				D452E85F20BEEAC300F05FC6 /* Enums.swift in Sources */,
-				7C179A32217632FF0063C3F8 /* TimeFieldDelefate.swift in Sources */,
 				D452E85820BEEAC300F05FC6 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

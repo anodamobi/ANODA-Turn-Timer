@@ -3,6 +3,7 @@ PODS:
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - Fabric (1.7.7)
+  - InputMask (4.0.0)
   - IQKeyboardManagerSwift (6.1.1)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Closures
   - Crashlytics
   - Fabric
+  - InputMask
   - IQKeyboardManagerSwift
   - R.swift
   - ReSwift (~> 4.0.1)
@@ -30,6 +32,7 @@ SPEC REPOS:
     - Closures
     - Crashlytics
     - Fabric
+    - InputMask
     - IQKeyboardManagerSwift
     - R.swift
     - R.swift.Library
@@ -53,6 +56,7 @@ SPEC CHECKSUMS:
   Closures: fe9ecbda045d8d42cc13520209b4ea5208e38248
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  InputMask: e3fe4ee45ce70241fd76684c1e9d6f98e1492eab
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
@@ -62,6 +66,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UIImagePDF: 7cae10d97e503ae042a3ebbfa53d19e4bca4daf9
 
-PODFILE CHECKSUM: 5796822b68494107ffa01866c75d8640861d8a53
+PODFILE CHECKSUM: e3635c9938ce07c93e297577e6ae480667d5db9a
 
 COCOAPODS: 1.5.3

@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Defaults[.wasLaunched] != true {
             
             Defaults[.wasLaunched] = true
-            Defaults[.timerInterval] = 5
-            Defaults[.beepInterval] = 1
+            Defaults[.timerInterval] = 60
+            Defaults[.beepInterval] = 10
         }
         IQKeyboardManager.shared.enable = true
         

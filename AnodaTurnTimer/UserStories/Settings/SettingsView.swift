@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 import SnapKit
+import InputMask
 
 class SettingsView: UIView {
-    
+
     let background: UIImageView = UIImageView()
     
     let backButton: UIButton = UIButton()
@@ -70,13 +71,14 @@ class SettingsView: UIView {
 
 
 class SettingsSectionView: UIView {
-    
+        
     let title: UILabel = UILabel()
     let background: UIView = UIView()
-    let durationTextField: UITextField = UITextField()
+    let timeTextField: UITextField = UITextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+                
         layoutView()
     }
     
@@ -106,20 +108,20 @@ class SettingsSectionView: UIView {
             make.width.equalTo(248)
         }
         
-        background.addSubview(durationTextField)
-        durationTextField.textColor = UIColor.mango
-        durationTextField.font = UIFont.gtSettingsDataFont()
-        durationTextField.keyboardType = .numberPad
-        durationTextField.textAlignment = .center
+        background.addSubview(timeTextField)
+        timeTextField.textColor = UIColor.mango
+        timeTextField.tintColor = UIColor.gtSlateGrey
+        timeTextField.font = UIFont.gtSettingsDataFont()
+        timeTextField.keyboardType = .numberPad
+        timeTextField.textAlignment = .center
         
-        durationTextField.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self)
+        timeTextField.snp.makeConstraints { (make) in
+            make.centerY.equalTo(background.snp.centerY)
             make.top.equalToSuperview().offset(-4)
             make.bottom.equalToSuperview().offset(4)
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
-            
         }
-  
+        
     }
 }

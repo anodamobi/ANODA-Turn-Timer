@@ -17,6 +17,10 @@ fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: 
 
 class MainView: UIView {
     
+    var pieViewSize: CGFloat = 0.0
+    
+    let pieViewContainerView = UIView()
+    let pieViewBacgroundImage = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
@@ -34,7 +38,7 @@ class MainView: UIView {
     }
     
     func updateRestartIcon(visible: Bool) {
-        let image: UIImage = UIImage.init(pdfNamed: "resetIcon", atHeight: 192)
+        let image: UIImage = UIImage.init(pdfNamed: "pieViewResetIcon", atHeight: 116)
         restartButton.setImage(visible ? image : nil, for: .normal)
         timerLabel.isHidden = visible
     }
@@ -44,21 +48,31 @@ class MainView: UIView {
         
         backgroundColor = .white
         
-        addSubview(pieView)
-        pieView.snp.makeConstraints { (make) in
-            
-            //HACK (Pavel.Mosunov) to not make a huge constraints for safe area as safeArea ext cannot into EDGES :'(
+        addSubview(pieViewContainerView)
+        pieViewContainerView.backgroundColor = UIColor.clear
+        pieViewContainerView.snp.makeConstraints { (make) in
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
             let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
             let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
-            
             make.top.left.right.equalTo(self).inset(edge)
-            make.height.equalTo(UIScreen.width - edge.left - edge.right)
+            pieViewSize = UIScreen.width - edge.left - edge.right
+            make.height.equalTo(pieViewSize)
+        }
+        
+        pieViewContainerView.addSubview(pieViewBacgroundImage)
+        pieViewBacgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: pieViewSize))
+        pieViewBacgroundImage.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        pieViewContainerView.addSubview(pieView)
+        pieView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
         addSubview(buttonsContainerView)
         buttonsContainerView.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-120)
+            $0.top.equalTo(pieViewContainerView.snp.bottom).offset(83)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(315)
             $0.height.equalTo(125)
@@ -149,7 +163,7 @@ class MainPieView: UIView {
         self.layer.insertSublayer(circleStrokeLayer, at: 0)
 
         pieLayer.setCircleStrokeWidth(15)
-        pieLayer.setCircleStrokeColor(UIColor.darkGray,
+        pieLayer.setCircleStrokeColor(UIColor.clear,
                                       circleFillColor: UIColor.white,
                                       progressCircleStrokeColor: UIColor.mango,
                                       progressCircleFillColor: UIColor.clear)
