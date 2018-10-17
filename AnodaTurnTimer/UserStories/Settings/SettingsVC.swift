@@ -15,7 +15,7 @@ import InputMask
 
 class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
     
-    let textFieldDelegate: MaskedTextFieldDelegate = MaskedTextFieldDelegate()
+    let textFieldDelegate: MaskedTextFieldDelegate = TimeFieldDelegate()
     
     let contentView = SettingsView()
     
@@ -62,7 +62,6 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
         contentView.beepSection.timeTextField.tag = 1
         
         self.hideKeyboardOnTap()
-        
     }
     
     func updateTimerSettings(){
@@ -70,30 +69,25 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
             return
         }
         // Get round duration
-        if(roundDurationValue.contains(":")){
-            let values: [String] = roundDurationValue.components(separatedBy: ":")
-            let minutes: Int = (values[0] as NSString).integerValue * 60
-            let seconds: Int = (values[1] as NSString).integerValue
-            timeInterval = minutes + seconds
-        } else {
-            let minutes = roundDurationValue as NSString
-            timeInterval = minutes.integerValue * 60
-        }
-        
+        timeInterval = parseTextToTime(userInput: roundDurationValue)
         // Get beep duration
-        if(beepIntervalValue.contains(":")){
-            let values: [String] = beepIntervalValue.components(separatedBy: ":")
-            let minutes: Int = (values[0] as NSString).integerValue * 60
-            let seconds: Int = (values[1] as NSString).integerValue
-            beepInterval = minutes + seconds
-        } else {
-            let minutes = beepIntervalValue as NSString
-            beepInterval = minutes.integerValue * 60
-        }
-        
+        beepInterval = parseTextToTime(userInput: beepIntervalValue)        
         // Update watch OS values
         WatchConnectivityService.shared.updateTimeInterval(interval: TimeInterval(timeInterval), type: .roundDuration)
         WatchConnectivityService.shared.updateTimeInterval(interval: TimeInterval(beepInterval), type: .beepInterval)
+    }
+    
+    func parseTextToTime(userInput: String) -> Int{
+        // Get round duration
+        if(userInput.contains(":")){
+            let values: [String] = userInput.components(separatedBy: ":")
+            let minutes: Int = (values[0] as NSString).integerValue * 60
+            let seconds: Int = (values[1] as NSString).integerValue
+            return minutes + seconds
+        } else {
+            let minutes = userInput as NSString
+            return minutes.integerValue * 60
+        }
     }
     
 }

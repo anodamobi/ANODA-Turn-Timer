@@ -20,14 +20,14 @@ class MainView: UIView {
     var pieViewSize: CGFloat = 0.0
     
     let pieViewContainerView = UIView()
-    let pieViewBacgroundImage = UIImageView()
+    let pieViewBackgroundImage = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
     let replayButton = UIButton()
-    let buttonsContainerView = UIView()
-    let buttonsBackgroundImage = UIImageView()
+    private let buttonsContainerView = UIView()
+    private let buttonsBackgroundImage = UIImageView()
     
     var restartButton: UIButton {
         return pieView.restartButton
@@ -45,7 +45,10 @@ class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupLayout()
+    }
+    
+    func setupLayout(){
         backgroundColor = .white
         
         addSubview(pieViewContainerView)
@@ -59,9 +62,9 @@ class MainView: UIView {
             make.height.equalTo(pieViewSize)
         }
         
-        pieViewContainerView.addSubview(pieViewBacgroundImage)
-        pieViewBacgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: pieViewSize))
-        pieViewBacgroundImage.snp.makeConstraints{ (make) in
+        pieViewContainerView.addSubview(pieViewBackgroundImage)
+        pieViewBackgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: pieViewSize))
+        pieViewBackgroundImage.snp.makeConstraints{ (make) in
             make.edges.equalToSuperview()
         }
         
@@ -91,7 +94,7 @@ class MainView: UIView {
             $0.left.equalToSuperview().offset(12)
             $0.size.equalTo(50)
         }
-      
+        
         buttonsContainerView.addSubview(pauseButton)
         updatePlay(toPause: false)
         pauseButton.snp.makeConstraints {
@@ -152,7 +155,6 @@ class MainPieView: UIView {
             make.edges.equalTo(self)
         }
 
-
         let ovalPath = UIBezierPath(ovalIn: self.frame)
         let circleStrokeLayer = CAShapeLayer()
         circleStrokeLayer.path = ovalPath.cgPath
@@ -167,7 +169,6 @@ class MainPieView: UIView {
                                       circleFillColor: UIColor.white,
                                       progressCircleStrokeColor: UIColor.mango,
                                       progressCircleFillColor: UIColor.clear)
-
         pieLayer.progress = 1
 
         addSubview(timerLabel)
@@ -178,14 +179,11 @@ class MainPieView: UIView {
             make.edges.equalTo(self)
         }
         
-        restartButton.setImage(UIImage(), for: .selected) //todo:
+        restartButton.setImage(UIImage(), for: .selected)
         restartButton.setImage(UIImage(), for: .highlighted)
         addSubview(restartButton)
         restartButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(-67)
-            make.bottom.equalTo(self).offset(67)
-            make.left.equalTo(self).offset(-64)
-            make.right.equalTo(self).offset(43)
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 67, 64, 43))
         }
     }
 }

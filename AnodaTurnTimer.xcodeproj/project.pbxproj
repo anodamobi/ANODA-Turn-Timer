@@ -16,6 +16,7 @@
 		7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */; };
 		7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */; };
 		7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */; };
+		7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -144,6 +145,7 @@
 		7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewBackground.pdf; sourceTree = "<group>"; };
 		7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewResetIcon.pdf; sourceTree = "<group>"; };
+		7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldDelegate.swift; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			children = (
 				D452E83520BEEAC300F05FC6 /* SettingsVC.swift */,
 				D452E83620BEEAC300F05FC6 /* SettingsView.swift */,
+				7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				D452E85D20BEEAC300F05FC6 /* SettingsVC.swift in Sources */,
 				7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */,
 				D452E83D20BEEAC300F05FC6 /* UIColor+Ext.swift in Sources */,
+				7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */,
 				D452E83E20BEEAC300F05FC6 /* UIDevice+Ext.swift in Sources */,
 				D452E85420BEEAC300F05FC6 /* AppState.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,

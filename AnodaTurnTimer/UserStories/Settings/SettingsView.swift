@@ -22,7 +22,6 @@ class SettingsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
         
         layoutView()
     }
@@ -32,6 +31,7 @@ class SettingsView: UIView {
     }
     
     func layoutView() {
+        backgroundColor = .white
         
         addSubview(roundDurationSection)
         roundDurationSection.title.text = Localizable.roundDuration(())
@@ -98,13 +98,14 @@ class SettingsSectionView: UIView {
         }
         
         addSubview(background)
+        let backgroundHeight: CGFloat = 91.0
         background.backgroundColor = UIColor.mango10
-        background.layer.cornerRadius = 91/2
+        background.layer.cornerRadius = backgroundHeight/2
         background.clipsToBounds = true
         background.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom)
             make.centerX.equalTo(self)
-            make.height.equalTo(91)
+            make.height.equalTo(backgroundHeight)
             make.width.equalTo(248)
         }
         
