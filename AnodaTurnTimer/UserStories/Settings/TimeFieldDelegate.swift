@@ -9,7 +9,7 @@
 import UIKit
 import InputMask
 
-class TimeFieldDelegate: MaskedTextFieldDelegate{
+class TimeFieldHandler: MaskedTextFieldDelegate{
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         let input: String = textField.text ?? ""

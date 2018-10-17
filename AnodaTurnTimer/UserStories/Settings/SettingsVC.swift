@@ -15,7 +15,7 @@ import InputMask
 
 class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
     
-    let textFieldDelegate: MaskedTextFieldDelegate = TimeFieldDelegate()
+    let textFieldHandler: MaskedTextFieldDelegate = TimeFieldHandler()
     
     let contentView = SettingsView()
     
@@ -52,13 +52,13 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
             }
         }
         
-        textFieldDelegate.affinityCalculationStrategy = .prefix
-        textFieldDelegate.affineFormats = [ "[00]{:}[00]" ]
-        textFieldDelegate.delegate = self
+        textFieldHandler.affinityCalculationStrategy = .prefix
+        textFieldHandler.affineFormats = [ "[00]{:}[00]" ]
+        textFieldHandler.delegate = self
         
-        contentView.roundDurationSection.timeTextField.delegate = textFieldDelegate
+        contentView.roundDurationSection.timeTextField.delegate = textFieldHandler
         contentView.roundDurationSection.timeTextField.tag = 0
-        contentView.beepSection.timeTextField.delegate = textFieldDelegate
+        contentView.beepSection.timeTextField.delegate = textFieldHandler
         contentView.beepSection.timeTextField.tag = 1
         
         self.hideKeyboardOnTap()

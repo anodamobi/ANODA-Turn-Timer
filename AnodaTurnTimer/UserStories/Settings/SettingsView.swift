@@ -118,10 +118,7 @@ class SettingsSectionView: UIView {
         
         timeTextField.snp.makeConstraints { (make) in
             make.centerY.equalTo(background.snp.centerY)
-            make.top.equalToSuperview().offset(-4)
-            make.bottom.equalToSuperview().offset(4)
-            make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-30)
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(4, 30, 4, 30))
         }
         
     }
