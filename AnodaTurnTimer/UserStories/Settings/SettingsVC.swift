@@ -61,7 +61,12 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
         contentView.beepSection.timeTextField.delegate = textFieldHandler
         contentView.beepSection.timeTextField.tag = 1
         
+        IQKeyboardManager.shared.enable = true
         self.hideKeyboardOnTap()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        IQKeyboardManager.shared.enable = false
     }
     
     func updateTimerSettings(){

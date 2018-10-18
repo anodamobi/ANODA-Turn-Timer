@@ -33,16 +33,6 @@
 		D452E83E20BEEAC300F05FC6 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */; };
 		D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */; };
 		D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452E81020BEEAC300F05FC6 /* Assets.xcassets */; };
-		D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */; };
-		D452E84520BEEAC300F05FC6 /* cancelPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */; };
-		D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */; };
-		D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81920BEEAC300F05FC6 /* pausePressed.pdf */; };
-		D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81A20BEEAC300F05FC6 /* playNormal.pdf */; };
-		D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81B20BEEAC300F05FC6 /* playPressed.pdf */; };
-		D452E84B20BEEAC300F05FC6 /* settingsNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */; };
-		D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */; };
-		D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */; };
-		D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E82020BEEAC300F05FC6 /* sharePressed.pdf */; };
 		D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D452E82120BEEAC300F05FC6 /* Localizable.strings */; };
 		D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D452E82320BEEAC300F05FC6 /* alarm.mp3 */; };
 		D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D452E82420BEEAC300F05FC6 /* start_end.mp3 */; };
@@ -162,16 +152,6 @@
 		D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
 		D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rancho-Regular.ttf"; sourceTree = "<group>"; };
 		D452E81020BEEAC300F05FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancelNormal.pdf; sourceTree = "<group>"; };
-		D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancelPressed.pdf; sourceTree = "<group>"; };
-		D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseNormal.pdf; sourceTree = "<group>"; };
-		D452E81920BEEAC300F05FC6 /* pausePressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pausePressed.pdf; sourceTree = "<group>"; };
-		D452E81A20BEEAC300F05FC6 /* playNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playNormal.pdf; sourceTree = "<group>"; };
-		D452E81B20BEEAC300F05FC6 /* playPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playPressed.pdf; sourceTree = "<group>"; };
-		D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsNormal.pdf; sourceTree = "<group>"; };
-		D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsPressed.pdf; sourceTree = "<group>"; };
-		D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareNormal.pdf; sourceTree = "<group>"; };
-		D452E82020BEEAC300F05FC6 /* sharePressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sharePressed.pdf; sourceTree = "<group>"; };
 		D452E82120BEEAC300F05FC6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D452E82320BEEAC300F05FC6 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		D452E82420BEEAC300F05FC6 /* start_end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_end.mp3; sourceTree = "<group>"; };
@@ -343,16 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				D420BD662163B93100ADA904 /* v2 */,
-				D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */,
-				D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */,
-				D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */,
-				D452E81920BEEAC300F05FC6 /* pausePressed.pdf */,
-				D452E81A20BEEAC300F05FC6 /* playNormal.pdf */,
-				D452E81B20BEEAC300F05FC6 /* playPressed.pdf */,
-				D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */,
-				D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */,
-				D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */,
-				D452E82020BEEAC300F05FC6 /* sharePressed.pdf */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -653,11 +623,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */,
 				D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */,
 				D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
-				D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
 				D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */,
 				D420BD712163B94000ADA904 /* buttonsContainerBackground.pdf in Resources */,
@@ -665,20 +633,12 @@
 				D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */,
 				7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */,
 				7C179A2C217610D80063C3F8 /* shareButtonIcon.pdf in Resources */,
-				D452E84B20BEEAC300F05FC6 /* settingsNormal.pdf in Resources */,
-				D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */,
-				D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */,
-				D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */,
 				D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */,
 				7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */,
-				D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */,
 				D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */,
-				D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
-				D452E84520BEEAC300F05FC6 /* cancelPressed.pdf in Resources */,
 				D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */,
 				7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */,
-				D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

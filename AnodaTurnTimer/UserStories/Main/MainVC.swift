@@ -40,14 +40,14 @@ class MainVC: UIViewController, StoreSubscriber {
             contentView.updateRestartIcon(visible: false)
             
         case .running:
-            self.contentView.updatePlay(toPause: true)
+            contentView.updatePlay(toPause: true)
             
         case .paused:
-            self.contentView.updatePlay(toPause: false)
+            contentView.updatePlay(toPause: false)
             
         case .isOut:
-            self.contentView.updateRestartIcon(visible: true)
-            self.contentView.updatePlay(toPause: false)
+            contentView.updateRestartIcon(visible: true)
+            contentView.updatePlay(toPause: false)
         }
         
         updated(timeInterval: state.roundTimeProgress)

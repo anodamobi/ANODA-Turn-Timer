@@ -17,8 +17,6 @@ fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: 
 
 class MainView: UIView {
     
-    var pieViewSize: CGFloat = 0.0
-    
     let pieViewContainerView = UIView()
     let pieViewBackgroundImage = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
@@ -54,16 +52,16 @@ class MainView: UIView {
         addSubview(pieViewContainerView)
         pieViewContainerView.backgroundColor = UIColor.clear
         pieViewContainerView.snp.makeConstraints { (make) in
+            //HACK (Pavel.Mosunov) to not make a huge constraints for safe area as safeArea ext cannot into EDGES :'(
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
             let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
             let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
             make.top.left.right.equalTo(self).inset(edge)
-            pieViewSize = UIScreen.width - edge.left - edge.right
-            make.height.equalTo(pieViewSize)
+            make.height.equalTo(UIScreen.width - edge.left - edge.right)
         }
         
         pieViewContainerView.addSubview(pieViewBackgroundImage)
-        pieViewBackgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: pieViewSize))
+        pieViewBackgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: sizeConst))
         pieViewBackgroundImage.snp.makeConstraints{ (make) in
             make.edges.equalToSuperview()
         }
@@ -179,8 +177,6 @@ class MainPieView: UIView {
             make.edges.equalTo(self)
         }
         
-        restartButton.setImage(UIImage(), for: .selected)
-        restartButton.setImage(UIImage(), for: .highlighted)
         addSubview(restartButton)
         restartButton.snp.makeConstraints { (make) in
             make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 67, 64, 43))

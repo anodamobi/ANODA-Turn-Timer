@@ -12,7 +12,6 @@ import SwiftyUserDefaults
 import Fabric
 import Crashlytics
 import ReSwift
-import IQKeyboardManagerSwift
 
 typealias Localizable = R.string.localizable
 
@@ -31,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Defaults[.timerInterval] = 60
             Defaults[.beepInterval] = 10
         }
-        IQKeyboardManager.shared.enable = true
         
         store.dispatch(TimerAppLaunchAction(beepInterval: Defaults[.beepInterval],
                                             timeInterval: Defaults[.timerInterval]))

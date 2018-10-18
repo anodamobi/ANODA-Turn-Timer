@@ -28,11 +28,11 @@ extension UIColor {
     }
     
     // MARK: Progress bar (circleStrokeColor)
-    @nonobjc class var ligthGrey: UIColor{
+    @nonobjc class var ligthGrey: UIColor {
         return UIColor(red:  231.0 / 255.0, green: 231.0 / 255.0, blue: 231.0 / 255.0, alpha: 1.0)
     }
     
-    @nonobjc class var darkGrey: UIColor{
+    @nonobjc class var darkGrey: UIColor {
         return UIColor(red:  245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
     }
         

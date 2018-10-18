@@ -10,8 +10,9 @@ import UIKit
 import Closures
 
 extension UIViewController {
+    
     func hideKeyboardOnTap() {
-        view.addTapGesture{ tap in
+        view.addTapGesture { tap in
             tap.cancelsTouchesInView = false
             self.view.endEditing(true)
         }
