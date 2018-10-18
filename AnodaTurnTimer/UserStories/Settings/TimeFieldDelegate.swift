@@ -9,7 +9,7 @@
 import UIKit
 import InputMask
 
-class TimeFieldHandler: MaskedTextFieldDelegate{
+class TimeFieldHandler: MaskedTextFieldDelegate {
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         let input: String = textField.text ?? ""
@@ -17,15 +17,8 @@ class TimeFieldHandler: MaskedTextFieldDelegate{
         return true
     }
     
-    func formatTime(userInput: String) -> String{
-        if(userInput.contains(":")){
-            let values: [String] = userInput.components(separatedBy: ":")
-            let minutes: Int = (values[0] as NSString).integerValue * 60
-            let seconds: Int = (values[1] as NSString).integerValue
-            return String.timeString(time: TimeInterval(minutes+seconds))
-        } else {
-            let minutes = userInput as NSString
-            return String.timeString(time: TimeInterval(minutes.integerValue * 60))
-        }
+    func formatTime(userInput: String) -> String {
+        let time = String.parseTextToTime(text: userInput)
+        return String.timeString(time: TimeInterval(time))
     }
 }

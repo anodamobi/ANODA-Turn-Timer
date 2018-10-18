@@ -33,12 +33,11 @@ class SettingsView: UIView {
         backgroundColor = .white
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = Localizable.roundDuration(())
+        roundDurationSection.title.text = Localizable.roundDuration()
         roundDurationSection.snp.makeConstraints { [unowned self] (make) in
             make.top.equalTo(self.safeArea.top).offset(25)
             make.centerX.equalToSuperview()
-            make.height.equalTo(137)
-            make.width.equalTo(248)
+            make.size.equalTo(CGSize(width: 248, height: 137))
         }
 
         addSubview(beepSection)
@@ -46,8 +45,7 @@ class SettingsView: UIView {
         beepSection.snp.makeConstraints { (make) in
             make.top.equalTo(roundDurationSection.snp.bottom).offset(18)
             make.centerX.equalToSuperview()
-            make.height.equalTo(137)
-            make.width.equalTo(248)
+            make.size.equalTo(CGSize(width: 248, height: 137))
         }
         
         addSubview(backButton)
@@ -55,7 +53,7 @@ class SettingsView: UIView {
         backButton.snp.makeConstraints { (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.left.equalToSuperview().offset(28)
-            make.height.width.equalTo(75)
+            make.size.equalTo(75)
         }
         
         addSubview(shareButton)
@@ -63,7 +61,7 @@ class SettingsView: UIView {
         shareButton.snp.makeConstraints { (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.right.equalToSuperview().offset(-28)
-            make.height.width.equalTo(75)
+            make.size.equalTo(75)
         }
     }
 }
@@ -116,7 +114,7 @@ class SettingsSectionView: UIView {
         timeTextField.textAlignment = .center
         
         timeTextField.snp.makeConstraints { (make) in
-            make.centerY.equalTo(background.snp.centerY)
+            make.centerY.equalToSuperview()
             make.edges.equalToSuperview().inset(UIEdgeInsetsMake(4, 30, 4, 30))
         }
         

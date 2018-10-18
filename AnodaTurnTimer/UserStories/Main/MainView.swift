@@ -17,8 +17,8 @@ fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: 
 
 class MainView: UIView {
     
-    let pieViewContainerView = UIView()
-    let pieViewBackgroundImage = UIImageView()
+    private let pieViewContainerView = UIView()
+    private let pieViewBackgroundImage = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
@@ -46,7 +46,7 @@ class MainView: UIView {
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         backgroundColor = .white
         
         addSubview(pieViewContainerView)
