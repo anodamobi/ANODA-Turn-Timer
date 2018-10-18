@@ -42,11 +42,4 @@ extension UIFont {
         return R.font.passionOneRegular(size: 75.0) ?? UIFont.systemFont(ofSize: 75.0)
     }
     
-    class func gtSubtitleFont() -> UIFont {
-        return R.font.ranchoRegular(size: 30.0) ?? UIFont.systemFont(ofSize: 30.0)
-    }
-    
-    class func gtPickerFont() -> UIFont {
-        return R.font.ranchoRegular(size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
-    }
 }

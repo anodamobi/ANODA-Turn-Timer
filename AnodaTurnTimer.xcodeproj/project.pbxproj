@@ -31,7 +31,6 @@
 		D452E83C20BEEAC300F05FC6 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80920BEEAC300F05FC6 /* UIButton+Ext.swift */; };
 		D452E83D20BEEAC300F05FC6 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */; };
 		D452E83E20BEEAC300F05FC6 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */; };
-		D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */; };
 		D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452E81020BEEAC300F05FC6 /* Assets.xcassets */; };
 		D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D452E82120BEEAC300F05FC6 /* Localizable.strings */; };
 		D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D452E82320BEEAC300F05FC6 /* alarm.mp3 */; };
@@ -150,7 +149,6 @@
 		D452E80920BEEAC300F05FC6 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
-		D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rancho-Regular.ttf"; sourceTree = "<group>"; };
 		D452E81020BEEAC300F05FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D452E82120BEEAC300F05FC6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D452E82320BEEAC300F05FC6 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 		D452E80D20BEEAC300F05FC6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */,
 				7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */,
 			);
 			path = Fonts;
@@ -623,7 +620,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */,
 				D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,

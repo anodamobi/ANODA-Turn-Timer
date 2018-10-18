@@ -39,7 +39,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>PassionOne-Regular.otf</string>
-		<string>Rancho-Regular.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
