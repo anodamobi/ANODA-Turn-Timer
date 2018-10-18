@@ -57,7 +57,7 @@ class MainView: UIView {
             let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
             let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
             make.top.left.right.equalTo(self).inset(edge)
-            make.height.equalTo(UIScreen.width - edge.left - edge.right)
+            make.height.equalTo(sizeConst)
         }
         
         pieViewContainerView.addSubview(pieViewBackgroundImage)
