@@ -15,9 +15,9 @@ import InputMask
 
 class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
     
-    let textFieldHandler: MaskedTextFieldDelegate = TimeFieldHandler()
+    private let textFieldHandler: MaskedTextFieldDelegate = TimeFieldHandler()
     
-    let contentView = SettingsView()
+    private let contentView = SettingsView()
     
     var timeInterval: Int = 0
     var beepInterval: Int = 0
@@ -31,18 +31,18 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
         
         timeInterval = store.state.timerAppState.timeInterval
         beepInterval = store.state.timerAppState.beepInterval
-        
+
         contentView.roundDurationSection.timeTextField.text = String.timeString(time: TimeInterval(timeInterval))
         contentView.beepSection.timeTextField.text = String.timeString(time: TimeInterval(beepInterval))
-        
+
         contentView.backButton.addTargetClosure { [unowned self] (button) in
             self.updateTimerSettings()
             store.dispatch(TimerUpdateSettingsAction(timeInterval: self.timeInterval,
                                                      beepInterval: self.beepInterval))
             self.navigationController?.popViewController(animated: true)
         }
-        
-        contentView.shareButton.addTargetClosure { (button) in
+
+        contentView.shareButton.addTargetClosure { [unowned self] (button) in
             let message =  Localizable.turnTimer()
             if let link = NSURL(string: "http://itunes.apple.com/app/id1282215925") {
                 let objectsToShare: [Any] = [message, link]
@@ -51,16 +51,16 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
                 self.present(activityVC, animated: true, completion: nil)
             }
         }
-        
+
         textFieldHandler.affinityCalculationStrategy = .prefix
         textFieldHandler.affineFormats = [ "[00]{:}[00]" ]
         textFieldHandler.delegate = self
-        
+
         contentView.roundDurationSection.timeTextField.delegate = textFieldHandler
         contentView.roundDurationSection.timeTextField.tag = 0
         contentView.beepSection.timeTextField.delegate = textFieldHandler
         contentView.beepSection.timeTextField.tag = 1
-        
+
         self.hideKeyboardOnTap()
     }
     

@@ -22,7 +22,6 @@ class SettingsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layoutView()
     }
     
@@ -35,7 +34,7 @@ class SettingsView: UIView {
         
         addSubview(roundDurationSection)
         roundDurationSection.title.text = Localizable.roundDuration(())
-        roundDurationSection.snp.makeConstraints { (make) in
+        roundDurationSection.snp.makeConstraints { [unowned self] (make) in
             make.top.equalTo(self.safeArea.top).offset(25)
             make.centerX.equalToSuperview()
             make.height.equalTo(137)
@@ -104,7 +103,7 @@ class SettingsSectionView: UIView {
         background.clipsToBounds = true
         background.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom)
-            make.centerX.equalTo(self)
+            make.centerX.equalToSuperview()
             make.height.equalTo(backgroundHeight)
             make.width.equalTo(248)
         }
