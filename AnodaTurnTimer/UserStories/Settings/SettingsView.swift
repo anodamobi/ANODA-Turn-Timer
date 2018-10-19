@@ -11,12 +11,19 @@ import UIKit
 import SnapKit
 import InputMask
 
-class SettingsView: UIView {
+fileprivate let buttonBackgroundSizeConst: CGFloat = 75.0
+fileprivate let buttonSizeConst: CGFloat = 50.0
 
-    let background: UIImageView = UIImageView()
+class SettingsView: UIView {
     
+    let backButtonContainerView: UIView = UIView()
+    let backButtonBackground: UIImageView = UIImageView()
     let backButton: UIButton = UIButton()
+    
+    let shareButtonContainerView: UIView = UIView()
+    let shareButtonBackground: UIImageView = UIImageView()
     let shareButton: UIButton = UIButton()
+    
     let roundDurationSection: SettingsSectionView = SettingsSectionView()
     let beepSection: SettingsSectionView = SettingsSectionView()
     
@@ -48,22 +55,48 @@ class SettingsView: UIView {
             make.size.equalTo(CGSize(width: 248, height: 137))
         }
         
-        addSubview(backButton)
-        backButton.setupButtonImages(imageName: ("backButtonIcon", "backButtonIcon", "backButtonIcon"), width: 75)
-        backButton.tintColor = UIColor.mangoPressed
-        backButton.snp.makeConstraints { (make) in
+        addSubview(backButtonContainerView)
+        backButtonContainerView.snp.makeConstraints{ (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.left.equalToSuperview().offset(28)
-            make.size.equalTo(75)
+            make.size.equalTo(buttonBackgroundSizeConst)
         }
         
-        addSubview(shareButton)
-        shareButton.setupButtonImages(imageName: ("shareButtonIcon", "shareButtonIcon", "shareButtonIcon"), width: 75)
-        shareButton.tintColor = UIColor.mangoPressed
-        shareButton.snp.makeConstraints { (make) in
+        backButtonContainerView.addSubview(backButtonBackground)
+        backButtonBackground.backgroundColor = UIColor.mango10
+        backButtonBackground.layer.cornerRadius = buttonBackgroundSizeConst / 2
+        backButtonBackground.clipsToBounds = true
+        backButtonBackground.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        backButtonContainerView.addSubview(backButton)
+        backButton.setupButtonImages(imageName: ("backButtonIcon", "backButtonIconPressed", "backButtonIconPressed"), width: buttonSizeConst)
+        backButton.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(buttonSizeConst)
+        }
+        
+        addSubview(shareButtonContainerView)
+        shareButtonContainerView.snp.makeConstraints { (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.right.equalToSuperview().offset(-28)
-            make.size.equalTo(75)
+            make.size.equalTo(buttonBackgroundSizeConst)
+        }
+        
+        shareButtonContainerView.addSubview(shareButtonBackground)
+        shareButtonBackground.backgroundColor = UIColor.mango10
+        shareButtonBackground.layer.cornerRadius = buttonBackgroundSizeConst / 2
+        shareButtonBackground.backgroundColor = UIColor.mango10
+        shareButtonBackground.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        shareButtonContainerView.addSubview(shareButton)
+        shareButton.setupButtonImages(imageName: ("shareButtonIcon", "shareButtonPressedIcon", "shareButtonPressedIcon"), width: buttonSizeConst)
+        shareButton.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(buttonSizeConst)
         }
     }
 }

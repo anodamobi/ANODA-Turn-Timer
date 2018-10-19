@@ -86,8 +86,7 @@ class MainView: UIView {
         }
         
         buttonsContainerView.addSubview(settingsButton)
-        settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIcon", "settingsIcon"), width: 50)
-        settingsButton.tintColor = UIColor.mangoPressed
+        settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIconPressed", "settingsIconPressed"), width: 50)
         settingsButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.left.equalToSuperview().offset(12)
@@ -96,15 +95,13 @@ class MainView: UIView {
         
         buttonsContainerView.addSubview(pauseButton)
         updatePlay(toPause: false)
-        pauseButton.tintColor = UIColor.mangoPressed
         pauseButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(100)
         }
         
         buttonsContainerView.addSubview(replayButton)
-        replayButton.setupButtonImages(imageName: ("resetIcon", "resetIcon", "resetIcon"), width: 50)
-        replayButton.tintColor = UIColor.mangoPressed
+        replayButton.setupButtonImages(imageName: ("resetIcon", "ressetIconPressed", "ressetIconPressed"), width: 50)
         replayButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().offset(-12)
@@ -114,9 +111,9 @@ class MainView: UIView {
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setupButtonImages(imageName: ("pauseButtonIcon", "pauseButtonIcon", "pauseButtonIcon"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("pauseButtonIcon", "pauseButtonIconPressed", "pauseButtonIconPressed"), width: 100)
         } else {
-            pauseButton.setupButtonImages(imageName: ("playButtonIcon", "playButtonIcon", "playButtonIcon"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("playButtonIcon", "playButtonIconPressed", "playButtonIconPressed"), width: 100)
         }
     }
     

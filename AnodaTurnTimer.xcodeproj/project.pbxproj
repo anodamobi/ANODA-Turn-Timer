@@ -10,14 +10,18 @@
 		7C1412E62179D59800A68B1D /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1412E52179D59800A68B1D /* UITextField+Ext.swift */; };
 		7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
 		7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
-		7C179A2921760D4C0063C3F8 /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */; };
-		7C179A2A21760D4C0063C3F8 /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */; };
-		7C179A2C217610D80063C3F8 /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */; };
-		7C179A2D217610D80063C3F8 /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */; };
 		7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */; };
 		7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */; };
 		7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */; };
 		7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */; };
+		7CCEA81F217A2E4300A7519B /* shareButtonPressedIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */; };
+		7CCEA821217A2E7C00A7519B /* ressetIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */; };
+		7CCEA823217A2EA000A7519B /* playButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */; };
+		7CCEA825217A2EB700A7519B /* pauseButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */; };
+		7CCEA827217A2EEA00A7519B /* backButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */; };
+		7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */; };
+		7CCEA82C217A30EB00A7519B /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */; };
+		7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -131,12 +135,18 @@
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		7C1412E52179D59800A68B1D /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PassionOne-Regular.otf"; sourceTree = "<group>"; };
-		7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
-		7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
 		7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewBackground.pdf; sourceTree = "<group>"; };
 		7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewResetIcon.pdf; sourceTree = "<group>"; };
 		7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldDelegate.swift; sourceTree = "<group>"; };
+		7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonPressedIcon.pdf; sourceTree = "<group>"; };
+		7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ressetIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
+		7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -228,6 +238,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7CCEA81D217A2E0E00A7519B /* pressed */ = {
+			isa = PBXGroup;
+			children = (
+				7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */,
+				7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */,
+				7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */,
+				7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */,
+				7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */,
+				7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */,
+			);
+			path = pressed;
+			sourceTree = "<group>";
+		};
 		C73F45501F64D4CF00254F49 = {
 			isa = PBXGroup;
 			children = (
@@ -259,20 +282,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D420BD662163B93100ADA904 /* v2 */ = {
+		D420BD662163B93100ADA904 /* unpressed */ = {
 			isa = PBXGroup;
 			children = (
 				D420BD6B2163B94000ADA904 /* buttonsContainerBackground.pdf */,
 				D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */,
+				7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */,
+				7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */,
 				D420BD692163B94000ADA904 /* playButtonIcon.pdf */,
 				7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */,
-				7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */,
 				7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */,
-				7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */,
 				D420BD672163B93F00ADA904 /* resetIcon.pdf */,
 				D420BD6C2163B94000ADA904 /* settingsIcon.pdf */,
 			);
-			path = v2;
+			path = unpressed;
 			sourceTree = "<group>";
 		};
 		D452E80520BEEAC300F05FC6 /* Extensions */ = {
@@ -322,7 +345,8 @@
 		D452E81520BEEAC300F05FC6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D420BD662163B93100ADA904 /* v2 */,
+				7CCEA81D217A2E0E00A7519B /* pressed */,
+				D420BD662163B93100ADA904 /* unpressed */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -623,17 +647,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CCEA823217A2EA000A7519B /* playButtonIconPressed.pdf in Resources */,
+				7CCEA81F217A2E4300A7519B /* shareButtonPressedIcon.pdf in Resources */,
 				D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
+				7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */,
+				7CCEA821217A2E7C00A7519B /* ressetIconPressed.pdf in Resources */,
+				7CCEA827217A2EEA00A7519B /* backButtonIconPressed.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
+				7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */,
 				D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */,
 				D420BD712163B94000ADA904 /* buttonsContainerBackground.pdf in Resources */,
-				7C179A2921760D4C0063C3F8 /* backButtonIcon.pdf in Resources */,
 				D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */,
+				7CCEA825217A2EB700A7519B /* pauseButtonIconPressed.pdf in Resources */,
 				7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */,
-				7C179A2C217610D80063C3F8 /* shareButtonIcon.pdf in Resources */,
 				D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */,
 				7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */,
+				7CCEA82C217A30EB00A7519B /* shareButtonIcon.pdf in Resources */,
 				D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
 				D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */,
@@ -645,8 +675,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C179A2D217610D80063C3F8 /* shareButtonIcon.pdf in Resources */,
-				7C179A2A21760D4C0063C3F8 /* backButtonIcon.pdf in Resources */,
 				7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */,
 				D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */,
 				D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */,
