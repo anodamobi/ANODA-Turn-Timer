@@ -45,8 +45,8 @@ extension UIButton {
     }
     
     func setupButtonImages(imageName: (nrm: String, slc: String, hld: String), width: CGFloat) {
-        self.setImage(UIImage.init(pdfNamed: imageName.nrm, atWidth: width), for: .normal)
-        self.setImage(UIImage.init(pdfNamed: imageName.slc, atWidth: width), for: .selected)
-        self.setImage(UIImage.init(pdfNamed: imageName.hld, atWidth: width), for: .highlighted)
+        self.setImage(UIImage.init(pdfNamed: imageName.nrm, atWidth: width).withRenderingMode(.alwaysOriginal), for: .normal)
+        self.setImage(UIImage.init(pdfNamed: imageName.slc, atWidth: width).withRenderingMode(.alwaysTemplate), for: .selected)
+        self.setImage(UIImage.init(pdfNamed: imageName.hld, atWidth: width).withRenderingMode(.alwaysTemplate), for: .highlighted)
     }
 }

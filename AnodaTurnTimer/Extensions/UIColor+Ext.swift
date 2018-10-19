@@ -27,6 +27,10 @@ extension UIColor {
         return UIColor(red: 255.0 / 255.0, green: 160.0 / 255.0, blue: 58.0 / 255.0, alpha: 1.0)
     }
     
+    @nonobjc class var mangoPressed: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 132.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
+    }
+    
     // MARK: Progress bar (circleStrokeColor)
     @nonobjc class var ligthGrey: UIColor {
         return UIColor(red:  231.0 / 255.0, green: 231.0 / 255.0, blue: 231.0 / 255.0, alpha: 1.0)

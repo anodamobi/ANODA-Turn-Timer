@@ -50,6 +50,7 @@ class SettingsView: UIView {
         
         addSubview(backButton)
         backButton.setupButtonImages(imageName: ("backButtonIcon", "backButtonIcon", "backButtonIcon"), width: 75)
+        backButton.tintColor = UIColor.mangoPressed
         backButton.snp.makeConstraints { (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.left.equalToSuperview().offset(28)
@@ -58,6 +59,7 @@ class SettingsView: UIView {
         
         addSubview(shareButton)
         shareButton.setupButtonImages(imageName: ("shareButtonIcon", "shareButtonIcon", "shareButtonIcon"), width: 75)
+        shareButton.tintColor = UIColor.mangoPressed
         shareButton.snp.makeConstraints { (make) in
             make.top.equalTo(beepSection.snp.bottom).offset(25)
             make.right.equalToSuperview().offset(-28)

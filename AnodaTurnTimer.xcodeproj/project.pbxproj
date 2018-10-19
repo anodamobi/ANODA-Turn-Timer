@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1412E62179D59800A68B1D /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1412E52179D59800A68B1D /* UITextField+Ext.swift */; };
 		7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
 		7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
 		7C179A2921760D4C0063C3F8 /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */; };
@@ -128,6 +129,7 @@
 		77136240DC03831EF6FC281B /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		7C1412E52179D59800A68B1D /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PassionOne-Regular.otf"; sourceTree = "<group>"; };
 		7C179A2821760D4C0063C3F8 /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
 		7C179A2B217610D80063C3F8 /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */,
 				D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */,
 				7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */,
+				7C1412E52179D59800A68B1D /* UITextField+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */,
 				D452E85E20BEEAC300F05FC6 /* SettingsView.swift in Sources */,
 				D452E85C20BEEAC300F05FC6 /* MainView.swift in Sources */,
+				7C1412E62179D59800A68B1D /* UITextField+Ext.swift in Sources */,
 				D452E85B20BEEAC300F05FC6 /* MainVC.swift in Sources */,
 				D452E83B20BEEAC300F05FC6 /* String+Ext.swift in Sources */,
 				D452E85320BEEAC300F05FC6 /* AppReducers.swift in Sources */,

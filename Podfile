@@ -17,7 +17,6 @@ abstract_target 'AnodaTurnTimerAbstract' do
         pod 'R.swift'
         pod 'Closures'
         pod 'IQKeyboardManagerSwift'
-        pod 'InputMask'
         # Analytics / Testing / Reporting
 
         pod 'Fabric'

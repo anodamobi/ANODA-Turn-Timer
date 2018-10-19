@@ -27,7 +27,7 @@ extension String {
         // Get round duration
         if(text.contains(":")) {
             let values: [String] = text.components(separatedBy: ":")
-            let minutes: Int = Int(values[0]) ?? 0 * 60
+            let minutes: Int = (Int(values[0]) ?? 0) * 60
             let seconds: Int = Int(values[1]) ?? 0
             return minutes + seconds
         } else {

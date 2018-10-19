@@ -11,11 +11,8 @@ import UIKit
 import SwiftyUserDefaults
 import Crashlytics
 import IQKeyboardManagerSwift
-import InputMask
 
-class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
-    
-    private let textFieldHandler: MaskedTextFieldDelegate = TimeFieldHandler()
+class SettingsVC: UIViewController {
     
     private let contentView = SettingsView()
     
@@ -52,14 +49,8 @@ class SettingsVC: UIViewController, MaskedTextFieldDelegateListener {
             }
         }
         
-        textFieldHandler.affinityCalculationStrategy = .prefix
-        textFieldHandler.affineFormats = [ "[00]{:}[00]" ]
-        textFieldHandler.delegate = self
-        
-        contentView.roundDurationSection.timeTextField.delegate = textFieldHandler
-        contentView.roundDurationSection.timeTextField.tag = 0
-        contentView.beepSection.timeTextField.delegate = textFieldHandler
-        contentView.beepSection.timeTextField.tag = 1
+        contentView.roundDurationSection.timeTextField.delegate = self
+        contentView.beepSection.timeTextField.delegate = self
         
         hideKeyboardOnTap()
     }

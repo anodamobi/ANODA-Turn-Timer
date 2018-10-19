@@ -87,6 +87,7 @@ class MainView: UIView {
         
         buttonsContainerView.addSubview(settingsButton)
         settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIcon", "settingsIcon"), width: 50)
+        settingsButton.tintColor = UIColor.mangoPressed
         settingsButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.left.equalToSuperview().offset(12)
@@ -95,6 +96,7 @@ class MainView: UIView {
         
         buttonsContainerView.addSubview(pauseButton)
         updatePlay(toPause: false)
+        pauseButton.tintColor = UIColor.mangoPressed
         pauseButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(100)
@@ -102,6 +104,7 @@ class MainView: UIView {
         
         buttonsContainerView.addSubview(replayButton)
         replayButton.setupButtonImages(imageName: ("resetIcon", "resetIcon", "resetIcon"), width: 50)
+        replayButton.tintColor = UIColor.mangoPressed
         replayButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().offset(-12)
@@ -178,6 +181,7 @@ class MainPieView: UIView {
         }
         
         addSubview(restartButton)
+        restartButton.tintColor = UIColor.mangoPressed
         restartButton.snp.makeConstraints { (make) in
             make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 67, 64, 43))
         }
