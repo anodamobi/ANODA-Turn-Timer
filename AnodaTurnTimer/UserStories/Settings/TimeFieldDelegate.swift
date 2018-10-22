@@ -12,8 +12,8 @@ extension SettingsVC: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let isDecimal = checkDecimalDigits(newString: string)
-        let isInRange = checkTextMaxCount(textFieldText: textField.text ?? "", newString: string, atRange: range, maxCount: 5)
-        addColonSeparator(textField: textField, newString: string, atRange: range)
+        let isInRange = checkTextMaxCount(textFieldText: textField.text ?? "", newString: string, at: range, maxCount: 5)
+        addColonSeparator(textField: textField, newString: string, at: range)
         let isValidTime: Bool = checkMinutesAndSeconds(newString: string, rangeLocation: range.location)
         return isDecimal && isInRange && isValidTime
     }
@@ -39,9 +39,9 @@ extension SettingsVC: UITextFieldDelegate {
     
     // MARK: Text field validation methods
     
-    func checkTextMaxCount(textFieldText: String, newString: String, atRange: NSRange, maxCount: Int) -> Bool {
+    func checkTextMaxCount(textFieldText: String, newString: String, at range: NSRange, maxCount: Int) -> Bool {
         // Add restriction to 5 symbols
-        let newLength = textFieldText.count + newString.count - atRange.length
+        let newLength = textFieldText.count + newString.count - range.length
         return newLength <= maxCount
     }
     
@@ -52,10 +52,10 @@ extension SettingsVC: UITextFieldDelegate {
         return decimalSet.isSuperset(of: characterSet)
     }
     
-    func addColonSeparator(textField: UITextField, newString: String, atRange: NSRange) {
+    func addColonSeparator(textField: UITextField, newString: String, at range: NSRange) {
         let text = textField.text ?? ""
         // Add colon separator
-        switch atRange.location {
+        switch range.location {
         case 0:
             if(text.contains(":")) {
                 textField.text = ""
