@@ -52,7 +52,7 @@ extension SettingsVC: UITextFieldDelegate {
         return decimalSet.isSuperset(of: characterSet)
     }
     
-    func addColonSeparator(textField: UITextField, newString: String, atRange: NSRange){
+    func addColonSeparator(textField: UITextField, newString: String, atRange: NSRange) {
         let text = textField.text ?? ""
         // Add colon separator
         switch atRange.location {
