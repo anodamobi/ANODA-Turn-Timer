@@ -180,7 +180,7 @@ class MainPieView: UIView {
         addSubview(restartButton)
         restartButton.tintColor = UIColor.mangoPressed
         restartButton.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 67, 64, 43))
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 43, 67, 64))
         }
     }
 }
