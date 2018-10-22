@@ -22,6 +22,10 @@
 		7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */; };
 		7CCEA82C217A30EB00A7519B /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */; };
 		7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */; };
+		7CCFC176217DF9590071FB12 /* RoundDurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC175217DF9590071FB12 /* RoundDurationController.swift */; };
+		7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */; };
+		7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */; };
+		7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -147,6 +151,10 @@
 		7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsIconPressed.pdf; sourceTree = "<group>"; };
 		7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
 		7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
+		7CCFC175217DF9590071FB12 /* RoundDurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDurationController.swift; sourceTree = "<group>"; };
+		7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepIntervalController.swift; sourceTree = "<group>"; };
+		7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKPickerItem+Ext.swift"; sourceTree = "<group>"; };
+		7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -251,6 +259,15 @@
 			path = pressed;
 			sourceTree = "<group>";
 		};
+		7CCFC17F217E35F60071FB12 /* UserStory */ = {
+			isa = PBXGroup;
+			children = (
+				D4F660B020B6965700508BC5 /* Settings */,
+				D4F660B320B6A10800508BC5 /* Main */,
+			);
+			path = UserStory;
+			sourceTree = "<group>";
+		};
 		C73F45501F64D4CF00254F49 = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */,
+				7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */,
+				7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,8 +455,7 @@
 				D4F660C920B70B0900508BC5 /* Helpers */,
 				D4F660C420B701B400508BC5 /* Resources */,
 				D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */,
-				D4F660B320B6A10800508BC5 /* Main */,
-				D4F660B020B6965700508BC5 /* Settings */,
+				7CCFC17F217E35F60071FB12 /* UserStory */,
 				D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */,
 				D4F660A220B5AD9100508BC5 /* Assets.xcassets */,
 				D4F660A420B5AD9100508BC5 /* Info.plist */,
@@ -449,6 +467,8 @@
 			isa = PBXGroup;
 			children = (
 				D4F660B120B6968900508BC5 /* SettingsController.swift */,
+				7CCFC175217DF9590071FB12 /* RoundDurationController.swift */,
+				7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -856,7 +876,9 @@
 				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
 				D452E86420BEEC4700F05FC6 /* AppState.swift in Sources */,
 				D452E86520BEEC4900F05FC6 /* Middleware.swift in Sources */,
+				7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */,
 				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
+				7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */,
 				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
 				D452E86820BEEDF900F05FC6 /* DefaultsKeys+Ext.swift in Sources */,
 				D452E86720BEECBB00F05FC6 /* EventHandler.swift in Sources */,
@@ -869,7 +891,9 @@
 				D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 				D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */,
+				7CCFC176217DF9590071FB12 /* RoundDurationController.swift in Sources */,
 				D452E86320BEEC4400F05FC6 /* AppReducers.swift in Sources */,
+				7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

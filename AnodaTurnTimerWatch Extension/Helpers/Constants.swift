@@ -9,5 +9,9 @@
 import Foundation
 
 struct Constants {
+    static let appFontName = "PassionOne-Regular"
+    
     static let settingsControllerClassName = "SettingsController"
+    static let roundDurationControllerClassName = "RoundDurationController"
+    static let beepIntervalController = "BeepIntervalController"
 }
