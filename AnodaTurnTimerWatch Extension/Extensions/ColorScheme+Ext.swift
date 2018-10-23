@@ -9,9 +9,19 @@
 import Foundation
 import WatchKit
 
+extension UIColor {
+    @nonobjc class var timerProgressBackgroundColor: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.2)
+    }
+}
+
 // Text styles
 extension UIFont {
     class func pickerItemFont() -> UIFont {
         return UIFont.init(name: Constants.appFontName, size: 27.0) ?? UIFont.systemFont(ofSize: 27.0)
+    }
+    
+    class func timerTimeFont() -> UIFont {
+        return UIFont.init(name: Constants.appFontName, size: 45.0) ?? UIFont.systemFont(ofSize: 45.0)
     }
 }

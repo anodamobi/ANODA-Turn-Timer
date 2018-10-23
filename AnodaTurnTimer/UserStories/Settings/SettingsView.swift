@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import SnapKit
-import InputMask
 
 fileprivate let buttonBackgroundSizeConst: CGFloat = 75.0
 fileprivate let buttonSizeConst: CGFloat = 50.0

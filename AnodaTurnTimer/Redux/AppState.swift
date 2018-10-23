@@ -34,16 +34,21 @@ struct TimerAppState: StateType {
 }
 
 struct RoundState: StateType {
-    var progress: Float = 0.0
+    var progress: Float = 0.0 // Percentage (time left to end)
     var roundState: TimerState = .initial
     
     var beepInterval: Int = 0
-    var roundTimeProgress: Int = 0
+    var roundTimeProgress: Int = 0 // Time to round end
+    
+    // Set while app goes to background, nil after update in foreground
+    // DO NOT USE start date because of timer pause
+    var endDate: Date?
     
     static func == (lhs: RoundState, rhs: RoundState) -> Bool {
         return lhs.roundState == rhs.roundState &&
             lhs.roundTimeProgress == rhs.roundTimeProgress &&
             lhs.beepInterval == rhs.beepInterval &&
-            lhs.progress == rhs.progress
+            lhs.progress == rhs.progress &&
+            lhs.endDate == rhs.endDate
     }
 }

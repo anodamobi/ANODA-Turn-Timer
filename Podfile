@@ -34,6 +34,9 @@ abstract_target 'AnodaTurnTimerAbstract' do
         
         pod 'ReSwift', '~> 4.0.1'
         pod 'SwiftyUserDefaults'
+        
+        # UI Controls
+        pod 'YOChartImageKit', '~> 1.1'
     end
 
 end

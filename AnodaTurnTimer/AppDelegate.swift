@@ -43,9 +43,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
         UIApplication.shared.statusBarStyle = .lightContent
         UIApplication.shared.isStatusBarHidden = false
-        
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("Foreground")
+        // Update RoundState.progress + RoundState.roundTimeProgress
+        
+        // After update
+        store.dispatch(RoundEndTime(endDate: nil))
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("Background")
+        // Set end date
+        let endDate = Date().addingTimeInterval(TimeInterval(store.state.roundAppState.roundTimeProgress))
+        store.dispatch(RoundEndTime(endDate: endDate))
+    }
+
 }
 
  

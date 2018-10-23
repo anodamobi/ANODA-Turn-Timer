@@ -11,6 +11,8 @@
 		7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
 		7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
 		7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */; };
+		7C4E858D217F11D900FCBFE6 /* MainNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4E858C217F11D900FCBFE6 /* MainNewController.swift */; };
+		7C4E8590217F266A00FCBFE6 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4E858F217F266A00FCBFE6 /* TimerController.swift */; };
 		7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */; };
 		7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */; };
 		7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */; };
@@ -26,6 +28,7 @@
 		7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */; };
 		7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */; };
 		7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */; };
+		7CCFC182217E375A0071FB12 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC181217E375A0071FB12 /* ShareController.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -140,6 +143,8 @@
 		7C1412E52179D59800A68B1D /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PassionOne-Regular.otf"; sourceTree = "<group>"; };
 		7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		7C4E858C217F11D900FCBFE6 /* MainNewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewController.swift; sourceTree = "<group>"; };
+		7C4E858F217F266A00FCBFE6 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewBackground.pdf; sourceTree = "<group>"; };
 		7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewResetIcon.pdf; sourceTree = "<group>"; };
 		7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepIntervalController.swift; sourceTree = "<group>"; };
 		7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKPickerItem+Ext.swift"; sourceTree = "<group>"; };
 		7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
+		7CCFC181217E375A0071FB12 /* ShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareController.swift; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -246,6 +252,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C4E858E217F262B00FCBFE6 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				7C4E858F217F266A00FCBFE6 /* TimerController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		7CCEA81D217A2E0E00A7519B /* pressed */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,10 +276,20 @@
 		7CCFC17F217E35F60071FB12 /* UserStory */ = {
 			isa = PBXGroup;
 			children = (
+				7C4E858E217F262B00FCBFE6 /* Timer */,
+				7CCFC180217E372F0071FB12 /* Share */,
 				D4F660B020B6965700508BC5 /* Settings */,
 				D4F660B320B6A10800508BC5 /* Main */,
 			);
 			path = UserStory;
+			sourceTree = "<group>";
+		};
+		7CCFC180217E372F0071FB12 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				7CCFC181217E375A0071FB12 /* ShareController.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		C73F45501F64D4CF00254F49 = {
@@ -478,6 +502,7 @@
 			children = (
 				D4F6609E20B5AD9100508BC5 /* MainController.swift */,
 				D4F660C720B707C600508BC5 /* MainController+Session.swift */,
+				7C4E858C217F11D900FCBFE6 /* MainNewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -625,6 +650,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 						};
 					};
 					D4F6608C20B5AD8F00508BC5 = {
@@ -722,11 +750,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-watchOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults-watchOS/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/YOChartImageKit/YOChartImageKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YOChartImageKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -778,7 +808,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -790,7 +819,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -875,8 +903,10 @@
 			files = (
 				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
 				D452E86420BEEC4700F05FC6 /* AppState.swift in Sources */,
+				7C4E858D217F11D900FCBFE6 /* MainNewController.swift in Sources */,
 				D452E86520BEEC4900F05FC6 /* Middleware.swift in Sources */,
 				7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */,
+				7C4E8590217F266A00FCBFE6 /* TimerController.swift in Sources */,
 				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
 				7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */,
 				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
@@ -888,6 +918,7 @@
 				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */,
 				D452E86B20BEF09300F05FC6 /* TimerService.swift in Sources */,
+				7CCFC182217E375A0071FB12 /* ShareController.swift in Sources */,
 				D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 				D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */,

@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14269.12" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14224.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PassionOne-Regular.otf">
+            <string>PassionOne-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="MainController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
-                        <group width="1" height="176" alignment="left" layout="vertical" id="dW7-gz-WGQ">
+                        <group width="1" height="150" alignment="left" layout="vertical" id="dW7-gz-WGQ">
                             <items>
                                 <button width="1" height="130" alignment="left" title="00:00" id="O6Z-it-Rmz">
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="40"/>
-                                    <variation key="device=watch38mm" height="100"/>
+                                    <variation key="device=watch38mm" height="50"/>
                                     <connections>
                                         <action selector="timerButtonAction" destination="AgC-eL-Hgc" id="FHE-ti-yie"/>
                                     </connections>
                                 </button>
-                                <button width="1" height="40" alignment="left" title="Settings" id="Uw6-rI-2Rb">
+                                <button width="1" height="40" alignment="left" verticalAlignment="bottom" title="Settings" id="Uw6-rI-2Rb">
                                     <connections>
                                         <action selector="didPressSettings" destination="AgC-eL-Hgc" id="wae-zG-NaO"/>
                                     </connections>
                                 </button>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="sBw-n4-cVq">
+                                    <connections>
+                                        <action selector="didPressStart" destination="AgC-eL-Hgc" id="YQY-e0-cSu"/>
+                                    </connections>
+                                </button>
                             </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="sBw-n4-cVq"/>
+                                </mask>
+                            </variation>
                         </group>
                     </items>
                     <connections>
@@ -38,7 +53,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="310" y="438.5"/>
+            <point key="canvasLocation" x="18" y="1136"/>
         </scene>
         <!--SettingsController-->
         <scene sceneID="RcJ-w2-YxD">
@@ -63,7 +78,193 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="580" y="441.5"/>
+            <point key="canvasLocation" x="288" y="1139"/>
+        </scene>
+        <!--RoundDurationController-->
+        <scene sceneID="HqP-2b-xbK">
+            <objects>
+                <controller identifier="RoundDurationController" fullBounds="YES" fullScreen="YES" id="ifb-TO-g6O" customClass="RoundDurationController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <label width="1" alignment="center" verticalAlignment="bottom" text=" Round duration" textAlignment="center" numberOfLines="2" id="zFJ-Yv-IFJ">
+                            <color key="textColor" red="1" green="0.62745098039215685" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                        </label>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="WTO-ql-VA2">
+                            <items>
+                                <group alignment="left" id="NqI-Bv-1Dk">
+                                    <items>
+                                        <picker width="49" height="100" alignment="left" focusStyle="stack" id="qXB-LM-RBI">
+                                            <variation key="device=watch38mm" height="80"/>
+                                            <variation key="device=watch40mm" height="90"/>
+                                            <variation key="device=watch42mm" height="100"/>
+                                            <variation key="device=watch44mm" height="110"/>
+                                        </picker>
+                                    </items>
+                                    <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="0.86724911971830976" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </group>
+                                <label width="30" alignment="left" verticalAlignment="center" text=":" textAlignment="center" id="T1s-M6-McW">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="27"/>
+                                </label>
+                                <picker width="49" height="100" alignment="right" focusStyle="stack" id="I8l-S7-zru">
+                                    <variation key="device=watch38mm" height="80"/>
+                                    <variation key="device=watch40mm" height="90"/>
+                                    <variation key="device=watch42mm" height="100"/>
+                                    <variation key="device=watch44mm" height="110"/>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="QJ2-Ag-7cG">
+                            <items>
+                                <label width="49" alignment="left" text="min" textAlignment="center" id="PQG-Gn-KjZ">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                </label>
+                                <label width="49" alignment="right" text="sec" textAlignment="center" id="foe-vC-Tsn">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="minutesPicker" destination="qXB-LM-RBI" id="V9W-Cd-vxM"/>
+                        <outlet property="secondsPicker" destination="I8l-S7-zru" id="jPl-dY-RXa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="580" y="797"/>
+        </scene>
+        <!--BeepIntervalController-->
+        <scene sceneID="OSs-bX-zf6">
+            <objects>
+                <controller identifier="BeepIntervalController" fullBounds="YES" id="ync-3h-Qbx" customClass="BeepIntervalController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <label width="1" alignment="center" verticalAlignment="bottom" text="Beep before round ends " textAlignment="center" numberOfLines="2" id="HdM-5C-MJn">
+                            <color key="textColor" red="1" green="0.62745098039215685" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                        </label>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="bXT-B7-MVe">
+                            <items>
+                                <picker width="49" height="100" alignment="left" focusStyle="stack" id="0t5-D1-J5T">
+                                    <variation key="device=watch38mm" height="80"/>
+                                    <variation key="device=watch40mm" height="90"/>
+                                    <variation key="device=watch42mm" height="100"/>
+                                    <variation key="device=watch44mm" height="110"/>
+                                </picker>
+                                <label width="30" alignment="left" verticalAlignment="center" text=":" textAlignment="center" id="A2A-1a-1bX">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="27"/>
+                                </label>
+                                <picker width="49" height="100" alignment="right" focusStyle="stack" id="fSf-zP-rls">
+                                    <variation key="device=watch38mm" height="80"/>
+                                    <variation key="device=watch40mm" height="90"/>
+                                    <variation key="device=watch42mm" height="100"/>
+                                    <variation key="device=watch44mm" height="110"/>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="xTh-Zk-m0e">
+                            <items>
+                                <label width="49" alignment="left" text="min" textAlignment="center" id="em5-HC-uKm">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                </label>
+                                <label width="49" alignment="right" text="sec" textAlignment="center" id="BOQ-WP-hDG">
+                                    <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="minutesPicker" destination="0t5-D1-J5T" id="X3J-s0-9wm"/>
+                        <outlet property="secondsPicker" destination="fSf-zP-rls" id="qqx-98-F4o"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="852" y="797"/>
+        </scene>
+        <!--ShareController-->
+        <scene sceneID="Dh3-Gd-Efw">
+            <objects>
+                <controller identifier="ShareController" id="hwf-MF-Sum" customClass="ShareController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <group alignment="left" id="BDa-ZG-Hsy">
+                            <items>
+                                <button width="60" height="60" alignment="left" id="nAE-Ya-QcP"/>
+                                <button width="60" height="60" alignment="right" id="3eV-65-xF1"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="YO3-MK-jZ9">
+                            <items>
+                                <button width="60" height="60" alignment="left" id="U5g-PI-XvH"/>
+                                <button width="60" height="60" alignment="right" id="R3r-Ec-rv6"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="facebookButton" destination="R3r-Ec-rv6" id="vce-41-ost"/>
+                        <outlet property="googlePlusButton" destination="3eV-65-xF1" id="1Xg-K7-JR3"/>
+                        <outlet property="messageButton" destination="U5g-PI-XvH" id="ViV-W5-Gq7"/>
+                        <outlet property="twitterButton" destination="nAE-Ya-QcP" id="TNv-Gs-Kmp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="580" y="1136"/>
+        </scene>
+        <!--Timer Controller-->
+        <scene sceneID="Glw-T3-it9">
+            <objects>
+                <controller fullBounds="YES" fullScreen="YES" id="JbZ-e4-cxI" customClass="TimerController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <imageView width="140" height="140" alignment="center" verticalAlignment="center" id="NUd-5J-xt0"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="NUd-5J-xt0" id="A5A-lV-DlP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="580" y="1481"/>
+        </scene>
+        <!--MainNewController-->
+        <scene sceneID="wUQ-Yg-Off">
+            <objects>
+                <controller identifier="MainNewController" id="seK-Ko-NEH" customClass="MainNewController" customModule="AnodaTurnTimerWatch_Extension">
+                    <items>
+                        <group width="1" height="0.5" alignment="left" id="VR1-b4-0FC">
+                            <items>
+                                <button width="60" height="60" alignment="left" backgroundImage="playButton" id="skx-b7-A8p">
+                                    <connections>
+                                        <action selector="startTimer" destination="seK-Ko-NEH" id="ZF0-CW-Dn0"/>
+                                    </connections>
+                                </button>
+                                <button width="60" height="60" alignment="right" backgroundImage="settingsButton" id="fBR-iz-zw6">
+                                    <connections>
+                                        <action selector="openSettings" destination="seK-Ko-NEH" id="gIr-ue-grZ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.5" alignment="left" id="E5f-2L-G7H">
+                            <items>
+                                <button width="60" height="60" alignment="left" backgroundImage="shareButton" id="lDL-BS-uG2">
+                                    <connections>
+                                        <action selector="shareApp" destination="seK-Ko-NEH" id="nZ0-UZ-fKk"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="playButton" destination="skx-b7-A8p" id="c8s-Z9-dzv"/>
+                        <outlet property="settingsButton" destination="fBR-iz-zw6" id="OwX-7i-tnK"/>
+                        <outlet property="shareButton" destination="lDL-BS-uG2" id="Xrz-hR-90j"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="852" y="1136"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
 </document>

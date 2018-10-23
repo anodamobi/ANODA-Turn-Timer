@@ -11,13 +11,12 @@ import WatchKit
 
 extension WKPickerItem {
     
-    func textToImage(text: String, font: UIFont, color: UIColor) -> UIImage{
+    func textToImage(text: String, font: UIFont, color: UIColor) -> UIImage {
         let attributes = [
             NSAttributedStringKey.foregroundColor: color,
             NSAttributedStringKey.font: font
         ]
         let textSize = text.size(withAttributes: attributes)
-        
         UIGraphicsBeginImageContextWithOptions(textSize, true, 0)
         text.draw(at: CGPoint.zero, withAttributes: attributes)
         let image = UIGraphicsGetImageFromCurrentImageContext()

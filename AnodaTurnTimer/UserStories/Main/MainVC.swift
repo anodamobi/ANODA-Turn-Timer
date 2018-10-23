@@ -31,7 +31,6 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     func newState(state: RoundState) {
-        
         contentView.pieView.update(to: CGFloat(state.progress), animated: true)
         
         switch state.roundState {
@@ -65,6 +64,10 @@ class MainVC: UIViewController, StoreSubscriber {
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
+                if state == .initial {
+                    let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+                    store.dispatch(RoundInitialAction(progress: 0, endDate: endDate))
+                }
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
@@ -86,7 +89,8 @@ class MainVC: UIViewController, StoreSubscriber {
     func replayAction() {
         store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
                                          beepValue: store.state.timerAppState.beepInterval))
-        store.dispatch(RoundInitialAction(progress: 0))
+        let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+        store.dispatch(RoundInitialAction(progress: 0, endDate: endDate))
         store.dispatch(RoundRunningAction())
     }
     
@@ -101,10 +105,7 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     func updated(timeInterval: Int) {
-        
-        var text: String
-        text = String.timeString(time: TimeInterval(timeInterval))
-        
+        let text = String.timeString(time: TimeInterval(timeInterval))
         contentView.timerLabel.text = text
     }
 }

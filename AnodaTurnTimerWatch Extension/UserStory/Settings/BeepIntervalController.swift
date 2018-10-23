@@ -19,8 +19,8 @@ class BeepIntervalController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        setTitle("<Menu")
         setupPickers()
-        setTitle("Menu")
     }
     
     func setupPickers(){
