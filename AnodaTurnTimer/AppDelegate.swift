@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: methods to handle timer progress after background
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        print("Foreground")
+        debugPrint("Foreground")
         if store.state.roundAppState.roundState == .running {
             // Update RoundState.progress + RoundState.roundTimeProgress
             let endDate = store.state.roundAppState.endDate ?? Date()
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("Background")
+        debugPrint("Background")
         if store.state.roundAppState.roundState == .running {
             // Set end date
             let endDate = Date().addingTimeInterval(TimeInterval(store.state.roundAppState.roundTimeProgress))

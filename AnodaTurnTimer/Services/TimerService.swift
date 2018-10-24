@@ -49,7 +49,7 @@ class TimerService: NSObject {
                                      selector: (#selector(updateTimer)),
                                      userInfo: nil,
                                      repeats: true)
-        print("\(store.state.roundAppState.roundTimeProgress)")
+        debugPrint("\(store.state.roundAppState.roundTimeProgress)")
     }
     
     
