@@ -64,10 +64,6 @@ class MainVC: UIViewController, StoreSubscriber {
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
-                if state == .initial {
-                    let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
-                    store.dispatch(RoundInitialAction(progress: 0, endDate: endDate))
-                }
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
                 store.dispatch(RoundPausedAction())

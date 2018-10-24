@@ -34,7 +34,7 @@ struct TimerAppState: StateType {
 }
 
 struct RoundState: StateType {
-    var progress: Float = 0.0 // Percentage (time left to end)
+    var progress: Float = 0.0 // Percentage (time left to end) (max value = 1.0)
     var roundState: TimerState = .initial
     
     var beepInterval: Int = 0

@@ -58,7 +58,7 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
         state.endDate = nil
     case let act as RoundTimeInterval:
         state.roundTimeProgress = act.timer
-    case let act as RoundEndTime:
+    case let act as RoundEndDate:
         state.endDate = act.endDate
         
     default:

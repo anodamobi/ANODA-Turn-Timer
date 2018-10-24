@@ -66,13 +66,6 @@ class TimerService: NSObject {
         }
         let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(store.state.timerAppState.timeInterval)))
         store.dispatch(RoundProgress(progress: Float(progress)))
-        
-//        if let endDate = store.state.roundAppState.endDate {
-//            let timeLeft = round(endDate.timeIntervalSince(Date()))
-//            let progress = CGFloat(1 - (CGFloat(timeLeft) / CGFloat(store.state.timerAppState.timeInterval)))
-//            store.dispatch(RoundProgress(progress: Float(progress)))
-//        }
-
     }
     
  func updateTo(state: TimerState) {
