@@ -89,8 +89,9 @@ class MainController: WKInterfaceController, StoreSubscriber {
         store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
                                          beepValue: store.state.timerAppState.beepInterval))
         let start = Date()
-        let end = start.addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
-        store.dispatch(RoundInitialAction(progress: 0, endDate: end))
+        let endDate = start.addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+        store.dispatch(RoundEndDate(endDate: endDate))
+        store.dispatch(RoundInitialAction(progress: 0))
         store.dispatch(RoundRunningAction())
     }
     

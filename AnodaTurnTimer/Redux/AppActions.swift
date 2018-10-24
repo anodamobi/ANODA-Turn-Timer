@@ -38,5 +38,4 @@ struct RoundTimeInterval: Action { var timer: Int }
 struct RoundEndDate: Action { var endDate: Date? }
 struct RoundInitialAction: Action {
     var progress: Float
-    var endDate: Date?
 }

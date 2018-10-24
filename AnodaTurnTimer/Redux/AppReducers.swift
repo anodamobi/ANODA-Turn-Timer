@@ -40,7 +40,6 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
     case let act as RoundInitialAction:
         state.roundState = .initial
         state.progress = act.progress
-        state.endDate = act.endDate
     case let act as RoundProgress:
         state.progress = act.progress
         
@@ -60,7 +59,6 @@ func roundReducer(action: Action, state: RoundState?) -> RoundState {
         state.roundTimeProgress = act.timer
     case let act as RoundEndDate:
         state.endDate = act.endDate
-        
     default:
         break
     }

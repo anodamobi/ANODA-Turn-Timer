@@ -53,6 +53,14 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +72,8 @@ class MainVC: UIViewController, StoreSubscriber {
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
+                let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+                store.dispatch(RoundEndDate(endDate: endDate))
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
@@ -86,7 +96,8 @@ class MainVC: UIViewController, StoreSubscriber {
         store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
                                          beepValue: store.state.timerAppState.beepInterval))
         let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
-        store.dispatch(RoundInitialAction(progress: 0, endDate: endDate))
+        store.dispatch(RoundEndDate(endDate: endDate))
+        store.dispatch(RoundInitialAction(progress: 0))
         store.dispatch(RoundRunningAction())
     }
     
