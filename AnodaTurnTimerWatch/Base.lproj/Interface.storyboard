@@ -190,7 +190,7 @@
             <objects>
                 <controller identifier="ShareController" id="hwf-MF-Sum" customClass="ShareController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
-                        <group alignment="left" id="BDa-ZG-Hsy">
+                        <group width="122" alignment="left" id="BDa-ZG-Hsy">
                             <items>
                                 <button width="60" height="60" alignment="left" id="nAE-Ya-QcP"/>
                                 <button width="60" height="60" alignment="right" id="3eV-65-xF1"/>

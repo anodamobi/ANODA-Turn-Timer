@@ -45,6 +45,7 @@ class MainVC: UIViewController, StoreSubscriber {
             contentView.updatePlay(toPause: false)
             
         case .isOut:
+            contentView.pieView.update(to: 1, animated: true)
             contentView.updateRestartIcon(visible: true)
             contentView.updatePlay(toPause: false)
         }
@@ -72,7 +73,7 @@ class MainVC: UIViewController, StoreSubscriber {
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
-                let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+                let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval + 1)) // cause need to round date to seconds
                 store.dispatch(RoundEndDate(endDate: endDate))
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
