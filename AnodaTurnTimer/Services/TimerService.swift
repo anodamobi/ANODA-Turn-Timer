@@ -55,7 +55,7 @@ class TimerService: NSObject {
     
     
     @objc func updateTimer() {
-        let progress1 = store.state.roundAppState.roundTimeProgress
+        checkEndDate()
         if store.state.roundAppState.roundTimeProgress <= 1 {
             updateTo(state: .isOut)
             return
@@ -91,12 +91,7 @@ class TimerService: NSObject {
                 WKInterfaceDevice.current().play(.success)
                 #endif
             }
-            if(!checkEndDate()){
-                runTimer()
-            } else {
-                store.dispatch(RoundIsOutAction(timerSecondsValue: store.state.timerAppState.timeInterval,
-                                                beepValue: store.state.timerAppState.beepInterval))
-            }
+            runTimer()
         case .isOut: // time is end
             store.dispatch(RoundIsOutAction(timerSecondsValue: store.state.timerAppState.timeInterval,
                                             beepValue: store.state.timerAppState.beepInterval))
@@ -108,10 +103,10 @@ class TimerService: NSObject {
         store.dispatch(RoundTimeInterval(timer: timeInterval))
     }
     
-    func checkEndDate() -> Bool{
-        // Update RoundState.roundTimeProgress
+    func checkEndDate(){
+        // Update RoundState.roundTimeProgress and time interval
         guard let endDate = store.state.roundAppState.endDate else {
-            return false
+            return
         }
         let timeToEnd: Int = Int(ceil(endDate.timeIntervalSince(Date())))
         if timeToEnd >= 1 {
@@ -120,12 +115,10 @@ class TimerService: NSObject {
             let progress: Double = 1 - (Double(timeToEnd) / Double(interval))
             store.dispatch(RoundProgress(progress: Float(progress)))
             store.dispatch(RoundTimeInterval(timer: Int(timeToEnd)))
-            return false
         } else {
             // Round already finished
-            store.dispatch(RoundProgress(progress: 0.0))
+            store.dispatch(RoundProgress(progress: 1.0))
             store.dispatch(RoundTimeInterval(timer: 0))
-            return true
         }
     }
 }
