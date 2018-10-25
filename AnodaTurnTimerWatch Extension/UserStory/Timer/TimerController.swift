@@ -60,7 +60,8 @@ class TimerController: WKInterfaceController, StoreSubscriber {
         let timeSpent = NSNumber(value: (1 - store.state.roundAppState.progress) * 100)
         timerRing.values = [timeSpent, roundProgress]    // chart values
         timerRing.colors = [UIColor.mango, UIColor.timerProgressBackgroundColor] // colors of pieces
-        let image = timerRing.draw(CGRect.init(x: 0, y: 0, width: 150, height: 150), scale: WKInterfaceDevice.current().screenScale)   // draw an image
+        let screenWidth = WKInterfaceDevice.current().screenBounds.width
+        let image = timerRing.draw(CGRect.init(x: 0, y: 0, width: screenWidth, height: screenWidth), scale: WKInterfaceDevice.current().screenScale)   // draw an image
         timerImageButton.setBackgroundImage(image)
     }
     

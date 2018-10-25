@@ -17,7 +17,7 @@
         <!--RoundDurationController-->
         <scene sceneID="HqP-2b-xbK">
             <objects>
-                <controller identifier="RoundDurationController" fullBounds="YES" id="ifb-TO-g6O" customClass="RoundDurationController" customModule="AnodaTurnTimerWatch_Extension">
+                <controller identifier="RoundDurationController" alwaysBounce="YES" fullBounds="YES" id="ifb-TO-g6O" customClass="RoundDurationController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <label width="1" alignment="center" text=" Round duration" textAlignment="center" numberOfLines="2" id="zFJ-Yv-IFJ">
                             <color key="textColor" red="1" green="0.62745098039215685" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,20 +28,36 @@
                                 <group width="58" height="108" alignment="left" id="NqI-Bv-1Dk">
                                     <items>
                                         <picker width="50" height="100" alignment="center" verticalAlignment="center" accessibilityIdentifier="0" id="qXB-LM-RBI">
+                                            <variation key="device=watch38mm" height="70" width="40"/>
+                                            <variation key="device=watch40mm" height="80"/>
+                                            <variation key="device=watch42mm" height="90"/>
+                                            <variation key="device=watch44mm" height="100"/>
                                             <connections>
                                                 <action selector="didPickMinutes:" destination="ifb-TO-g6O" id="M1l-ih-dm9"/>
                                             </connections>
                                         </picker>
                                     </items>
+                                    <variation key="device=watch38mm" height="78" width="48"/>
+                                    <variation key="device=watch40mm" height="88"/>
+                                    <variation key="device=watch42mm" height="98"/>
+                                    <variation key="device=watch44mm" height="108"/>
                                 </group>
                                 <group width="58" height="108" alignment="right" id="UDL-Rw-Jr0">
                                     <items>
                                         <picker width="50" height="100" alignment="center" verticalAlignment="center" accessibilityIdentifier="1" id="I8l-S7-zru">
+                                            <variation key="device=watch38mm" height="70" width="40"/>
+                                            <variation key="device=watch40mm" height="80"/>
+                                            <variation key="device=watch42mm" height="90"/>
+                                            <variation key="device=watch44mm" height="100"/>
                                             <connections>
                                                 <action selector="didPickSeconds:" destination="ifb-TO-g6O" id="kN0-nq-bP0"/>
                                             </connections>
                                         </picker>
                                     </items>
+                                    <variation key="device=watch38mm" height="78" width="48"/>
+                                    <variation key="device=watch40mm" height="88"/>
+                                    <variation key="device=watch42mm" height="98"/>
+                                    <variation key="device=watch44mm" height="108"/>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" text=":" textAlignment="center" id="T1s-M6-McW">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,10 +70,12 @@
                                 <label width="58" alignment="left" text="min" textAlignment="center" id="PQG-Gn-KjZ">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                    <variation key="device=watch38mm" width="48"/>
                                 </label>
                                 <label width="58" alignment="right" text="sec" textAlignment="center" id="foe-vC-Tsn">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                    <variation key="device=watch38mm" width="48"/>
                                 </label>
                             </items>
                         </group>
@@ -75,7 +93,7 @@
         <!--BeepIntervalController-->
         <scene sceneID="OSs-bX-zf6">
             <objects>
-                <controller identifier="BeepIntervalController" fullBounds="YES" id="ync-3h-Qbx" customClass="BeepIntervalController" customModule="AnodaTurnTimerWatch_Extension">
+                <controller identifier="BeepIntervalController" alwaysBounce="YES" fullBounds="YES" id="ync-3h-Qbx" customClass="BeepIntervalController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <label width="1" alignment="center" text="Beep before round ends " textAlignment="center" numberOfLines="2" id="HdM-5C-MJn">
                             <color key="textColor" red="1" green="0.62745098039215685" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,20 +104,36 @@
                                 <group width="58" height="108" alignment="left" id="8Yv-Bz-7DV">
                                     <items>
                                         <picker width="50" height="100" alignment="center" verticalAlignment="center" accessibilityIdentifier="0" id="0t5-D1-J5T">
+                                            <variation key="device=watch38mm" height="70" width="40"/>
+                                            <variation key="device=watch40mm" height="80"/>
+                                            <variation key="device=watch42mm" height="90"/>
+                                            <variation key="device=watch44mm" height="100"/>
                                             <connections>
                                                 <action selector="didPickMinutes:" destination="ync-3h-Qbx" id="wrn-7N-h5F"/>
                                             </connections>
                                         </picker>
                                     </items>
+                                    <variation key="device=watch38mm" height="78" width="48"/>
+                                    <variation key="device=watch40mm" height="88"/>
+                                    <variation key="device=watch42mm" height="98"/>
+                                    <variation key="device=watch44mm" height="108"/>
                                 </group>
                                 <group width="58" height="108" alignment="right" id="cna-kb-a7L">
                                     <items>
                                         <picker width="50" height="100" alignment="center" verticalAlignment="center" accessibilityIdentifier="1" id="fSf-zP-rls">
+                                            <variation key="device=watch38mm" height="70" width="40"/>
+                                            <variation key="device=watch40mm" height="80"/>
+                                            <variation key="device=watch42mm" height="90"/>
+                                            <variation key="device=watch44mm" height="100"/>
                                             <connections>
                                                 <action selector="didPickSeconds:" destination="ync-3h-Qbx" id="jKD-nK-R02"/>
                                             </connections>
                                         </picker>
                                     </items>
+                                    <variation key="device=watch38mm" height="78" width="48"/>
+                                    <variation key="device=watch40mm" height="88"/>
+                                    <variation key="device=watch42mm" height="98"/>
+                                    <variation key="device=watch44mm" height="108"/>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" text=":" textAlignment="center" id="A2A-1a-1bX">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -112,10 +146,12 @@
                                 <label width="58" alignment="left" text="min" textAlignment="center" id="em5-HC-uKm">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                    <variation key="device=watch38mm" width="48"/>
                                 </label>
                                 <label width="58" alignment="right" text="sec" textAlignment="center" id="BOQ-WP-hDG">
                                     <color key="textColor" red="1" green="0.62745098040000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="PassionOne-Regular" family="Passion" pointSize="19"/>
+                                    <variation key="device=watch38mm" width="48"/>
                                 </label>
                             </items>
                         </group>
@@ -133,9 +169,13 @@
         <!--TimerController-->
         <scene sceneID="Glw-T3-it9">
             <objects>
-                <controller identifier="TimerController" fullBounds="YES" id="JbZ-e4-cxI" customClass="TimerController" customModule="AnodaTurnTimerWatch_Extension">
+                <controller identifier="TimerController" alwaysBounce="YES" fullBounds="YES" id="JbZ-e4-cxI" customClass="TimerController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <button width="150" height="150" alignment="center" verticalAlignment="center" id="k3y-68-dMz">
+                            <variation key="device=watch38mm" height="120" width="120"/>
+                            <variation key="device=watch40mm" height="130" width="130"/>
+                            <variation key="device=watch42mm" height="140" width="140"/>
+                            <variation key="device=watch44mm" height="150" width="150"/>
                             <connections>
                                 <action selector="didTimerPressed" destination="JbZ-e4-cxI" id="rWu-F7-Tug"/>
                             </connections>
@@ -151,7 +191,7 @@
         <!--MainController-->
         <scene sceneID="wUQ-Yg-Off">
             <objects>
-                <controller identifier="MainController" id="seK-Ko-NEH" customClass="MainController" customModule="AnodaTurnTimerWatch_Extension">
+                <controller identifier="MainController" alwaysBounce="YES" fullBounds="YES" id="seK-Ko-NEH" customClass="MainController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" id="VR1-b4-0FC">
                             <items>
