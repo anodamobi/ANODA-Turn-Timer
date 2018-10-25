@@ -40,8 +40,6 @@ struct RoundState: StateType {
     var beepInterval: Int = 0
     var roundTimeProgress: Int = 0 // Time to round end
     
-    // Set while app goes to background, nil after update in foreground
-    // DO NOT USE start date because of timer pause
     var endDate: Date?
     
     static func == (lhs: RoundState, rhs: RoundState) -> Bool {

@@ -29,6 +29,7 @@
 		7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */; };
 		7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */; };
 		7CF3092E2181D21000A336F8 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3092D2181D21000A336F8 /* MainController+Session.swift */; };
+		7CF3093121821BB600A336F8 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3093021821BB600A336F8 /* TimeInterval+Ext.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -158,6 +159,7 @@
 		7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKPickerItem+Ext.swift"; sourceTree = "<group>"; };
 		7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
 		7CF3092D2181D21000A336F8 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
+		7CF3093021821BB600A336F8 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F660CA20B70B1300508BC5 /* Constants.swift */,
+				7CF3093021821BB600A336F8 /* TimeInterval+Ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				7CCFC176217DF9590071FB12 /* RoundDurationController.swift in Sources */,
 				D452E86320BEEC4400F05FC6 /* AppReducers.swift in Sources */,
 				7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */,
+				7CF3093121821BB600A336F8 /* TimeInterval+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

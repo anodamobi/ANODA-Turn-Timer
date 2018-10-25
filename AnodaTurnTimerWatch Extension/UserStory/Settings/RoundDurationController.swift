@@ -33,7 +33,7 @@ class RoundDurationController: WKInterfaceController {
     func setupPickersValues() {
         for interval in pickersIntervals {
             let item = WKPickerItem()
-            item.contentImage = WKImage.init(image: item.textToImage(text: String(interval), font: UIFont.pickerItemFont(), color: UIColor.mango))
+            item.contentImage = WKImage(image: item.textToImage(text: String(interval), font: UIFont.pickerItemFont(), color: UIColor.mango))
             pickerItems.append(item)
         }
         minutesPicker.setItems(pickerItems)
@@ -74,28 +74,29 @@ class RoundDurationController: WKInterfaceController {
         updateTimeInterval()
     }
     
-    func setPickersSelectedValues(){
-        let timeInterval = store.state.timerAppState.timeInterval
-        let minutes = Int(timeInterval / 60)
-        let seconds = Int(timeInterval) % 60
-        minutesPicker.setSelectedItemIndex(minutes)
-        secondsPicker.setSelectedItemIndex(seconds)
+    func setPickersSelectedValues() {
+        let timeInterval = getTimerTimeInterval()
+        minutesPicker.setSelectedItemIndex(timeInterval.minutes)
+        secondsPicker.setSelectedItemIndex(timeInterval.seconds)
     }
     
     func updateTimeInterval() {
-        let timeInterval = store.state.timerAppState.timeInterval
-        var minutes = Int(timeInterval / 60)
-        var seconds = Int(timeInterval) % 60
+        var timeInterval = getTimerTimeInterval()
         if let newMinutesValue = pickedMinutesInterval {
-            minutes = newMinutesValue
+            timeInterval.minutes = newMinutesValue
         }
         if let newSecondsValue = pickedSecondsInterval {
-            seconds = newSecondsValue
+            timeInterval.seconds = newSecondsValue
         }
-        let newTimeInterval = (minutes * 60) +  seconds
+        let newTimeInterval = (timeInterval.minutes * 60) +  timeInterval.seconds
         store.dispatch(TimerUpdateSettingsAction(timeInterval: newTimeInterval, beepInterval: store.state.timerAppState.beepInterval))
     }
     
-    
+    func getTimerTimeInterval() -> TimerTimeInterval {
+        let timeInterval = store.state.timerAppState.timeInterval
+        let minutes = Int(timeInterval / 60)
+        let seconds = Int(timeInterval) % 60
+        return TimerTimeInterval(minutes: minutes, seconds: seconds)
+    }
     
 }
