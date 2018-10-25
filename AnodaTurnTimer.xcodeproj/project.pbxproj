@@ -28,7 +28,7 @@
 		7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */; };
 		7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */; };
 		7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */; };
-		7CCFC182217E375A0071FB12 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC181217E375A0071FB12 /* ShareController.swift */; };
+		7CF3092E2181D21000A336F8 /* TimerController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3092D2181D21000A336F8 /* TimerController+Session.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
@@ -76,13 +76,10 @@
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F6609E20B5AD9100508BC5 /* MainController.swift */; };
 		D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */; };
 		D4F660A320B5AD9100508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F660A220B5AD9100508BC5 /* Assets.xcassets */; };
 		D4F660A720B5AD9100508BC5 /* AnodaTurnTimerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */; };
-		D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B120B6968900508BC5 /* SettingsController.swift */; };
 		D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F660C120B700AF00508BC5 /* Localizable.strings */; };
-		D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C720B707C600508BC5 /* MainController+Session.swift */; };
 		D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CA20B70B1300508BC5 /* Constants.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */; };
@@ -160,7 +157,7 @@
 		7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepIntervalController.swift; sourceTree = "<group>"; };
 		7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKPickerItem+Ext.swift"; sourceTree = "<group>"; };
 		7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
-		7CCFC181217E375A0071FB12 /* ShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareController.swift; sourceTree = "<group>"; };
+		7CF3092D2181D21000A336F8 /* TimerController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerController+Session.swift"; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -199,15 +196,12 @@
 		D4F6609220B5AD9000508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F6609420B5AD9000508BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AnodaTurnTimerWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4F6609E20B5AD9100508BC5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D4F660A220B5AD9100508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F660A420B5AD9100508BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4F660B120B6968900508BC5 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnodaTurnTimer.entitlements; sourceTree = "<group>"; };
 		D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AnodaTurnTimerWatch Extension.entitlements"; sourceTree = "<group>"; };
 		D4F660C120B700AF00508BC5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		D4F660C720B707C600508BC5 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
 		D4F660CA20B70B1300508BC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75F79751F69F73A00DFF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				7C4E858F217F266A00FCBFE6 /* TimerController.swift */,
+				7CF3092D2181D21000A336F8 /* TimerController+Session.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -277,19 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				7C4E858E217F262B00FCBFE6 /* Timer */,
-				7CCFC180217E372F0071FB12 /* Share */,
 				D4F660B020B6965700508BC5 /* Settings */,
 				D4F660B320B6A10800508BC5 /* Main */,
 			);
 			path = UserStory;
-			sourceTree = "<group>";
-		};
-		7CCFC180217E372F0071FB12 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				7CCFC181217E375A0071FB12 /* ShareController.swift */,
-			);
-			path = Share;
 			sourceTree = "<group>";
 		};
 		C73F45501F64D4CF00254F49 = {
@@ -490,7 +476,6 @@
 		D4F660B020B6965700508BC5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D4F660B120B6968900508BC5 /* SettingsController.swift */,
 				7CCFC175217DF9590071FB12 /* RoundDurationController.swift */,
 				7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */,
 			);
@@ -500,8 +485,6 @@
 		D4F660B320B6A10800508BC5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6609E20B5AD9100508BC5 /* MainController.swift */,
-				D4F660C720B707C600508BC5 /* MainController+Session.swift */,
 				7C4E858C217F11D900FCBFE6 /* MainNewController.swift */,
 			);
 			path = Main;
@@ -901,24 +884,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
 				D452E86420BEEC4700F05FC6 /* AppState.swift in Sources */,
 				7C4E858D217F11D900FCBFE6 /* MainNewController.swift in Sources */,
 				D452E86520BEEC4900F05FC6 /* Middleware.swift in Sources */,
+				7CF3092E2181D21000A336F8 /* TimerController+Session.swift in Sources */,
 				7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */,
 				7C4E8590217F266A00FCBFE6 /* TimerController.swift in Sources */,
 				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
 				7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */,
-				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
 				D452E86820BEEDF900F05FC6 /* DefaultsKeys+Ext.swift in Sources */,
 				D452E86720BEECBB00F05FC6 /* EventHandler.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
 				D452E86620BEECA500F05FC6 /* String+Ext.swift in Sources */,
 				D452E86220BEEC4100F05FC6 /* AppActions.swift in Sources */,
-				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */,
 				D452E86B20BEF09300F05FC6 /* TimerService.swift in Sources */,
-				7CCFC182217E375A0071FB12 /* ShareController.swift in Sources */,
 				D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 				D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */,

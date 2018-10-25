@@ -15,23 +15,17 @@ class MainNewController: WKInterfaceController {
     
     @IBOutlet var settingsButton: WKInterfaceButton!
     
-    @IBOutlet var shareButton: WKInterfaceButton!
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
     }
     
     
     @IBAction private func startTimer() {
-        
+        pushController(withName: Constants.timerControllerClassName, context: nil)
     }
     
     @IBAction private func openSettings() {
-        
-    }
-    
-    @IBAction private func shareApp() {
-        
+        presentController(withNames: [Constants.roundDurationControllerClassName, Constants.beepIntervalController], contexts: nil)
     }
     
 }

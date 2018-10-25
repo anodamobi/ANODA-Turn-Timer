@@ -22,6 +22,10 @@ extension UIFont {
     }
     
     class func timerTimeFont() -> UIFont {
-        return UIFont.init(name: Constants.appFontName, size: 45.0) ?? UIFont.systemFont(ofSize: 45.0)
+        return UIFont.init(name: Constants.appFontName, size: 32.0) ?? UIFont.systemFont(ofSize: 32.0)
+    }
+    
+    class func timerReplayFont() -> UIFont {
+        return UIFont.init(name: Constants.appFontName, size: 27.0) ?? UIFont.systemFont(ofSize: 27.0)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import WatchKit
 import WatchConnectivity
 
-extension MainController: WCSessionDelegate {
+extension TimerController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         DispatchQueue.main.async { [unowned self] in
@@ -20,13 +20,13 @@ extension MainController: WCSessionDelegate {
     
     func processAppContext() {
         if let iPhoneContext = session.receivedApplicationContext as? [String : Double] {
-
+            
             if let interval = iPhoneContext[WatchConnectivityKey.roundDuration.rawValue] {
                 let beepInterval = store.state.timerAppState.beepInterval
                 store.dispatch(TimerUpdateSettingsAction(timeInterval: Int(interval),
                                                          beepInterval: beepInterval))
             }
-
+            
             if let interval = iPhoneContext[WatchConnectivityKey.beepInterval.rawValue] {
                 let timeInterval = store.state.timerAppState.timeInterval
                 store.dispatch(TimerUpdateSettingsAction(timeInterval: timeInterval,
@@ -34,8 +34,11 @@ extension MainController: WCSessionDelegate {
             }
             
             let state = store.state.roundAppState.roundState
-            if state == .initial || state == .isOut {
-                updateTimerLabel(isActive: false, isInitial: true)
+            if state == .initial {
+                setTimerImage()
+            }
+            if state == .isOut {
+                updateTimerImage(timerLabel: "Replay", labelFont: UIFont.timerReplayFont())
             }
         }
     }
