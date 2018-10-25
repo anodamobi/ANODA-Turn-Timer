@@ -10,7 +10,7 @@ import Foundation
 import WatchKit
 import WatchConnectivity
 
-extension TimerController: WCSessionDelegate {
+extension MainController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         DispatchQueue.main.async { [unowned self] in
@@ -34,12 +34,6 @@ extension TimerController: WCSessionDelegate {
             }
             
             let state = store.state.roundAppState.roundState
-            if state == .initial {
-                setTimerImage()
-            }
-            if state == .isOut {
-                updateTimerImage(timerLabel: "Replay", labelFont: UIFont.timerReplayFont())
-            }
         }
     }
     

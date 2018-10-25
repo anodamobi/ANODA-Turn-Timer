@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="852" y="1139"/>
         </scene>
-        <!--MainNewController-->
+        <!--MainController-->
         <scene sceneID="wUQ-Yg-Off">
             <objects>
-                <controller identifier="MainNewController" id="seK-Ko-NEH" customClass="MainNewController" customModule="AnodaTurnTimerWatch_Extension">
+                <controller identifier="MainController" id="seK-Ko-NEH" customClass="MainController" customModule="AnodaTurnTimerWatch_Extension">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" id="VR1-b4-0FC">
                             <items>

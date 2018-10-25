@@ -8,7 +8,6 @@
 
 import Foundation
 import WatchKit
-import WatchConnectivity
 import ReSwift
 import YOChartImageKit
 
@@ -18,14 +17,12 @@ class TimerController: WKInterfaceController, StoreSubscriber {
     
     let timerRing = YODonutChartImage()
     
-    let session = WCSession.default
     private var timer: TimerService?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         setTitle("Menu")
         setTimerImage()
-        setupSession()
         timer = TimerService()
     }
     
@@ -85,12 +82,6 @@ class TimerController: WKInterfaceController, StoreSubscriber {
     }
     
     // MARK: End of UI methods
-    
-    private func setupSession() {
-        processAppContext()
-        session.delegate = self
-        session.activate()
-    }
     
     private func replayAction() {
         store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
