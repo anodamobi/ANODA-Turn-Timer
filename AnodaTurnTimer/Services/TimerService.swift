@@ -105,13 +105,13 @@ class TimerService: NSObject {
         guard let endDate = store.state.roundAppState.endDate else {
             return
         }
-        let timeToEnd = Int(ceil(endDate.timeIntervalSince(Date())))
+        let timeToEnd = endDate.timeIntervalSince(Date()).rounded(.up)
         if timeToEnd >= 1 {
             // Update storage values
             let interval = store.state.timerAppState.timeInterval
-            let progress: Double = 1 - Double(timeToEnd) / Double(interval)
+            let progress = 1 - timeToEnd / Double(interval)
             store.dispatch(RoundProgress(progress: progress))
-            store.dispatch(RoundTimeInterval(timer: timeToEnd))
+            store.dispatch(RoundTimeInterval(timer: Int(timeToEnd)))
         } else {
             // Round already finished
             store.dispatch(RoundProgress(progress: 1.0))
