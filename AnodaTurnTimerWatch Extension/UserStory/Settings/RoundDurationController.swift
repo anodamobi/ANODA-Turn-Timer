@@ -75,13 +75,13 @@ class RoundDurationController: WKInterfaceController {
     }
     
     func setPickersSelectedValues() {
-        let timeInterval = getTimerTimeInterval()
+        let timeInterval = TimerData.convertToTime(timeInterval: store.state.timerAppState.timeInterval)
         minutesPicker.setSelectedItemIndex(timeInterval.minutes)
         secondsPicker.setSelectedItemIndex(timeInterval.seconds)
     }
     
     func updateTimeInterval() {
-        var timeInterval = getTimerTimeInterval()
+        var timeInterval = TimerData.convertToTime(timeInterval: store.state.timerAppState.timeInterval)
         if let newMinutesValue = pickedMinutesInterval {
             timeInterval.minutes = newMinutesValue
         }
@@ -91,12 +91,6 @@ class RoundDurationController: WKInterfaceController {
         let newTimeInterval = (timeInterval.minutes * 60) +  timeInterval.seconds
         store.dispatch(TimerUpdateSettingsAction(timeInterval: newTimeInterval, beepInterval: store.state.timerAppState.beepInterval))
     }
-    
-    func getTimerTimeInterval() -> TimerTimeInterval {
-        let timeInterval = store.state.timerAppState.timeInterval
-        let minutes = Int(timeInterval / 60)
-        let seconds = Int(timeInterval) % 60
-        return TimerTimeInterval(minutes: minutes, seconds: seconds)
-    }
+
     
 }

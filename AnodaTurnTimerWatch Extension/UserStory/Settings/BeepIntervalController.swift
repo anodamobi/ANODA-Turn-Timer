@@ -75,13 +75,13 @@ class BeepIntervalController: WKInterfaceController {
     }
     
     func setPickersSelectedValues() {
-        let beepInterval = getTimerBeepInterval()
+        let beepInterval = TimerData.convertToTime(timeInterval: store.state.timerAppState.beepInterval)
         minutesPicker.setSelectedItemIndex(beepInterval.minutes)
         secondsPicker.setSelectedItemIndex(beepInterval.seconds)
     }
     
     func updateBeepInterval() {
-        var beepInterval = getTimerBeepInterval()
+        var beepInterval = TimerData.convertToTime(timeInterval: store.state.timerAppState.beepInterval)
         if let newMinutesValue = pickedMinutesInterval {
             beepInterval.minutes = newMinutesValue
         }
@@ -91,11 +91,5 @@ class BeepIntervalController: WKInterfaceController {
         let newBeepInterval = (beepInterval.minutes * 60) +  beepInterval.seconds
         store.dispatch(TimerUpdateSettingsAction(timeInterval: store.state.timerAppState.timeInterval, beepInterval: newBeepInterval))
     }
-    
-    func getTimerBeepInterval() -> TimerTimeInterval {
-        let timeInterval = store.state.timerAppState.beepInterval
-        let minutes = Int(timeInterval / 60)
-        let seconds = Int(timeInterval) % 60
-        return TimerTimeInterval(minutes: minutes, seconds: seconds)
-    }
+
 }

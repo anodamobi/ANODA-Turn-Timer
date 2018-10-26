@@ -25,7 +25,6 @@ class TimerService: NSObject {
     override init() { 
         super.init()
         setupSubscription()
-        
     }
     
     func setupSubscription() {
@@ -52,10 +51,8 @@ class TimerService: NSObject {
         debugPrint("\(store.state.roundAppState.roundTimeProgress)")
     }
     
-    
-    
     @objc func updateTimer() {
-        checkEndDate()
+        updateTimerIfNeeded()
         if store.state.roundAppState.roundTimeProgress <= 1 {
             updateTo(state: .isOut)
             return
@@ -67,8 +64,8 @@ class TimerService: NSObject {
         }
         let timeToEnd = store.state.roundAppState.roundTimeProgress
         let interval = store.state.timerAppState.timeInterval
-        let progress = CGFloat(1 - (CGFloat(timeToEnd) / CGFloat(interval)))
-        store.dispatch(RoundProgress(progress: Float(progress)))
+        let progress: Double = 1 - Double(timeToEnd) / Double(interval)
+        store.dispatch(RoundProgress(progress: progress))
     }
     
     func updateTo(state: TimerState) {
@@ -103,18 +100,18 @@ class TimerService: NSObject {
         store.dispatch(RoundTimeInterval(timer: timeInterval))
     }
     
-    func checkEndDate(){
+    func updateTimerIfNeeded() {
         // Update RoundState.roundTimeProgress and time interval
         guard let endDate = store.state.roundAppState.endDate else {
             return
         }
-        let timeToEnd: Int = Int(ceil(endDate.timeIntervalSince(Date())))
+        let timeToEnd = Int(ceil(endDate.timeIntervalSince(Date())))
         if timeToEnd >= 1 {
             // Update storage values
             let interval = store.state.timerAppState.timeInterval
-            let progress: Double = 1 - (Double(timeToEnd) / Double(interval))
-            store.dispatch(RoundProgress(progress: Float(progress)))
-            store.dispatch(RoundTimeInterval(timer: Int(timeToEnd)))
+            let progress: Double = 1 - Double(timeToEnd) / Double(interval)
+            store.dispatch(RoundProgress(progress: progress))
+            store.dispatch(RoundTimeInterval(timer: timeToEnd))
         } else {
             // Round already finished
             store.dispatch(RoundProgress(progress: 1.0))
