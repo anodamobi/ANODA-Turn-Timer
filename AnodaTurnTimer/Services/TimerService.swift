@@ -52,7 +52,7 @@ class TimerService: NSObject {
     }
     
     @objc func updateTimer() {
-        updateTimerIfNeeded()
+        checkTimerEndDate()
         if store.state.roundAppState.roundTimeProgress <= 1 {
             updateTo(state: .isOut)
             return
@@ -100,7 +100,7 @@ class TimerService: NSObject {
         store.dispatch(RoundTimeInterval(timer: timeInterval))
     }
     
-    func updateTimerIfNeeded() {
+    func checkTimerEndDate() {
         // Update RoundState.roundTimeProgress and time interval
         guard let endDate = store.state.roundAppState.endDate else {
             return

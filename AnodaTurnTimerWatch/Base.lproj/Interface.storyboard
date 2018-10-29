@@ -196,11 +196,19 @@
                         <group width="1" alignment="left" verticalAlignment="center" id="VR1-b4-0FC">
                             <items>
                                 <button width="60" height="60" alignment="left" backgroundImage="playButton" id="skx-b7-A8p">
+                                    <variation key="device=watch38mm" height="60" width="60"/>
+                                    <variation key="device=watch40mm" height="65" width="65"/>
+                                    <variation key="device=watch42mm" height="70" width="70"/>
+                                    <variation key="device=watch44mm" height="75" width="75"/>
                                     <connections>
                                         <action selector="startTimer" destination="seK-Ko-NEH" id="ZF0-CW-Dn0"/>
                                     </connections>
                                 </button>
                                 <button width="60" height="60" alignment="right" backgroundImage="settingsButton" id="fBR-iz-zw6">
+                                    <variation key="device=watch38mm" height="60" width="60"/>
+                                    <variation key="device=watch40mm" height="65" width="65"/>
+                                    <variation key="device=watch42mm" height="70" width="70"/>
+                                    <variation key="device=watch44mm" height="75" width="75"/>
                                     <connections>
                                         <action selector="openSettings" destination="seK-Ko-NEH" id="gIr-ue-grZ"/>
                                     </connections>
