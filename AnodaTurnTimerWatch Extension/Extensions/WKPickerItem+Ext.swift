@@ -17,7 +17,7 @@ extension WKPickerItem {
             NSAttributedStringKey.font: font
         ]
         let textSize = text.size(withAttributes: attributes)
-        UIGraphicsBeginImageContextWithOptions(textSize, true, 0)
+        UIGraphicsBeginImageContextWithOptions(textSize, true, WKInterfaceDevice.current().screenScale)
         text.draw(at: CGPoint.zero, withAttributes: attributes)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
