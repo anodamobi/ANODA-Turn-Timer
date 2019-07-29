@@ -22,7 +22,7 @@ DEPENDENCIES:
   - "UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)"
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
     - R.swift
@@ -56,4 +56,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4ca5ba69cfd98f4b4f52a10cf7aaaabe21b41e2c
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.5

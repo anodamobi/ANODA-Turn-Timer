@@ -676,7 +676,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-watchOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults-watchOS/SwiftyUserDefaults.framework",
 			);
@@ -687,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2F4D0347691C96D6AB8915AD /* [CP] Check Pods Manifest.lock */ = {
@@ -732,7 +732,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -751,7 +751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D41E5F0320BECCAA004F79A8 /* R.swift */ = {

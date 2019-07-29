@@ -1,0 +1,16 @@
+language: swift
+osx_image: xcode10.3
+
+# safelist
+branches:
+  only:
+  - master
+  - travis-ci-test
+
+xcode_workspace: AnodaTurnTimer.xcworkspace
+xcode_scheme: AnodaTurnTimer
+xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone X
+
+script:
+  - set -o pipefail
+  - xcodebuild -workspace AnodaTurnTimer.xcworkspace -scheme AnodaTurnTimer -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
