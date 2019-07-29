@@ -20,7 +20,7 @@ abstract_target 'AnodaTurnTimerAbstract' do
         pod 'Fabric'
         pod 'Crashlytics'
         
-        pod 'UIImagePDF', :git=> 'git@github.com:anodamobi/UIImage-PDF.git', :branch => '0.9-beta1', :commit => '7d9dfbf'
+        pod 'UIImagePDF', :git=> 'https://github.com/anodamobi/UIImage-PDF.git', :branch => '0.9-beta1', :commit => '7d9dfbf'
         
         
         pod 'ReSwift', '~> 4.0.1'
