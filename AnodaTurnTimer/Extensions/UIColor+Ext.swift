@@ -6,8 +6,10 @@
 //  Copyright © 2018 Oksana Kovalchuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+#if os(watchOS)
 import WatchKit
+#endif
 
 extension UIColor {
     

@@ -28,7 +28,7 @@ DEPENDENCIES:
   - YOChartImageKit (~> 1.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Closures
     - Crashlytics
     - Fabric
@@ -68,4 +68,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0b6004eb3cd9c517c2a442c380b92b520c7a67a7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
