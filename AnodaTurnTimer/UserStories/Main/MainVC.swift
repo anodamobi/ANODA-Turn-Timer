@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import Closures
 
 class MainVC: UIViewController, StoreSubscriber {
     
@@ -30,59 +31,75 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     func newState(state: RoundState) {
-        
         contentView.pieView.update(to: CGFloat(state.progress), animated: true)
         
         switch state.roundState {
         case .initial:
             contentView.pieView.update(to: 0, animated: true)
             contentView.updateRestartIcon(visible: false)
-
+            
         case .running:
-            self.contentView.updatePlay(toPause: true)
-
+            contentView.updatePlay(toPause: true)
+            
         case .paused:
-            self.contentView.updatePlay(toPause: false)
-
+            contentView.updatePlay(toPause: false)
+            
         case .isOut:
-            self.contentView.updateRestartIcon(visible: true)
-            self.contentView.updatePlay(toPause: false)
+            contentView.pieView.update(to: 1, animated: true)
+            contentView.updateRestartIcon(visible: true)
+            contentView.updatePlay(toPause: false)
         }
         
         updated(timeInterval: state.roundTimeProgress)
     }
-
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        contentView.pauseButton.addTargetClosure { (button) in
+        
+        contentView.restartButton.onTap { [unowned self] in
+            self.replayAction()
+        }
+        
+        contentView.pauseButton.onTap { [unowned self] in
             let state: TimerState = store.state.roundAppState.roundState
             
             if state == .paused || state == .initial {
+                let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval + 1)) // cause need to round date to seconds
+                store.dispatch(RoundEndDate(endDate: endDate))
                 store.dispatch(RoundRunningAction())
             } else if state == .running {
                 store.dispatch(RoundPausedAction())
             } else if state == .isOut {
-                replayAction()
+                self.replayAction()
             }
         }
         
-        contentView.restartButton.addTargetClosure { (button) in
-            replayAction()
-        }
-        
-        contentView.settingsButton.addTargetClosure { (button) in
+        contentView.settingsButton.onTap { [unowned self] in
             store.dispatch(RoundPausedAction())
             self.navigationController?.pushViewController(SettingsVC(), animated: true)
         }
         
-        func replayAction() {
-            store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
-                                             beepValue: store.state.timerAppState.beepInterval))
-            store.dispatch(RoundInitialAction(progress: 0))
-            store.dispatch(RoundRunningAction())
+        contentView.replayButton.onTap { [unowned self] in
+            self.replayAction()
         }
+    }
+    
+    func replayAction() {
+        store.dispatch(RoundReplayAction(timeValue: store.state.timerAppState.timeInterval,
+                                         beepValue: store.state.timerAppState.beepInterval))
+        let endDate = Date().addingTimeInterval(TimeInterval(store.state.timerAppState.timeInterval))
+        store.dispatch(RoundEndDate(endDate: endDate))
+        store.dispatch(RoundInitialAction(progress: 0))
+        store.dispatch(RoundRunningAction())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,10 +113,7 @@ class MainVC: UIViewController, StoreSubscriber {
     }
     
     func updated(timeInterval: Int) {
-        
-        var text: String
-        text = String.timeString(time: TimeInterval(timeInterval))
-        
+        let text = String.timeString(time: TimeInterval(timeInterval))
         contentView.timerLabel.text = text
     }
 }

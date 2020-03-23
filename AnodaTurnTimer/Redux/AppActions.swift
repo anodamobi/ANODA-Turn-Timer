@@ -32,6 +32,10 @@ struct RoundIsOutAction: Action {
     var beepValue: Int
 }
 
-struct RoundProgress: Action { var progress: Float }
+struct RoundProgress: Action { var progress: Double }
 struct RoundTimeInterval: Action { var timer: Int }
-struct RoundInitialAction: Action { var progress: Float }
+
+struct RoundEndDate: Action { var endDate: Date? }
+struct RoundInitialAction: Action {
+    var progress: Double
+}

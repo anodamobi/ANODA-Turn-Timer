@@ -1,7 +1,9 @@
 PODS:
+  - Closures (0.4)
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - Fabric (1.7.7)
+  - IQKeyboardManagerSwift (6.1.1)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
@@ -10,27 +12,34 @@ PODS:
   - SwiftySound (1.0.0)
   - SwiftyUserDefaults (3.0.1)
   - UIImagePDF (0.9-beta1)
+  - YOChartImageKit (1.2.1)
 
 DEPENDENCIES:
+  - Closures
   - Crashlytics
   - Fabric
+  - IQKeyboardManagerSwift
   - R.swift
   - ReSwift (~> 4.0.1)
   - SnapKit (~> 4.0)
   - SwiftySound
   - SwiftyUserDefaults
   - "UIImagePDF (from `git@github.com:anodamobi/UIImage-PDF.git`, commit `7d9dfbf`, branch `0.9-beta1`)"
+  - YOChartImageKit (~> 1.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
+    - Closures
     - Crashlytics
     - Fabric
+    - IQKeyboardManagerSwift
     - R.swift
     - R.swift.Library
     - ReSwift
     - SnapKit
     - SwiftySound
     - SwiftyUserDefaults
+    - YOChartImageKit
 
 EXTERNAL SOURCES:
   UIImagePDF:
@@ -44,8 +53,10 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:anodamobi/UIImage-PDF.git"
 
 SPEC CHECKSUMS:
+  Closures: fe9ecbda045d8d42cc13520209b4ea5208e38248
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
@@ -53,7 +64,8 @@ SPEC CHECKSUMS:
   SwiftySound: b9c3370956fd4ed65ed79d45563070077a50a2cd
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UIImagePDF: 7cae10d97e503ae042a3ebbfa53d19e4bca4daf9
+  YOChartImageKit: bd73e66857c848325bef87edc40595d72a6b5fbe
 
-PODFILE CHECKSUM: 4ca5ba69cfd98f4b4f52a10cf7aaaabe21b41e2c
+PODFILE CHECKSUM: 0b6004eb3cd9c517c2a442c380b92b520c7a67a7
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.8.4

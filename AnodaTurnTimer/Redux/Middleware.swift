@@ -9,9 +9,9 @@
 import Foundation
 import ReSwift
 import SwiftyUserDefaults
-//#if os(watchOS)
+#if os(watchOS)
 import WatchKit
-//#endif
+#endif
 
 let timerAppStateMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in

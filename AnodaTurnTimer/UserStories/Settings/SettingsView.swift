@@ -10,18 +10,24 @@ import Foundation
 import UIKit
 import SnapKit
 
+fileprivate let buttonBackgroundSizeConst: CGFloat = 75.0
+fileprivate let buttonSizeConst: CGFloat = 50.0
+
 class SettingsView: UIView {
     
-    let background: UIImageView = UIImageView()
-    
+    let backButtonContainerView: UIView = UIView()
+    let backButtonBackground: UIImageView = UIImageView()
     let backButton: UIButton = UIButton()
+    
+    let shareButtonContainerView: UIView = UIView()
+    let shareButtonBackground: UIImageView = UIImageView()
     let shareButton: UIButton = UIButton()
+    
     let roundDurationSection: SettingsSectionView = SettingsSectionView()
     let beepSection: SettingsSectionView = SettingsSectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layoutView()
     }
     
@@ -30,56 +36,80 @@ class SettingsView: UIView {
     }
     
     func layoutView() {
-        
-        addSubview(background)
-        background.setImage(UIImage.backgroudImage())
-        background.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
-        }
-        
-        addSubview(backButton)
-        backButton.setupButtonImages(imageName: ("cancelNormal", "cancelPressed", "cancelPressed"), width: 75)
-        backButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.safeArea.top).offset(25)
-            make.left.equalTo(10)
-        }
-        
-        addSubview(shareButton)
-        shareButton.setupButtonImages(imageName: ("shareNormal", "sharePressed", "sharePressed"), width: 75)
-        shareButton.snp.makeConstraints { (make) in
-            make.right.equalTo(-10)
-            make.top.equalTo(backButton)
-        }
+        backgroundColor = .white
         
         addSubview(roundDurationSection)
-        roundDurationSection.title.text = Localizable.roundDuration(())
-        roundDurationSection.snp.makeConstraints { (make) in
-            make.top.equalTo(backButton.snp.bottom)
-            make.left.right.equalTo(self)
-            make.height.equalTo(250)
+        roundDurationSection.title.text = Localizable.roundDuration()
+        roundDurationSection.snp.makeConstraints { [unowned self] (make) in
+            make.top.equalTo(self.safeArea.top).offset(25)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 248, height: 137))
         }
-        
+
         addSubview(beepSection)
-        beepSection.picker.tag = 1
         beepSection.title.text = Localizable.beepBeforeRoundEnds(())
         beepSection.snp.makeConstraints { (make) in
-            make.top.equalTo(roundDurationSection.snp.bottom).offset(16)
-            make.width.equalTo(roundDurationSection)
-            make.height.equalTo(roundDurationSection)
+            make.top.equalTo(roundDurationSection.snp.bottom).offset(18)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 248, height: 137))
+        }
+        
+        addSubview(backButtonContainerView)
+        backButtonContainerView.snp.makeConstraints{ (make) in
+            make.top.equalTo(beepSection.snp.bottom).offset(25)
+            make.left.equalToSuperview().offset(28)
+            make.size.equalTo(buttonBackgroundSizeConst)
+        }
+        
+        backButtonContainerView.addSubview(backButtonBackground)
+        backButtonBackground.backgroundColor = UIColor.mango10
+        backButtonBackground.layer.cornerRadius = buttonBackgroundSizeConst / 2
+        backButtonBackground.clipsToBounds = true
+        backButtonBackground.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        backButtonContainerView.addSubview(backButton)
+        backButton.setupButtonImages(imageName: ("backButtonIcon", "backButtonIconPressed", "backButtonIconPressed"), width: buttonSizeConst)
+        backButton.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(buttonSizeConst)
+        }
+        
+        addSubview(shareButtonContainerView)
+        shareButtonContainerView.snp.makeConstraints { (make) in
+            make.top.equalTo(beepSection.snp.bottom).offset(25)
+            make.right.equalToSuperview().offset(-28)
+            make.size.equalTo(buttonBackgroundSizeConst)
+        }
+        
+        shareButtonContainerView.addSubview(shareButtonBackground)
+        shareButtonBackground.backgroundColor = UIColor.mango10
+        shareButtonBackground.layer.cornerRadius = buttonBackgroundSizeConst / 2
+        shareButtonBackground.backgroundColor = UIColor.mango10
+        shareButtonBackground.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        shareButtonContainerView.addSubview(shareButton)
+        shareButton.setupButtonImages(imageName: ("shareButtonIcon", "shareButtonPressedIcon", "shareButtonPressedIcon"), width: buttonSizeConst)
+        shareButton.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(buttonSizeConst)
         }
     }
 }
 
 
 class SettingsSectionView: UIView {
-    
+        
     let title: UILabel = UILabel()
     let background: UIView = UIView()
-    let picker: LETimeIntervalPicker = LETimeIntervalPicker()
-    
+    let timeTextField: UITextField = UITextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+                
         layoutView()
     }
     
@@ -90,33 +120,37 @@ class SettingsSectionView: UIView {
     func layoutView() {
         
         addSubview(title)
-        title.font = UIFont.gtSubtitleFont()
+        title.font = UIFont.gtSettingsSubtitleFont()
         title.textAlignment = .center
-        title.textColor = UIColor.gtVeryLightPink
+        title.textColor = UIColor.mango
+        title.adjustsFontSizeToFitWidth = true
         title.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(self)
-            make.height.equalTo(44)
+            make.top.left.right.equalToSuperview()
         }
         
         addSubview(background)
-        background.backgroundColor = UIColor.gtVeryLightPink
-        background.layer.cornerRadius = 85
+        let backgroundHeight: CGFloat = 91.0
+        background.backgroundColor = UIColor.mango10
+        background.layer.cornerRadius = backgroundHeight/2
         background.clipsToBounds = true
         background.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom)
-            make.centerX.equalTo(self)
-            make.height.equalTo(170)
-            make.width.equalTo(320)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(backgroundHeight)
+            make.width.equalTo(248)
         }
         
-        background.addSubview(picker)
-        picker.unitsStyle = .short
-        picker.components = [.minutes, .seconds]
-        picker.textFont = UIFont.gtPickerFont()
-        picker.numberFont = UIFont.gtPickerFont()
-        picker.tintColor = UIColor.white
-        picker.snp.makeConstraints { (make) in
-            make.edges.equalTo(background)
+        background.addSubview(timeTextField)
+        timeTextField.textColor = UIColor.mango
+        timeTextField.tintColor = UIColor.gtSlateGrey
+        timeTextField.font = UIFont.gtSettingsDataFont()
+        timeTextField.keyboardType = .numberPad
+        timeTextField.textAlignment = .center
+        
+        timeTextField.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(4, 30, 4, 30))
         }
+        
     }
 }

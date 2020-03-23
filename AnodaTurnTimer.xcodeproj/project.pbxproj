@@ -7,31 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1412E62179D59800A68B1D /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1412E52179D59800A68B1D /* UITextField+Ext.swift */; };
+		7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
+		7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */; };
+		7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */; };
+		7C4E858D217F11D900FCBFE6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4E858C217F11D900FCBFE6 /* MainController.swift */; };
+		7C4E8590217F266A00FCBFE6 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4E858F217F266A00FCBFE6 /* TimerController.swift */; };
+		7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */; };
+		7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */; };
+		7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */; };
+		7CCEA81F217A2E4300A7519B /* shareButtonPressedIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */; };
+		7CCEA821217A2E7C00A7519B /* ressetIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */; };
+		7CCEA823217A2EA000A7519B /* playButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */; };
+		7CCEA825217A2EB700A7519B /* pauseButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */; };
+		7CCEA827217A2EEA00A7519B /* backButtonIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */; };
+		7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */; };
+		7CCEA82C217A30EB00A7519B /* shareButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */; };
+		7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */; };
+		7CCFC176217DF9590071FB12 /* RoundDurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC175217DF9590071FB12 /* RoundDurationController.swift */; };
+		7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */; };
+		7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */; };
+		7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */; };
+		7CF3092E2181D21000A336F8 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3092D2181D21000A336F8 /* MainController+Session.swift */; };
+		7CF3093121821BB600A336F8 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3093021821BB600A336F8 /* TimerData.swift */; };
 		B0895956A973CC53BE9406EA /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BF399BED17B7CA656A7420 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimerWatch_Extension.framework */; };
 		D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */; };
 		D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E5F0420BECCEC004F79A8 /* R.generated.swift */; };
+		D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD672163B93F00ADA904 /* resetIcon.pdf */; };
+		D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD692163B94000ADA904 /* playButtonIcon.pdf */; };
+		D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */; };
+		D420BD712163B94000ADA904 /* buttonsContainerBackground.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6B2163B94000ADA904 /* buttonsContainerBackground.pdf */; };
+		D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D420BD6C2163B94000ADA904 /* settingsIcon.pdf */; };
 		D452E83920BEEAC300F05FC6 /* ColorScheme+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */; };
 		D452E83A20BEEAC300F05FC6 /* DefaultsKeys+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */; };
 		D452E83B20BEEAC300F05FC6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80820BEEAC300F05FC6 /* String+Ext.swift */; };
 		D452E83C20BEEAC300F05FC6 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80920BEEAC300F05FC6 /* UIButton+Ext.swift */; };
 		D452E83D20BEEAC300F05FC6 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */; };
 		D452E83E20BEEAC300F05FC6 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */; };
-		D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */; };
 		D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452E81020BEEAC300F05FC6 /* Assets.xcassets */; };
-		D452E84120BEEAC300F05FC6 /* background-i5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81220BEEAC300F05FC6 /* background-i5.pdf */; };
-		D452E84220BEEAC300F05FC6 /* background-i6.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81320BEEAC300F05FC6 /* background-i6.pdf */; };
-		D452E84320BEEAC300F05FC6 /* background-i6p.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81420BEEAC300F05FC6 /* background-i6p.pdf */; };
-		D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */; };
-		D452E84520BEEAC300F05FC6 /* cancelPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */; };
-		D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */; };
-		D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81920BEEAC300F05FC6 /* pausePressed.pdf */; };
-		D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81A20BEEAC300F05FC6 /* playNormal.pdf */; };
-		D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81B20BEEAC300F05FC6 /* playPressed.pdf */; };
-		D452E84A20BEEAC300F05FC6 /* reset.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81C20BEEAC300F05FC6 /* reset.pdf */; };
-		D452E84B20BEEAC300F05FC6 /* settingsNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */; };
-		D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */; };
-		D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */; };
-		D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D452E82020BEEAC300F05FC6 /* sharePressed.pdf */; };
 		D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D452E82120BEEAC300F05FC6 /* Localizable.strings */; };
 		D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D452E82320BEEAC300F05FC6 /* alarm.mp3 */; };
 		D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D452E82420BEEAC300F05FC6 /* start_end.mp3 */; };
@@ -64,13 +77,10 @@
 		D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F6608F20B5AD8F00508BC5 /* Interface.storyboard */; };
 		D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6609220B5AD9000508BC5 /* Assets.xcassets */; };
 		D4F6609A20B5AD9100508BC5 /* AnodaTurnTimerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F6609E20B5AD9100508BC5 /* MainController.swift */; };
 		D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */; };
 		D4F660A320B5AD9100508BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F660A220B5AD9100508BC5 /* Assets.xcassets */; };
 		D4F660A720B5AD9100508BC5 /* AnodaTurnTimerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4F6608D20B5AD8F00508BC5 /* AnodaTurnTimerWatch.app */; };
-		D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660B120B6968900508BC5 /* SettingsController.swift */; };
 		D4F660C220B700AF00508BC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F660C120B700AF00508BC5 /* Localizable.strings */; };
-		D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660C720B707C600508BC5 /* MainController+Session.swift */; };
 		D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F660CA20B70B1300508BC5 /* Constants.swift */; };
 		D75F79A11F69F73A00DFF3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79721F69F73A00DFF3AA /* AppDelegate.swift */; };
 		D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */; };
@@ -128,31 +138,43 @@
 		77136240DC03831EF6FC281B /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig"; sourceTree = "<group>"; };
 		7AF2F1A49D449BE1F1B1D81E /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		7C1412E52179D59800A68B1D /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PassionOne-Regular.otf"; sourceTree = "<group>"; };
+		7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		7C4E858C217F11D900FCBFE6 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		7C4E858F217F266A00FCBFE6 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewBackground.pdf; sourceTree = "<group>"; };
+		7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pieViewResetIcon.pdf; sourceTree = "<group>"; };
+		7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldDelegate.swift; sourceTree = "<group>"; };
+		7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonPressedIcon.pdf; sourceTree = "<group>"; };
+		7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ressetIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsIconPressed.pdf; sourceTree = "<group>"; };
+		7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareButtonIcon.pdf; sourceTree = "<group>"; };
+		7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = backButtonIcon.pdf; sourceTree = "<group>"; };
+		7CCFC175217DF9590071FB12 /* RoundDurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDurationController.swift; sourceTree = "<group>"; };
+		7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepIntervalController.swift; sourceTree = "<group>"; };
+		7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKPickerItem+Ext.swift"; sourceTree = "<group>"; };
+		7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
+		7CF3092D2181D21000A336F8 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
+		7CF3093021821BB600A336F8 /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		C73F45591F64D4CF00254F49 /* AnodaTurnTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnodaTurnTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKButton+Ext.swift"; sourceTree = "<group>"; };
 		D41E5F0420BECCEC004F79A8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D420BD672163B93F00ADA904 /* resetIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = resetIcon.pdf; sourceTree = "<group>"; };
+		D420BD692163B94000ADA904 /* playButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playButtonIcon.pdf; sourceTree = "<group>"; };
+		D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseButtonIcon.pdf; sourceTree = "<group>"; };
+		D420BD6B2163B94000ADA904 /* buttonsContainerBackground.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = buttonsContainerBackground.pdf; sourceTree = "<group>"; };
+		D420BD6C2163B94000ADA904 /* settingsIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsIcon.pdf; sourceTree = "<group>"; };
 		D452E80620BEEAC300F05FC6 /* ColorScheme+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorScheme+Ext.swift"; sourceTree = "<group>"; };
 		D452E80720BEEAC300F05FC6 /* DefaultsKeys+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Ext.swift"; sourceTree = "<group>"; };
 		D452E80820BEEAC300F05FC6 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		D452E80920BEEAC300F05FC6 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
-		D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rancho-Regular.ttf"; sourceTree = "<group>"; };
 		D452E81020BEEAC300F05FC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D452E81220BEEAC300F05FC6 /* background-i5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "background-i5.pdf"; sourceTree = "<group>"; };
-		D452E81320BEEAC300F05FC6 /* background-i6.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "background-i6.pdf"; sourceTree = "<group>"; };
-		D452E81420BEEAC300F05FC6 /* background-i6p.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "background-i6p.pdf"; sourceTree = "<group>"; };
-		D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancelNormal.pdf; sourceTree = "<group>"; };
-		D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancelPressed.pdf; sourceTree = "<group>"; };
-		D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pauseNormal.pdf; sourceTree = "<group>"; };
-		D452E81920BEEAC300F05FC6 /* pausePressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pausePressed.pdf; sourceTree = "<group>"; };
-		D452E81A20BEEAC300F05FC6 /* playNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playNormal.pdf; sourceTree = "<group>"; };
-		D452E81B20BEEAC300F05FC6 /* playPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = playPressed.pdf; sourceTree = "<group>"; };
-		D452E81C20BEEAC300F05FC6 /* reset.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = reset.pdf; sourceTree = "<group>"; };
-		D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsNormal.pdf; sourceTree = "<group>"; };
-		D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = settingsPressed.pdf; sourceTree = "<group>"; };
-		D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = shareNormal.pdf; sourceTree = "<group>"; };
-		D452E82020BEEAC300F05FC6 /* sharePressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sharePressed.pdf; sourceTree = "<group>"; };
 		D452E82120BEEAC300F05FC6 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D452E82320BEEAC300F05FC6 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		D452E82420BEEAC300F05FC6 /* start_end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_end.mp3; sourceTree = "<group>"; };
@@ -176,15 +198,12 @@
 		D4F6609220B5AD9000508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F6609420B5AD9000508BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F6609920B5AD9000508BC5 /* AnodaTurnTimerWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AnodaTurnTimerWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4F6609E20B5AD9100508BC5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D4F660A220B5AD9100508BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F660A420B5AD9100508BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4F660B120B6968900508BC5 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		D4F660B420B6D41700508BC5 /* AnodaTurnTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnodaTurnTimer.entitlements; sourceTree = "<group>"; };
 		D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AnodaTurnTimerWatch Extension.entitlements"; sourceTree = "<group>"; };
 		D4F660C120B700AF00508BC5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		D4F660C720B707C600508BC5 /* MainController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Session.swift"; sourceTree = "<group>"; };
 		D4F660CA20B70B1300508BC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D75F79721F69F73A00DFF3AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75F79751F69F73A00DFF3AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +248,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C4E858E217F262B00FCBFE6 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				7C4E858F217F266A00FCBFE6 /* TimerController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		7CCEA81D217A2E0E00A7519B /* pressed */ = {
+			isa = PBXGroup;
+			children = (
+				7CCEA822217A2EA000A7519B /* playButtonIconPressed.pdf */,
+				7CCEA820217A2E7C00A7519B /* ressetIconPressed.pdf */,
+				7CCEA826217A2EE900A7519B /* backButtonIconPressed.pdf */,
+				7CCEA824217A2EB700A7519B /* pauseButtonIconPressed.pdf */,
+				7CCEA828217A2F1E00A7519B /* settingsIconPressed.pdf */,
+				7CCEA81E217A2E4300A7519B /* shareButtonPressedIcon.pdf */,
+			);
+			path = pressed;
+			sourceTree = "<group>";
+		};
+		7CCFC17F217E35F60071FB12 /* UserStory */ = {
+			isa = PBXGroup;
+			children = (
+				7C4E858E217F262B00FCBFE6 /* Timer */,
+				D4F660B020B6965700508BC5 /* Settings */,
+				D4F660B320B6A10800508BC5 /* Main */,
+			);
+			path = UserStory;
+			sourceTree = "<group>";
+		};
 		C73F45501F64D4CF00254F49 = {
 			isa = PBXGroup;
 			children = (
@@ -256,8 +306,26 @@
 			isa = PBXGroup;
 			children = (
 				D41E5EB920B7F5D8004F79A8 /* WKButton+Ext.swift */,
+				7CCFC179217E19DB0071FB12 /* WKPickerItem+Ext.swift */,
+				7CCFC17D217E32C20071FB12 /* ColorScheme+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D420BD662163B93100ADA904 /* unpressed */ = {
+			isa = PBXGroup;
+			children = (
+				D420BD6B2163B94000ADA904 /* buttonsContainerBackground.pdf */,
+				D420BD6A2163B94000ADA904 /* pauseButtonIcon.pdf */,
+				7CCEA82B217A30EB00A7519B /* backButtonIcon.pdf */,
+				7CCEA82A217A30EA00A7519B /* shareButtonIcon.pdf */,
+				D420BD692163B94000ADA904 /* playButtonIcon.pdf */,
+				7C821DF1217768E9001BAE06 /* pieViewResetIcon.pdf */,
+				7C821DEF2177617C001BAE06 /* pieViewBackground.pdf */,
+				D420BD672163B93F00ADA904 /* resetIcon.pdf */,
+				D420BD6C2163B94000ADA904 /* settingsIcon.pdf */,
+			);
+			path = unpressed;
 			sourceTree = "<group>";
 		};
 		D452E80520BEEAC300F05FC6 /* Extensions */ = {
@@ -270,6 +338,8 @@
 				D452E80920BEEAC300F05FC6 /* UIButton+Ext.swift */,
 				D452E80A20BEEAC300F05FC6 /* UIColor+Ext.swift */,
 				D452E80B20BEEAC300F05FC6 /* UIDevice+Ext.swift */,
+				7C179A2E217618850063C3F8 /* UIViewController+Ext.swift */,
+				7C1412E52179D59800A68B1D /* UITextField+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,7 +358,7 @@
 		D452E80D20BEEAC300F05FC6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D452E80E20BEEAC300F05FC6 /* Rancho-Regular.ttf */,
+				7C179A252175F3510063C3F8 /* PassionOne-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -297,36 +367,16 @@
 			isa = PBXGroup;
 			children = (
 				D452E81020BEEAC300F05FC6 /* Assets.xcassets */,
-				D452E81120BEEAC300F05FC6 /* Background */,
 				D452E81520BEEAC300F05FC6 /* Buttons */,
 			);
 			path = Images;
 			sourceTree = "<group>";
 		};
-		D452E81120BEEAC300F05FC6 /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				D452E81220BEEAC300F05FC6 /* background-i5.pdf */,
-				D452E81320BEEAC300F05FC6 /* background-i6.pdf */,
-				D452E81420BEEAC300F05FC6 /* background-i6p.pdf */,
-			);
-			path = Background;
-			sourceTree = "<group>";
-		};
 		D452E81520BEEAC300F05FC6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D452E81620BEEAC300F05FC6 /* cancelNormal.pdf */,
-				D452E81720BEEAC300F05FC6 /* cancelPressed.pdf */,
-				D452E81820BEEAC300F05FC6 /* pauseNormal.pdf */,
-				D452E81920BEEAC300F05FC6 /* pausePressed.pdf */,
-				D452E81A20BEEAC300F05FC6 /* playNormal.pdf */,
-				D452E81B20BEEAC300F05FC6 /* playPressed.pdf */,
-				D452E81C20BEEAC300F05FC6 /* reset.pdf */,
-				D452E81D20BEEAC300F05FC6 /* settingsNormal.pdf */,
-				D452E81E20BEEAC300F05FC6 /* settingsPressed.pdf */,
-				D452E81F20BEEAC300F05FC6 /* shareNormal.pdf */,
-				D452E82020BEEAC300F05FC6 /* sharePressed.pdf */,
+				7CCEA81D217A2E0E00A7519B /* pressed */,
+				D420BD662163B93100ADA904 /* unpressed */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -386,6 +436,7 @@
 			children = (
 				D452E83520BEEAC300F05FC6 /* SettingsVC.swift */,
 				D452E83620BEEAC300F05FC6 /* SettingsView.swift */,
+				7C821DF3217786EB001BAE06 /* TimeFieldDelegate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -415,8 +466,7 @@
 				D4F660C920B70B0900508BC5 /* Helpers */,
 				D4F660C420B701B400508BC5 /* Resources */,
 				D4F660B520B6D48300508BC5 /* AnodaTurnTimerWatch Extension.entitlements */,
-				D4F660B320B6A10800508BC5 /* Main */,
-				D4F660B020B6965700508BC5 /* Settings */,
+				7CCFC17F217E35F60071FB12 /* UserStory */,
 				D4F660A020B5AD9100508BC5 /* ExtensionDelegate.swift */,
 				D4F660A220B5AD9100508BC5 /* Assets.xcassets */,
 				D4F660A420B5AD9100508BC5 /* Info.plist */,
@@ -427,7 +477,8 @@
 		D4F660B020B6965700508BC5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D4F660B120B6968900508BC5 /* SettingsController.swift */,
+				7CCFC175217DF9590071FB12 /* RoundDurationController.swift */,
+				7CCFC177217DFF260071FB12 /* BeepIntervalController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -435,8 +486,8 @@
 		D4F660B320B6A10800508BC5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6609E20B5AD9100508BC5 /* MainController.swift */,
-				D4F660C720B707C600508BC5 /* MainController+Session.swift */,
+				7C4E858C217F11D900FCBFE6 /* MainController.swift */,
+				7CF3092D2181D21000A336F8 /* MainController+Session.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -453,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F660CA20B70B1300508BC5 /* Constants.swift */,
+				7CF3093021821BB600A336F8 /* TimerData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -579,20 +631,23 @@
 					C73F45581F64D4CF00254F49 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0930;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
 							};
 						};
 					};
 					D4F6608C20B5AD8F00508BC5 = {
 						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D4F6609820B5AD9000508BC5 = {
 						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -626,26 +681,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D452E84E20BEEAC300F05FC6 /* sharePressed.pdf in Resources */,
-				D452E83F20BEEAC300F05FC6 /* Rancho-Regular.ttf in Resources */,
+				7CCEA823217A2EA000A7519B /* playButtonIconPressed.pdf in Resources */,
+				7CCEA81F217A2E4300A7519B /* shareButtonPressedIcon.pdf in Resources */,
+				D420BD6F2163B94000ADA904 /* playButtonIcon.pdf in Resources */,
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
-				D452E84D20BEEAC300F05FC6 /* shareNormal.pdf in Resources */,
+				7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */,
+				7CCEA821217A2E7C00A7519B /* ressetIconPressed.pdf in Resources */,
+				7CCEA827217A2EEA00A7519B /* backButtonIconPressed.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
+				7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */,
+				D420BD702163B94000ADA904 /* pauseButtonIcon.pdf in Resources */,
+				D420BD712163B94000ADA904 /* buttonsContainerBackground.pdf in Resources */,
 				D452E84F20BEEAC300F05FC6 /* Localizable.strings in Resources */,
-				D452E84220BEEAC300F05FC6 /* background-i6.pdf in Resources */,
-				D452E84B20BEEAC300F05FC6 /* settingsNormal.pdf in Resources */,
-				D452E84C20BEEAC300F05FC6 /* settingsPressed.pdf in Resources */,
-				D452E84820BEEAC300F05FC6 /* playNormal.pdf in Resources */,
-				D452E84720BEEAC300F05FC6 /* pausePressed.pdf in Resources */,
-				D452E84920BEEAC300F05FC6 /* playPressed.pdf in Resources */,
-				D452E84620BEEAC300F05FC6 /* pauseNormal.pdf in Resources */,
+				7CCEA825217A2EB700A7519B /* pauseButtonIconPressed.pdf in Resources */,
+				7C179A262175F3510063C3F8 /* PassionOne-Regular.otf in Resources */,
+				D420BD722163B94000ADA904 /* settingsIcon.pdf in Resources */,
+				7C821DF2217768E9001BAE06 /* pieViewResetIcon.pdf in Resources */,
+				7CCEA82C217A30EB00A7519B /* shareButtonIcon.pdf in Resources */,
+				D420BD6D2163B94000ADA904 /* resetIcon.pdf in Resources */,
 				D452E85120BEEAC300F05FC6 /* start_end.mp3 in Resources */,
-				D452E84120BEEAC300F05FC6 /* background-i5.pdf in Resources */,
-				D452E84320BEEAC300F05FC6 /* background-i6p.pdf in Resources */,
-				D452E84520BEEAC300F05FC6 /* cancelPressed.pdf in Resources */,
 				D452E84020BEEAC300F05FC6 /* Assets.xcassets in Resources */,
-				D452E84A20BEEAC300F05FC6 /* reset.pdf in Resources */,
-				D452E84420BEEAC300F05FC6 /* cancelNormal.pdf in Resources */,
+				7C821DF02177617C001BAE06 /* pieViewBackground.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +709,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C179A272175F3510063C3F8 /* PassionOne-Regular.otf in Resources */,
 				D4F6609320B5AD9000508BC5 /* Assets.xcassets in Resources */,
 				D4F6609120B5AD8F00508BC5 /* Interface.storyboard in Resources */,
 			);
@@ -676,18 +733,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-watchOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults-watchOS/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/YOChartImageKit/YOChartImageKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YOChartImageKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension/Pods-AnodaTurnTimerAbstract-AnodaTurnTimerWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2F4D0347691C96D6AB8915AD /* [CP] Check Pods Manifest.lock */ = {
@@ -732,7 +791,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift-iOS/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -742,6 +803,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -751,7 +814,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer/Pods-AnodaTurnTimerAbstract-AnodaTurnTimer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D41E5F0320BECCAA004F79A8 /* R.swift */ = {
@@ -792,6 +855,7 @@
 				D41E5F0520BECCED004F79A8 /* R.generated.swift in Sources */,
 				D452E85E20BEEAC300F05FC6 /* SettingsView.swift in Sources */,
 				D452E85C20BEEAC300F05FC6 /* MainView.swift in Sources */,
+				7C1412E62179D59800A68B1D /* UITextField+Ext.swift in Sources */,
 				D452E85B20BEEAC300F05FC6 /* MainVC.swift in Sources */,
 				D452E83B20BEEAC300F05FC6 /* String+Ext.swift in Sources */,
 				D452E85320BEEAC300F05FC6 /* AppReducers.swift in Sources */,
@@ -803,7 +867,9 @@
 				D452E83920BEEAC300F05FC6 /* ColorScheme+Ext.swift in Sources */,
 				D452E86120BEEAFF00F05FC6 /* UIView+Ext.swift in Sources */,
 				D452E85D20BEEAC300F05FC6 /* SettingsVC.swift in Sources */,
+				7C179A2F217618850063C3F8 /* UIViewController+Ext.swift in Sources */,
 				D452E83D20BEEAC300F05FC6 /* UIColor+Ext.swift in Sources */,
+				7C821DF4217786EB001BAE06 /* TimeFieldDelegate.swift in Sources */,
 				D452E83E20BEEAC300F05FC6 /* UIDevice+Ext.swift in Sources */,
 				D452E85420BEEAC300F05FC6 /* AppState.swift in Sources */,
 				D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */,
@@ -821,23 +887,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F660C820B707C600508BC5 /* MainController+Session.swift in Sources */,
 				D452E86420BEEC4700F05FC6 /* AppState.swift in Sources */,
+				7C4E858D217F11D900FCBFE6 /* MainController.swift in Sources */,
 				D452E86520BEEC4900F05FC6 /* Middleware.swift in Sources */,
+				7CF3092E2181D21000A336F8 /* MainController+Session.swift in Sources */,
+				7CCFC17E217E32C20071FB12 /* ColorScheme+Ext.swift in Sources */,
+				7C4E8590217F266A00FCBFE6 /* TimerController.swift in Sources */,
 				D41E5EBA20B7F5D8004F79A8 /* WKButton+Ext.swift in Sources */,
-				D4F660B220B6968900508BC5 /* SettingsController.swift in Sources */,
+				7CCFC17A217E19DB0071FB12 /* WKPickerItem+Ext.swift in Sources */,
 				D452E86820BEEDF900F05FC6 /* DefaultsKeys+Ext.swift in Sources */,
 				D452E86720BEECBB00F05FC6 /* EventHandler.swift in Sources */,
 				D4F660A120B5AD9100508BC5 /* ExtensionDelegate.swift in Sources */,
 				D452E86620BEECA500F05FC6 /* String+Ext.swift in Sources */,
 				D452E86220BEEC4100F05FC6 /* AppActions.swift in Sources */,
-				D4F6609F20B5AD9100508BC5 /* MainController.swift in Sources */,
 				D452E86C20BEF0C000F05FC6 /* ReduxHelper.swift in Sources */,
 				D452E86B20BEF09300F05FC6 /* TimerService.swift in Sources */,
 				D452E86920BEEEC400F05FC6 /* UIColor+Ext.swift in Sources */,
 				D4F660CB20B70B1300508BC5 /* Constants.swift in Sources */,
 				D452E86A20BEEED100F05FC6 /* Enums.swift in Sources */,
+				7CCFC176217DF9590071FB12 /* RoundDurationController.swift in Sources */,
 				D452E86320BEEC4400F05FC6 /* AppReducers.swift in Sources */,
+				7CCFC178217DFF260071FB12 /* BeepIntervalController.swift in Sources */,
+				7CF3093121821BB600A336F8 /* TimerData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,13 +1061,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer AdHoc";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1010,13 +1083,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer AdHoc";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1031,12 +1106,14 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch AdHoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1053,12 +1130,14 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch AdHoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1076,14 +1155,14 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch Extension AdHoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1101,14 +1180,14 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch Extension AdHoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

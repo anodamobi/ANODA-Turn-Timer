@@ -13,34 +13,32 @@ import WatchKit
 #endif
 
 class TimerService: NSObject {
-
+    
     var timer = Timer()
     
     var state: TimerState = .initial
     
     private var timerAppState: ReduxHelper<TimerAppState>?
     private var roundAppState: ReduxHelper<RoundState>?
-
-
+    
+    
     override init() { 
         super.init()
         setupSubscription()
-
     }
     
     func setupSubscription() {
         
         timerAppState = ReduxHelper<TimerAppState>.init({ (subscriber) in
-                store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0 == $1 })}
-            }) { (state) in
-                
-                store.dispatch(RoundInitialAction(progress: 0))
+            store.subscribe(subscriber) { $0.select({ $0.timerAppState } ).skipRepeats({ $0 == $1 })}
+        }) { (state) in
+            store.dispatch(RoundInitialAction(progress: 0))
         }
         
         roundAppState = ReduxHelper<RoundState>.init({ (subscirbe) in
-                store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0 == $1 }) }
-            }) { [unowned self] (state) in
-                self.updateTo(state: state.roundState)
+            store.subscribe(subscirbe) { $0.select({ $0.roundAppState }).skipRepeats({ $0 == $1 }) }
+        }) { [unowned self] (state) in
+            self.updateTo(state: state.roundState)
         }
     }
     
@@ -50,12 +48,12 @@ class TimerService: NSObject {
                                      selector: (#selector(updateTimer)),
                                      userInfo: nil,
                                      repeats: true)
+        debugPrint("\(store.state.roundAppState.roundTimeProgress)")
     }
     
-    
-
     @objc func updateTimer() {
-        if store.state.roundAppState.roundTimeProgress < 1 {
+        checkTimerEndDate()
+        if store.state.roundAppState.roundTimeProgress <= 1 {
             updateTo(state: .isOut)
             return
         } else if store.state.roundAppState.roundState == .paused {
@@ -64,12 +62,13 @@ class TimerService: NSObject {
             let seconds = store.state.roundAppState.roundTimeProgress - 1
             store.dispatch(RoundTimeInterval(timer: seconds))
         }
-        
-        let progress = CGFloat(1 - (CGFloat(store.state.roundAppState.roundTimeProgress) / CGFloat(store.state.timerAppState.timeInterval)))
-        store.dispatch(RoundProgress(progress: Float(progress)))
+        let timeToEnd = store.state.roundAppState.roundTimeProgress
+        let interval = store.state.timerAppState.timeInterval
+        let progress: Double = 1 - Double(timeToEnd) / Double(interval)
+        store.dispatch(RoundProgress(progress: progress))
     }
     
- func updateTo(state: TimerState) {
+    func updateTo(state: TimerState) {
         timer.invalidate()
         
         switch state {
@@ -84,13 +83,12 @@ class TimerService: NSObject {
             if self.state == .initial {
                 store.dispatch(RoundTimeInterval(timer: store.state.timerAppState.timeInterval))
                 #if os(iOS)
-                    SoundManager.startEndSound()
+                SoundManager.startEndSound()
                 #elseif os(watchOS)
-                    WKInterfaceDevice.current().play(.success)
+                WKInterfaceDevice.current().play(.success)
                 #endif
             }
             runTimer()
-            
         case .isOut: // time is end
             store.dispatch(RoundIsOutAction(timerSecondsValue: store.state.timerAppState.timeInterval,
                                             beepValue: store.state.timerAppState.beepInterval))
@@ -100,5 +98,24 @@ class TimerService: NSObject {
     
     func updateTimeInterval(timeInterval: Int) {
         store.dispatch(RoundTimeInterval(timer: timeInterval))
+    }
+    
+    func checkTimerEndDate() {
+        // Update RoundState.roundTimeProgress and time interval
+        guard let endDate = store.state.roundAppState.endDate else {
+            return
+        }
+        let timeToEnd = endDate.timeIntervalSince(Date()).rounded(.up)
+        if timeToEnd >= 1 {
+            // Update storage values
+            let interval = store.state.timerAppState.timeInterval
+            let progress = 1 - timeToEnd / Double(interval)
+            store.dispatch(RoundProgress(progress: progress))
+            store.dispatch(RoundTimeInterval(timer: Int(timeToEnd)))
+        } else {
+            // Round already finished
+            store.dispatch(RoundProgress(progress: 1.0))
+            store.dispatch(RoundTimeInterval(timer: 0))
+        }
     }
 }

@@ -17,20 +17,19 @@ typealias Localizable = R.string.localizable
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         WatchConnectivityService.shared.start()
         Fabric.with([Crashlytics.self])
-
+        
         if Defaults[.wasLaunched] != true {
             
             Defaults[.wasLaunched] = true
             Defaults[.timerInterval] = 60
             Defaults[.beepInterval] = 10
         }
-        
         
         store.dispatch(TimerAppLaunchAction(beepInterval: Defaults[.beepInterval],
                                             timeInterval: Defaults[.timerInterval]))
@@ -42,13 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = nc
         
         UIApplication.shared.isIdleTimerDisabled = true
-        UIApplication.shared.statusBarStyle = .lightContent
-        UIApplication.shared.isStatusBarHidden = false
-
-
-        
         return true
     }
+        
 }
 
- 
+

@@ -17,11 +17,15 @@ fileprivate let pieFrame: CGRect = CGRect(x: 0, y: 0, width: sizeConst, height: 
 
 class MainView: UIView {
     
-    let background = UIImageView()
+    private let pieViewContainerView = UIView()
+    private let pieViewBackgroundImage = UIImageView()
     let pieView = MainPieView(frame: pieFrame)
     
     let settingsButton = UIButton()
     let pauseButton = UIButton()
+    let replayButton = UIButton()
+    private let buttonsContainerView = UIView()
+    private let buttonsBackgroundImage = UIImageView()
     
     var restartButton: UIButton {
         return pieView.restartButton
@@ -32,53 +36,84 @@ class MainView: UIView {
     }
     
     func updateRestartIcon(visible: Bool) {
-        let image: UIImage = UIImage.init(pdfNamed: "reset", atHeight: 192)
+        let image: UIImage = UIImage.init(pdfNamed: "pieViewResetIcon", atHeight: 116)
         restartButton.setImage(visible ? image : nil, for: .normal)
         timerLabel.isHidden = visible
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
-        addSubview(background)
-        background.setImage(UIImage.backgroudImage())
-        background.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
-        }
+        setupLayout()
+    }
+    
+    func setupLayout() {
+        backgroundColor = .white
         
-        addSubview(pieView)
-        pieView.snp.makeConstraints { (make) in
-            
+        addSubview(pieViewContainerView)
+        pieViewContainerView.backgroundColor = UIColor.clear
+        pieViewContainerView.snp.makeConstraints { (make) in
             //HACK (Pavel.Mosunov) to not make a huge constraints for safe area as safeArea ext cannot into EDGES :'(
             let edges = UIEdgeInsetsMake(40, 20, 0, 20)
             let edgesX = UIEdgeInsetsMake(80, 20, 0, 20)
             let edge = UIScreen.screenType == .iphoneX ? edgesX : edges
-            
             make.top.left.right.equalTo(self).inset(edge)
-            make.height.equalTo(UIScreen.width - edge.left - edge.right)
+            make.height.equalTo(sizeConst)
         }
         
+        pieViewContainerView.addSubview(pieViewBackgroundImage)
+        pieViewBackgroundImage.setImage(UIImage(pdfNamed: "pieViewBackground", atWidth: sizeConst))
+        pieViewBackgroundImage.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        pieViewContainerView.addSubview(pieView)
+        pieView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        addSubview(buttonsContainerView)
+        buttonsContainerView.snp.makeConstraints {
+            $0.top.equalTo(pieViewContainerView.snp.bottom).offset(83)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(315)
+            $0.height.equalTo(125)
+        }
+        
+        buttonsContainerView.addSubview(buttonsBackgroundImage)
+        buttonsBackgroundImage.setImage(UIImage(pdfNamed: "buttonsContainerBackground", atWidth: 315))
+        buttonsBackgroundImage.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        buttonsContainerView.addSubview(settingsButton)
+        settingsButton.setupButtonImages(imageName: ("settingsIcon", "settingsIconPressed", "settingsIconPressed"), width: 50)
+        settingsButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(12)
+            $0.size.equalTo(50)
+        }
+        
+        buttonsContainerView.addSubview(pauseButton)
         updatePlay(toPause: false)
-        addSubview(pauseButton)
-        pauseButton.snp.makeConstraints { (make) in
-            
-            make.bottom.equalTo(self.safeArea.bottom).offset(-20)
-            make.left.equalTo(self).offset(20)
+        pauseButton.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(100)
         }
         
-        settingsButton.setupButtonImages(imageName: ("settingsNormal", "settingsPressed", "settingsPressed"), width: 100)
-        addSubview(settingsButton)
-        settingsButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(pauseButton)
-            make.right.equalTo(self).offset(-20)
+        buttonsContainerView.addSubview(replayButton)
+        replayButton.setupButtonImages(imageName: ("resetIcon", "ressetIconPressed", "ressetIconPressed"), width: 50)
+        replayButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().offset(-12)
+            $0.size.equalTo(50)
         }
     }
     
     func updatePlay(toPause: Bool) {
         if toPause {
-            pauseButton.setupButtonImages(imageName: ("pauseNormal", "pausePressed", "pausePressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("pauseButtonIcon", "pauseButtonIconPressed", "pauseButtonIconPressed"), width: 100)
         } else {
-            pauseButton.setupButtonImages(imageName: ("playNormal", "playPressed", "playPressed"), width: 100)
+            pauseButton.setupButtonImages(imageName: ("playButtonIcon", "playButtonIconPressed", "playButtonIconPressed"), width: 100)
         }
     }
     
@@ -118,7 +153,6 @@ class MainPieView: UIView {
             make.edges.equalTo(self)
         }
 
-
         let ovalPath = UIBezierPath(ovalIn: self.frame)
         let circleStrokeLayer = CAShapeLayer()
         circleStrokeLayer.path = ovalPath.cgPath
@@ -128,27 +162,25 @@ class MainPieView: UIView {
 
         self.layer.insertSublayer(circleStrokeLayer, at: 0)
 
-        pieLayer.setCircleStrokeWidth(5)
+        pieLayer.setCircleStrokeWidth(15)
         pieLayer.setCircleStrokeColor(UIColor.clear,
-                                      circleFillColor: UIColor.clear,
-                                      progressCircleStrokeColor: UIColor.clear,
-                                      progressCircleFillColor: UIColor.white.withAlphaComponent(0.2))
-
+                                      circleFillColor: UIColor.white,
+                                      progressCircleStrokeColor: UIColor.mango,
+                                      progressCircleFillColor: UIColor.clear)
         pieLayer.progress = 1
 
         addSubview(timerLabel)
         timerLabel.font = UIFont.gtTimerFont()
-        timerLabel.textColor = UIColor.gtVeryLightPink
+        timerLabel.textColor = UIColor.blackText
         timerLabel.textAlignment = .center
         timerLabel.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
         
-        restartButton.setImage(UIImage(), for: .selected) //todo:
-        restartButton.setImage(UIImage(), for: .highlighted)
         addSubview(restartButton)
+        restartButton.tintColor = UIColor.mangoPressed
         restartButton.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(67, 43, 67, 64))
         }
     }
 }

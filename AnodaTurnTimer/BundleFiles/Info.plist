@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.2</string>
+	<string>1.1.3</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Fabric</key>
@@ -38,7 +38,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Rancho-Regular.ttf</string>
+		<string>PassionOne-Regular.otf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

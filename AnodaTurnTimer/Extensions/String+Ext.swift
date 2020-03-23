@@ -18,12 +18,21 @@ extension String {
     }
     
     static func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
+        let minutes = Int(time / 60)
         let seconds = Int(time) % 60
-        if minutes > 0 {
-            return  self.init(format:"%02i:%02i", minutes, seconds)
+        return self.init(format:"%02i:%02i", minutes, seconds)
+    }
+    
+    static func parseTextToTime(text: String) -> Int {
+        // Get round duration
+        if(text.contains(":")) {
+            let values: [String] = text.components(separatedBy: ":")
+            let minutes: Int = (Int(values[0]) ?? 0) * 60
+            let seconds: Int = Int(values[1]) ?? 0
+            return minutes + seconds
         } else {
-            return  self.init(format:"%i", seconds)
+            let minutes = Int(text) ?? 0
+            return minutes * 60
         }
     }
     
