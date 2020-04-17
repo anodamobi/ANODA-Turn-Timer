@@ -86,6 +86,7 @@
 		D75F79C21F69F73A00DFF3AA /* LETimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */; };
 		D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F79A01F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings */; };
 		D75F79F11F6A063B00DFF3AA /* BRCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F79F01F6A063B00DFF3AA /* BRCircularProgressView.swift */; };
+		FA927367244992AD00BB3E7E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA927366244992AD00BB3E7E /* Launch Screen.storyboard */; };
 		FC2C894D6877E64F5E227E90 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA1BD85F0C21876F04FF4A8 /* Pods_AnodaTurnTimerAbstract_AnodaTurnTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +211,7 @@
 		D75F799F1F69F73A00DFF3AA /* LETimeIntervalPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LETimeIntervalPicker.swift; sourceTree = "<group>"; };
 		D75F79A01F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LETimeIntervalPickerLocalizable.strings; sourceTree = "<group>"; };
 		D75F79F01F6A063B00DFF3AA /* BRCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRCircularProgressView.swift; sourceTree = "<group>"; };
+		FA927366244992AD00BB3E7E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				D75F79751F69F73A00DFF3AA /* Info.plist */,
+				FA927366244992AD00BB3E7E /* Launch Screen.storyboard */,
 			);
 			path = BundleFiles;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				D75F79C31F69F73A00DFF3AA /* LETimeIntervalPickerLocalizable.strings in Resources */,
 				7CCEA829217A2F1E00A7519B /* settingsIconPressed.pdf in Resources */,
 				7CCEA821217A2E7C00A7519B /* ressetIconPressed.pdf in Resources */,
+				FA927367244992AD00BB3E7E /* Launch Screen.storyboard in Resources */,
 				7CCEA827217A2EEA00A7519B /* backButtonIconPressed.pdf in Resources */,
 				D452E85020BEEAC300F05FC6 /* alarm.mp3 in Resources */,
 				7CCEA82D217A30EB00A7519B /* backButtonIcon.pdf in Resources */,
@@ -1059,18 +1063,21 @@
 			baseConfigurationReference = 77136240DC03831EF6FC281B /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer AdHoc";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1081,18 +1088,20 @@
 			baseConfigurationReference = 7A8512F6C94F303501F171BE /* Pods-AnodaTurnTimerAbstract-AnodaTurnTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer AdHoc";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer AppStore";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1108,9 +1117,11 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch AdHoc";
@@ -1132,12 +1143,14 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch AppStore";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1157,9 +1170,11 @@
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch Extension AdHoc";
@@ -1182,12 +1197,14 @@
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mobi.anoda.turn-timer.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch Extension AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Turn Timer Watch Extension AppStore";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
