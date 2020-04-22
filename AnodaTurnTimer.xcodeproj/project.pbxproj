@@ -1067,7 +1067,7 @@
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
@@ -1092,7 +1092,7 @@
 				CODE_SIGN_ENTITLEMENTS = AnodaTurnTimer/AnodaTurnTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = AnodaTurnTimer/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1117,7 +1117,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
@@ -1143,7 +1143,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				IBSC_MODULE = AnodaTurnTimerWatch_Extension;
 				INFOPLIST_FILE = AnodaTurnTimerWatch/Info.plist;
@@ -1170,7 +1170,7 @@
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1197,7 +1197,7 @@
 				CODE_SIGN_ENTITLEMENTS = "AnodaTurnTimerWatch Extension/AnodaTurnTimerWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7VYW9J77NX;
 				INFOPLIST_FILE = "AnodaTurnTimerWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
